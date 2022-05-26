@@ -7,3 +7,9 @@ develop your relationshi[p with them. You can choose the friendhsip path or the 
 * Launch instructions: Launch from the terminal, from a file called Woo.java:
   $ javac Woo.java
   $ java Woo
+
+### ToDo:
+* Proposal pdf
+* Put in flag
+* UMLs
+* Flowcharts
