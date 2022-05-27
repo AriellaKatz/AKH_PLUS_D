@@ -1,4 +1,6 @@
 # AKH_PLUS_D
+![logo](https://user-images.githubusercontent.com/90857207/170614268-ef2b6af4-a41c-441e-b7b6-0b364eec6d84.jpg)
+
 Team AKH+D: Ariella Katz, Kaitlin Ho, Hugo Jenkins
 ### Project Description:
 * RPG in which you encounter different personas and choose how you want to
