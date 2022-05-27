@@ -16,3 +16,4 @@ develop your relationship with them. You can choose the friendhsip path or the l
 * ~~Put in flag~~
 * ~~UMLs~~
 * Flowcharts
+* Adjust umls
