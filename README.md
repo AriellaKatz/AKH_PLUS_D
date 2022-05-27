@@ -9,7 +9,7 @@ develop your relationshi[p with them. You can choose the friendhsip path or the 
   $ java Woo
 
 ### ToDo:
-* Proposal pdf
-* Put in flag
-* UMLs
+* ~~Proposal pdf~~
+* ~~Put in flag~~
+* ~~UMLs~~
 * Flowcharts

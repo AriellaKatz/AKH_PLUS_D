@@ -78,10 +78,10 @@ ALL :: Brainstormed project specifics, updated README
 
 2022-05-26
 --------------------------------------------------------------
-Ariella :: Wrote up the propro.
-Kaitlin :: Made flag.
-Hugo :: Made files + ToDo List.
-ALL :: Brainstormed specific technicalities and how we will store certain information. Worked on the propro.
+Ariella :: Wrote up the propro. Worked on UMLs.
+Kaitlin :: Made flag. Worked on developing Brad. Drew Brad.
+Hugo :: Made files + ToDo List. Worked on developing Brad. 
+ALL :: Brainstormed specific technicalities and how we will store certain information. Worked on the propro. Further specified how we will implement certain aspects of our project.
 ==============================================================
 
 yyyy-mm-dd
