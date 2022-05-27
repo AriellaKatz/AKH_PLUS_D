@@ -81,7 +81,7 @@ ALL :: Brainstormed project specifics, updated README
 Ariella :: Showed up 14 mins late.
 Kaitlin :: Made flag.
 Hugo :: Made files + ToDo List.
-ALL :: Brainstormed specific technicalities and how we will store certain information. Worked on the propro.
+ALL :: Brainstormed specific technicalities and how we will store certain information. Worked on the propro. 
 ==============================================================
 
 yyyy-mm-dd
