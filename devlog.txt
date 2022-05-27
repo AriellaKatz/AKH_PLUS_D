@@ -84,6 +84,14 @@ Hugo :: Made files + ToDo List. Worked on developing Brad's tree.
 ALL :: Brainstormed specific technicalities and how we will store certain information. Worked on the propro and UML. Further specified how we will implement certain aspects of our project. 1hr 45mins
 ==============================================================
 
+2022-05-27
+--------------------------------------------------------------
+Ariella :: 
+Kaitlin :: 
+Hugo :: 
+ALL :: Worked on developing Jessica's tree. 
+==============================================================
+
 yyyy-mm-dd
 --------------------------------------------------------------
 Ariella :: <Thing member did.>
