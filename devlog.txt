@@ -78,6 +78,7 @@ ALL :: Brainstormed project specifics, updated README
 
 2022-05-26
 --------------------------------------------------------------
+v0
 Ariella :: Wrote up the propro. Worked on UMLs.
 Kaitlin :: Made flag. Worked on developing Brad's tree. Drew Brad.
 Hugo :: Made files + ToDo List. Worked on developing Brad's tree.
@@ -86,6 +87,7 @@ ALL :: Brainstormed specific technicalities and how we will store certain inform
 
 2022-05-27
 --------------------------------------------------------------
+v0
 Ariella ::
 Kaitlin ::
 Hugo ::
@@ -94,8 +96,9 @@ ALL :: Joined call. Worked on developing Jessica's tree.
 
 2022-05-29
 --------------------------------------------------------------
-Ariella :: Worked on coding TreeNode, wrote Character constructor.
-Kaitlin :: Worked on Brad and Jessica storylines.
+v1
+Ariella :: Worked on coding TreeNode, wrote Character constructor. Updated devlog.
+Kaitlin :: Worked on Brad, Richard, and Jessica storylines.
 Hugo :: Worked on coding Character. Updated devlog.
 ALL :: Joined call. Had lots of fun.
 ==============================================================
