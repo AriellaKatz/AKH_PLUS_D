@@ -5,14 +5,14 @@ FP -- Are You a Player?
 2022-05-26
 */
 
-import java.util.*.
+import java.util.*;
 
 public class Character {
   private boolean _over;
   private boolean _fallen;
   private Stack<String> _status;
   private int _attraction;
-  private TreeNode _head;
+  // private TreeNode _head;
   private String _descrip;
   private String _name;
   // Changes attraction level
@@ -23,10 +23,8 @@ public class Character {
   }
 
   // Changes relationship status
-  public String changeStatus(String newStatus) {
-    String old = _status;
-    _status = newStatus;
-    return old;
+  public String changeStatus() {
+    return _status.pop();
   }
 
   // Accessor for description
@@ -41,7 +39,7 @@ public class Character {
 
   // Accessor for relationship status
   public String getStatus() {
-    return _status;
+    return _status.peek();
   }
 
   // Accessor for _name
@@ -69,7 +67,7 @@ public class Character {
   // Changes _fallen
   public boolean setFallen(boolean hasFallen) {
     boolean old = _fallen;
-    _fallen = isFallen;
+    _fallen = hasFallen;
     return old;
   }
 }
