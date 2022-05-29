@@ -15,6 +15,22 @@ public class Character {
   // private TreeNode _head;
   private String _descrip;
   private String _name;
+
+  public Character() {
+    _over = false;
+    _fallen = false;
+    _status = new Stack<String>();
+    _status.push("<3 <3 <3 <3 <3");
+    _status.push("<3 <3 <3 <3");
+    _status.push("<3 <3 <3");
+    _status.push("<3 <3");
+    _status.push("<3");
+    _attraction = 0;
+    //_head = null;
+    _descrip = "";
+    _name = "";
+  }
+
   // Changes attraction level
   public int changeAttraction(int change) {
     int old = _attraction;
