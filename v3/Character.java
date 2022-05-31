@@ -12,7 +12,7 @@ public class Character {
   protected boolean _fallen;
   protected Stack<String> _status;
   protected int _attraction;
-  // protected TreeNode _head;
+  protected TreeNode _head;
   protected String _descrip;
   protected String _name;
 
@@ -29,6 +29,10 @@ public class Character {
     //_head = null;
     _descrip = "";
     _name = "";
+  }
+
+  public void updateTree(TreeNode newHead) {
+    _head = newHead;
   }
 
   // Changes attraction level

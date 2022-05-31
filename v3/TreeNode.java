@@ -6,6 +6,7 @@ FP -- Are You a Player?
 */
 
 import java.util.ArrayList;
+import java.io.*;
 
 public abstract class TreeNode {
 
@@ -22,7 +23,7 @@ public abstract class TreeNode {
   }
 
   //abstract interaction method; coded individually for each node
-  public abstract void interact();
+  public abstract void interact() throws IOException;
 
 
   //changes corresponding character's attraction stat by specified amount

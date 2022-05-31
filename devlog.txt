@@ -113,6 +113,15 @@ Hugo :: Adjusted organization of updateStatus() method (location), ate dinner
 ALL ::
 ==============================================================
 
+2022-05-31
+--------------------------------------------------------------
+v3
+Ariella :: Coded interact() for Js1c1
+Kaitlin :: Helped Ariella (pair=programming)
+Hugo :: Made Scanny
+ALL ::
+==============================================================
+
 yyyy-mm-dd
 --------------------------------------------------------------
 Ariella :: <Thing member did.>
