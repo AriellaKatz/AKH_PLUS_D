@@ -19,24 +19,25 @@ public class Js1c1 extends TreeNode {
     _character = character;
   }
 
-  public void interact() throws IOException {
+  public void interact() {
     System.out.println("JESSICA: Heyyy I love your hair... can I run my fingers through it?");
     System.out.println("Respond: \n\t1. \"No...\" \n\t2. \"Haha sure!\"");
     System.out.println("Enter 1 or 2.");
     Scanner in = new Scanner(System.in);
     String choice = in.nextLine();
+    while (!choice.trim().equals("1") && !choice.trim().equals("2")) {
+      System.out.println("Congrats, you can't follow instructions. Try again.");
+      Scanner in2 = new Scanner(System.in);
+      choice = in.nextLine;
+    }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(_children.get(0));
       _children.get(0).updateAttraction();
     }
-    else if (input == 2) {
+    else {
       _character.updateTree(_children.get(1));
       _children.get(1).updateAttraction();
-    }
-    else {
-      System.out.println("Congrats, you broke the game because you can't follow instructions.");
-      throw new IOException();
     }
   }
 

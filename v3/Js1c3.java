@@ -19,7 +19,28 @@ public class Js1c3 extends TreeNode {
   }
 
   public void interact() {
-
+    System.out.println("JESSICA: \"Oooh it's really soft. Wanna hang out tomorrow?\"");
+    System.out.println("Respond: \n\t1. \"Sure!\" \n\t2. \"Sorry, I'm busy.\"");
+    System.out.println("Enter 1 or 2.");
+    Scanner in = new Scanner(System.in);
+    String choice = in.nextLine();
+    while (!choice.trim().equals("1") && !choice.trim().equals("2")) {
+      System.out.println("Congrats, you can't follow instructions. Try again.");
+      Scanner in2 = new Scanner(System.in);
+      choice = in.nextLine;
+    }
+    Integer input = Integer.parseInt(choice);
+    if (input == 1) {
+      _character.updateTree(_children.get(0));
+      _children.get(0).updateAttraction();
+      System.out.println("*You hang out and have a great time.*");
+    }
+    else {
+      _character.setOver(true);
+      _character.updateTree(_children.get(1));
+      System.out.println("IT'S OVER!");
+      //_children.get(1).updateAttraction(); b/c it's null
+    }
   }
 
 }
