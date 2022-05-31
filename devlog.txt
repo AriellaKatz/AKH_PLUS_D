@@ -79,7 +79,7 @@ ALL :: Brainstormed project specifics, updated README
 2022-05-26
 --------------------------------------------------------------
 v0
-1hr 45mins
+time in call: 1hr 45mins
 Ariella :: Wrote up the propro. Worked on UMLs.
 Kaitlin :: Made flag. Worked on developing Brad's tree. Drew Brad.
 Hugo :: Made files + ToDo List. Worked on developing Brad's tree.
