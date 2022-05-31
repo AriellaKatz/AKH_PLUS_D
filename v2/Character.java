@@ -8,13 +8,13 @@ FP -- Are You a Player?
 import java.util.*;
 
 public class Character {
-  private boolean _over;
-  private boolean _fallen;
-  private Stack<String> _status;
-  private int _attraction;
-  // private TreeNode _head;
-  private String _descrip;
-  private String _name;
+  protected boolean _over;
+  protected boolean _fallen;
+  protected Stack<String> _status;
+  protected int _attraction;
+  // protected TreeNode _head;
+  protected String _descrip;
+  protected String _name;
 
   public Character() {
     _over = false;

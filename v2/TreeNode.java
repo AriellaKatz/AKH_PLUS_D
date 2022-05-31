@@ -10,16 +10,13 @@ import java.util.ArrayList;
 public abstract class TreeNode {
 
   protected ArrayList<TreeNode> _children;
-  protected String _action;
   protected int _likeChange;
   protected Character _character;
 
   //constructor (doesn't actually work, but can be used as a prototype for
   //subclass constructors)
   protected TreeNode() {
-    ArrayList<TreeNode> children = new ArrayList<TreeNode>();
-    _children = _children;
-    _action = "";
+    _children = new ArrayList<TreeNode>();
     _likeChange = 0;
     _character = null;
   }
@@ -27,10 +24,6 @@ public abstract class TreeNode {
   //abstract interaction method; coded individually for each node
   public abstract void interact();
 
-  //provides description of the action corresponding to this node
-  public String getAction() {
-    return _action;
-  }
 
   //changes corresponding character's attraction stat by specified amount
   //corresponding to this node's action
