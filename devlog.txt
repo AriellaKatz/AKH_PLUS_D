@@ -117,8 +117,8 @@ ALL ::
 --------------------------------------------------------------
 v3
 Ariella :: Coded interact() for Js1c1
-Kaitlin :: Helped Ariella (pair=programming)
-Hugo :: Made Scanny
+Kaitlin :: Helped Ariella (pair=programming). Finished up storylines (for now)
+Hugo :: Made Scanny. Made flowchart
 ALL ::
 ==============================================================
 
