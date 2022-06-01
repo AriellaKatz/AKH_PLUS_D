@@ -12,27 +12,77 @@ public class Character {
   protected boolean _fallen;
   protected Stack<String> _status;
   protected int _attraction;
-  protected TreeNode _head;
+  protected ArrayList<TreeNode> _stage1;
+  protected ArrayList<TreeNode> _stage2;
+  protected ArrayList<TreeNode> _stage3;
   protected String _descrip;
   protected String _name;
+
+  /*
+    Woo starts at _stage1[0].
+    It goes through this tree until you get to the end of the tree (a null
+    node), at which point the tree is removed from _stage1. As you go through
+    the tree, the head of the tree has to be continuously updated via the
+    updateTree() method, which takes the stage the tree is from, the tree and
+    the head you'd like to update it with.
+    updateTree() returns a boolean stating whether the tree is finished.
+    When you get to the end of the tree, Woo checks likeability to see if player
+    can move on to the next stage. If they cannot, proceed with deleting the tree
+    and the next convo Woo calls will be the new _stage1[0]. Otherwise, Woo will
+    move on to the next _stageX, via a series of if else statements checking the
+    _status of the Character before calling the next interaction.
+    If the player goes through all the convos in a stage without progressing to
+    the next one, _isOver = true and the player can no longer proceed with this
+    Character.
+  */
 
   public Character() {
     _over = false;
     _fallen = false;
     _status = new Stack<String>();
-    _status.push("<3 <3 <3 <3 <3");
-    _status.push("<3 <3 <3 <3");
+    // _status.push("<3 <3 <3 <3 <3");
+    // _status.push("<3 <3 <3 <3");
     _status.push("<3 <3 <3");
     _status.push("<3 <3");
     _status.push("<3");
     _attraction = 0;
-    //_head = null;
+    _stage1 = null;
+    _stage2 = null;
+    _stage3 = null;
     _descrip = "";
     _name = "";
   }
 
-  public void updateTree(TreeNode newHead) {
-    _head = newHead;
+  public boolean updateTree(int stage, TreeNode tree, TreeNode newHead) {
+    //if you've reached the end of the tree, delete it from the stage
+    if (newHead == null) {
+      if (stage == 1) {
+        _stage1.remove(0);
+        //if you've gotten through the entire stage, it's over
+        if (_stage1.size() == 0) {
+          _over = true;
+          System.out.println("IT'S OVER.");
+        }
+      }
+      else if (stage == 2) {
+        _stage2.remove(0);
+        //if you've gotten through the entire stage, it's over
+        if (_stage2.size() == 0) {
+          _over = true;
+          System.out.println("IT'S OVER.");
+        }
+      }
+      else {
+        _stage3.remove(0);
+        //if you've gotten through the entire stage, it's over
+        if (_stage3.size() == 0) {
+          _over = true;
+          System.out.println("IT'S OVER.");
+        }
+      }
+      return true;
+    }
+    else {_head = newHead; return false;}
   }
 
   // Changes attraction level
