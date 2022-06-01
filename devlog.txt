@@ -117,9 +117,17 @@ ALL ::
 --------------------------------------------------------------
 v3
 Ariella :: Coded interact() for Js1c1
-Kaitlin :: Helped Ariella (pair=programming). Finished up storylines (for now)
+Kaitlin :: Helped Ariella (pair programming). Finished up storylines (for now)
 Hugo :: Made Scanny. Made flowchart
 ALL ::
+==============================================================
+
+2022-06-01
+--------------------------------------------------------------
+Ariella :: Actual code
+Kaitlin :: Wrote stages
+Hugo :: Learned how to image open
+ALL :: Revamped our gameplay .
 ==============================================================
 
 yyyy-mm-dd
