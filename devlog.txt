@@ -130,7 +130,7 @@ ALL ::
 --------------------------------------------------------------
 time in call: 40 mins
 Ariella :: Actual code. Wrote updateTree in Character.java.
-Kaitlin :: Wrote stages
+Kaitlin :: Solidified new gameplay!! There will be no main character tree other than Richard's; each character will have smaller conversations. Split Jessica's story into three stages and wrote a lot more story. 
 Hugo :: Learned how to image open. Debugged updateTree. Made preliminary Brad and Richard files. Wrote Player constructor and sortRank(). Added delay and type from our last project to this one. Began introduction method. 
 ALL :: Revamped our gameplay. Talked through plans.
 ==============================================================
