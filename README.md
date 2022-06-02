@@ -15,10 +15,3 @@ develop your relationship with them. You can choose the friendhsip path or the l
    $ javac Woo.java
    $ java Woo
    ```
-
-### ToDo:
-* ~~Proposal pdf~~
-* ~~Put in flag~~
-* ~~UMLs~~
-* Flowcharts
-* Adjust umls
