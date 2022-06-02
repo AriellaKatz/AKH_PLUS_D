@@ -19,12 +19,6 @@ public class Woo {
 // with certain attraction levels
   }
 
-  public static void main(String[] args) {
-    Woo game = new Woo();
-    game.introduction();
-    game.play();
-  }
-
   public void introduction() {
     // Welcome Message
     System.out.println("Welcome to: ");
@@ -48,8 +42,6 @@ public class Woo {
     return "";
   }
 
-
-
   //to print stuff so it looks like it's being typed out
   public static void type(String s){
     String punc = ",.?!-";
@@ -70,6 +62,12 @@ public class Woo {
     while (System.currentTimeMillis() - beginTimer < milliseconds) {
       continue;
     }
+  }
+
+  public static void main(String[] args) {
+    Woo game = new Woo();
+    game.introduction();
+    game.play();
   }
 
 }
