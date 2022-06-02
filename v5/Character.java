@@ -16,6 +16,7 @@ public class Character {
   protected ArrayList<TreeNode> _stage1;
   protected ArrayList<TreeNode> _stage2;
   protected ArrayList<TreeNode> _stage3;
+  protected ArrayList<TreeNode> _winScene;
   protected String _descrip;
   protected String _name;
 
@@ -51,6 +52,7 @@ public class Character {
     _stage1 = null;
     _stage2 = null;
     _stage3 = null;
+    _winScene = null;
     _descrip = "";
     _name = "";
   }
