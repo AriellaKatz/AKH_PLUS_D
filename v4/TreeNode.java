@@ -28,11 +28,8 @@ public abstract class TreeNode {
 
   //changes corresponding character's attraction stat by specified amount
   //corresponding to this node's action
-  public int updateAttraction() {
-    // int oldAttraction = _character.getAttraction();
-    // _character.changeAttraction(_likeChange);
-    // updateStatus(oldAttraction);
-    return _character.changeAttraction(_likeChange);
+  public int getLikeChange() {
+    return _likeChange;
   }
 
   //updates corresponding character's status stat based on updated attraction

@@ -12,6 +12,7 @@ public class Character {
   protected boolean _fallen;
   protected Stack<String> _status;
   protected int _attraction;
+  protected int _pendingLikeChange;
   protected ArrayList<TreeNode> _stage1;
   protected ArrayList<TreeNode> _stage2;
   protected ArrayList<TreeNode> _stage3;
@@ -46,6 +47,7 @@ public class Character {
     _status.push("<3 <3");
     _status.push("<3");
     _attraction = 0;
+    _pendingLikeChange = 0;
     _stage1 = null;
     _stage2 = null;
     _stage3 = null;
@@ -54,7 +56,7 @@ public class Character {
   }
 
   public boolean updateTree(TreeNode newHead) {
-    //convert status to an int
+    //convert _status to an int
     int stat = 0;
     String status = _status;
     while (status.indexOf("<3") != -1) {
@@ -64,6 +66,8 @@ public class Character {
     //if you've reached the end of the tree, delete it from the stage
     if (newHead == null) {
       if (stat == 1) {
+        changeAttraction(_pendingLikeChange);
+        _pendingLikeChange == 0;
         _stage1.remove(0);
         //if you've gotten through the entire stage without progressing, it's over
         if (_stage1.size() == 0) {
@@ -72,6 +76,8 @@ public class Character {
         }
       }
       else if (stat == 2) {
+        changeAttraction(_pendingLikeChange);
+        _pendingLikeChange == 0;
         _stage2.remove(0);
         //if you've gotten through the entire stage, it's over
         if (_stage2.size() == 0) {
@@ -80,6 +86,8 @@ public class Character {
         }
       }
       else {
+        changeAttraction(_pendingLikeChange);
+        _pendingLikeChange == 0;
         _stage3.remove(0);
         //if you've gotten through the entire stage, it's over
         if (_stage3.size() == 0) {
@@ -93,14 +101,18 @@ public class Character {
     // the head the player chose (newHead)
     else {
       if (stat == 1) {
+        _pendingLikeChange += _stage1.get(0).getLikeChange();
         _stage1.set(0, newHead);
       }
       else if (stat == 2) {
+        _pendingLikeChange += _stage2.get(0).getLikeChange();
         _stage2.set(0, newHead);
       }
       else {
+        _pendingLikeChange += _stage3.get(0).getLikeChange();
         _stage3.set(0, newHead);
       }
+      return false;
     }
   }
 
