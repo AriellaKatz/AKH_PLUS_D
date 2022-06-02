@@ -23,8 +23,8 @@ public class Character {
     It goes through this tree until you get to the end of the tree (a null
     node), at which point the tree is removed from _stage1. As you go through
     the tree, the head of the tree has to be continuously updated via the
-    updateTree() method, which takes the stage the tree is from, the tree and
-    the head you'd like to update it with.
+    updateTree() method, which takes the head you'd like to update the tree with
+    (the current tree is always the tree at index 0 in the ArrayList).
     updateTree() returns a boolean stating whether the tree is finished.
     When you get to the end of the tree, Woo checks likeability to see if player
     can move on to the next stage. If they cannot, proceed with deleting the tree
@@ -53,18 +53,25 @@ public class Character {
     _name = "";
   }
 
-  public boolean updateTree(int stage, TreeNode tree, TreeNode newHead) {
+  public boolean updateTree(TreeNode newHead) {
+    //convert status to an int
+    int stat = 0;
+    String status = _status;
+    while (status.indexOf("<3") != -1) {
+      stat ++;
+      status = status.substring(status.indexOf("<3") + 2);
+    }
     //if you've reached the end of the tree, delete it from the stage
     if (newHead == null) {
-      if (stage == 1) {
+      if (stat == 1) {
         _stage1.remove(0);
-        //if you've gotten through the entire stage, it's over
+        //if you've gotten through the entire stage without progressing, it's over
         if (_stage1.size() == 0) {
           _over = true;
           System.out.println("IT'S OVER.");
         }
       }
-      else if (stage == 2) {
+      else if (stat == 2) {
         _stage2.remove(0);
         //if you've gotten through the entire stage, it's over
         if (_stage2.size() == 0) {
@@ -82,7 +89,19 @@ public class Character {
       }
       return true;
     }
-    else {_head = newHead; return false;}
+    //if you haven't reached the end of the tree, update it so that you're at
+    // the head the player chose (newHead)
+    else {
+      if (stat == 1) {
+        _stage1.set(0, newHead);
+      }
+      else if (stat == 2) {
+        _stage2.set(0, newHead);
+      }
+      else {
+        _stage3.set(0, newHead);
+      }
+    }
   }
 
   // Changes attraction level
@@ -102,16 +121,13 @@ public class Character {
       System.out.println("IT'S OVER");
       this.setOver(true);
     }
-    else if (oldAttraction <= 25 && a > 25 && a < 50) {
+    else if (oldAttraction <= 33 && a > 33 && a < 66) {
       this.changeStatus();
     }
-    else if (oldAttraction <= 50 && a > 50 && a < 75) {
+    else if (oldAttraction <= 66 && a > 66 && a < 100) {
       this.changeStatus();
     }
-    else if (oldAttraction <= 75 && a > 75 && a < 100){
-      this.changeStatus();
-    }
-    else if (a > 100){
+    else if (a >= 100){
       this.changeStatus();
       System.out.println(this._name + "has fallen for you!");
       this.setFallen(true);

@@ -27,9 +27,9 @@ public class Woo {
 
   }
 
-  // public String probeTree(Character character){
-  //
-  // }
+  public String probeTree(Character character){
+    
+  }
 
 
 }
