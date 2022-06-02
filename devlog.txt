@@ -127,7 +127,7 @@ ALL ::
 Ariella :: Actual code
 Kaitlin :: Wrote stages
 Hugo :: Learned how to image open
-ALL :: Revamped our gameplay .
+ALL :: Revamped our gameplay.
 ==============================================================
 
 yyyy-mm-dd

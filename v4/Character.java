@@ -58,7 +58,7 @@ public class Character {
   public boolean updateTree(TreeNode newHead) {
     //convert _status to an int
     int stat = 0;
-    String status = _status;
+    String status = _status.peek();
     while (status.indexOf("<3") != -1) {
       stat ++;
       status = status.substring(status.indexOf("<3") + 2);
@@ -67,7 +67,7 @@ public class Character {
     if (newHead == null) {
       if (stat == 1) {
         changeAttraction(_pendingLikeChange);
-        _pendingLikeChange == 0;
+        _pendingLikeChange = 0;
         _stage1.remove(0);
         //if you've gotten through the entire stage without progressing, it's over
         if (_stage1.size() == 0) {
@@ -77,7 +77,7 @@ public class Character {
       }
       else if (stat == 2) {
         changeAttraction(_pendingLikeChange);
-        _pendingLikeChange == 0;
+        _pendingLikeChange = 0;
         _stage2.remove(0);
         //if you've gotten through the entire stage, it's over
         if (_stage2.size() == 0) {
@@ -87,7 +87,7 @@ public class Character {
       }
       else {
         changeAttraction(_pendingLikeChange);
-        _pendingLikeChange == 0;
+        _pendingLikeChange = 0;
         _stage3.remove(0);
         //if you've gotten through the entire stage, it's over
         if (_stage3.size() == 0) {

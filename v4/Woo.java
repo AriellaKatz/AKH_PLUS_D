@@ -8,10 +8,6 @@ FP -- Are You a Player?
 import java.util.ArrayList;
 
 public class Woo {
-  public static void main(String[] args) {
-    System.out.println("This is our v0 beep bop");
-  }
-
   //private Brad _brad;
   private Jessica _jessica;
   //private Richard _richard;
@@ -23,12 +19,16 @@ public class Woo {
 // with certain attraction levels
   }
 
+  public static void main(String[] args) {
+    System.out.println("This is our v0 beep bop");
+  }
+
   public void play(){
 
   }
 
   public String probeTree(Character character){
-    
+
   }
 
 
