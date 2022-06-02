@@ -20,6 +20,9 @@ public class Jessica extends Character{
   public Jessica(int attraction) {
     this();
     _attraction = attraction;
+    if (_attraction < 0) {
+      _over = true;
+    }
   }
 
 }

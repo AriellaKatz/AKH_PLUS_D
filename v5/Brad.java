@@ -22,6 +22,9 @@ public class Brad extends Character{
   public Brad(int attraction) {
     this();
     _attraction = attraction;
+    if (_attraction < 0) {
+      _over = true;
+    }
   }
 
 }

@@ -10,6 +10,9 @@ import java.util.ArrayList;
 public class Woo {
 
   private Player _player;
+  private Jessica _jessica;
+  private Richard _richard;
+  private Brad _brad;
   private boolean _gameOver;
 
   public Woo(){
@@ -30,11 +33,56 @@ public class Woo {
       type(s);
       delay(1000);
     }
+
+    int startingAttraction = 0;
+    String s = "Tell us a bit about yourself.";
+    type(s);
+    Scanny in = new Scanny();
+    String intro = in.toString().trim().toLowercase();
+    s = "Great... let's get started!";
+    type(s);
+    if (intro.indexOf("smart") != -1) {
+      startingAttraction ++;
+    }
+    if (intro.indexOf("sweet") != -1) {
+      startingAttraction ++;
+    }
+    if (intro.indexOf("funny") != -1) {
+      startingAttraction ++;
+    }
+    if (intro.indexOf("hot") != -1
+    || intro.indexOf("pretty") != -1) {
+      startingAttraction ++;
+    }
+    if (intro.indexOf("gamer") != -1
+    || intro.indexOf("gaming") != -1) {
+      startingAttraction -= 10;
+    }
+    if (intro.indexOf("comp sci") != -1
+    || intro.indexOf("compsci") != -1
+    || intro.indexOf("cs") != -1
+    || intro.indexOf("coding") != -1
+    || intro.indexOf("programming") != -1) {
+      startingAttraction -= 10;
+    }
+
+    _jessica = new Jessica(startingAttraction);
+    _richard = new Richard(startingAttraction);
+    _brad = new Brad(startingAttraction);
+
   }
 
   public void play(){
+    String s = "";
 
-
+    if (_jessica.isOver() && _richard.isOver() && _brad.isOver()) {
+      _gameOver = true;
+      s = "You've struck out with ALL of them. GAME OVER.";
+      type(s);
+    }
+    else {
+      
+    }
 
   }
 
