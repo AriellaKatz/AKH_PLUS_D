@@ -131,7 +131,7 @@ ALL ::
 time in call: 40 mins
 Ariella :: Actual code. Wrote updateTree in Character.java.
 Kaitlin :: Wrote stages
-Hugo :: Learned how to image open. Debugged updateTree. Made preliminary Brad and Richard files. Wrote Player constructor and sortRank().
+Hugo :: Learned how to image open. Debugged updateTree. Made preliminary Brad and Richard files. Wrote Player constructor and sortRank(). Added delay and type from our last project to this one. Began introduction method. 
 ALL :: Revamped our gameplay. Talked through plans.
 ==============================================================
 
