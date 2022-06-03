@@ -6,7 +6,6 @@ FP -- Are You a Player?
 */
 //touch hair
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.io.*;
 
 public class Js1c1 extends TreeNode {
@@ -23,12 +22,12 @@ public class Js1c1 extends TreeNode {
     System.out.println("JESSICA: Heyyy I love your hair... can I run my fingers through it?");
     System.out.println("Respond: \n\t1. \"No...\" \n\t2. \"Haha sure!\"");
     System.out.println("Enter 1 or 2.");
-    Scanner in = new Scanner(System.in);
-    String choice = in.nextLine();
+    Scanny in = new Scanny();
+    String choice = in.toString();
     while (!choice.trim().equals("1") && !choice.trim().equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
-      Scanner in2 = new Scanner(System.in);
-      choice = in.nextLine;
+      Scanny in2 = new Scanny();
+      String choice = in2.toString();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {

@@ -22,12 +22,12 @@ public class Js1c3 extends TreeNode {
     System.out.println("JESSICA: \"Oooh it's really soft. Wanna hang out tomorrow?\"");
     System.out.println("Respond: \n\t1. \"Sure!\" \n\t2. \"Sorry, I'm busy.\"");
     System.out.println("Enter 1 or 2.");
-    Scanner in = new Scanner(System.in);
-    String choice = in.nextLine();
+    Scanny in = new Scanny();
+    String choice = in.toString();
     while (!choice.trim().equals("1") && !choice.trim().equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
-      Scanner in2 = new Scanner(System.in);
-      choice = in.nextLine;
+      Scanny in2 = new Scanny();
+      String choice = in2.toString();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
