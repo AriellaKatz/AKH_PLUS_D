@@ -60,6 +60,110 @@ public class Character {
     _name = "";
   }
 
+
+  //ACCESSORS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // Accessor for _over
+  public boolean isOver() {
+    return _over;
+  }
+
+  // Accessor for _fallen
+  public boolean hasFallen() {
+    return _fallen;
+  }
+
+  // Accessor for relationship status
+  public String getStatus() {
+    return _status.peek();
+  }
+
+  // Accessor for attraction level
+  public int getAttraction() {
+    return _attraction;
+  }
+
+  // Accessor for _currentStage
+  public ArrayList<TreeNode> getStage() {
+    return _currentStage;
+  }
+
+  // Accessor for description
+  public String getDescrip() {
+    return _descrip;
+  }
+
+  // Accessor for _name
+  public String getName() {
+    return _name;
+  }
+
+
+  //MUTATORS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // Changes _over
+  public boolean setOver(boolean isOver) {
+    boolean old = _over;
+    _over = isOver;
+    return old;
+  }
+
+  // Changes _fallen
+  public boolean setFallen(boolean hasFallen) {
+    boolean old = _fallen;
+    _fallen = hasFallen;
+    return old;
+  }
+
+  // Changes relationship status
+  public String changeStatus() {
+    String prevStat = _status.pop();
+    if (getStatus().equals("<3 <3")) {
+      _currentStage = _stage2;
+    }
+    else if (getStatus().equals("<3 <3 <3")) {
+      _currentStage = _stage3;
+    }
+    else {
+      _currentStage = _winScene;
+    }
+    return prevStat;
+  }
+
+  // Updates corresponding character's status stat based on updated attraction
+  // Stat
+  // Currently assumes that you can't skip levels
+  public String maintainStatus(int oldAttraction) {
+    int a = this._attraction;
+    if (a < 0) {
+      System.out.println("IT'S OVER");
+      this.setOver(true);
+    }
+    else if (oldAttraction <= 33 && a > 33 && a < 66) {
+      this.changeStatus();
+    }
+    else if (oldAttraction <= 66 && a > 66 && a < 100) {
+      this.changeStatus();
+    }
+    else if (a >= 100){
+      this.changeStatus();
+      System.out.println(this._name + "has fallen for you!");
+      this.setFallen(true);
+    }
+    return this.getStatus();
+  }
+
+  // Changes attraction level
+  public int changeAttraction(int change) {
+    int old = _attraction;
+    _attraction += change;
+     maintainStatus(old);
+    return old;
+  }
+
+  // Updates the current tree (found at _currentStage.get(0))
+  //Returns true when the player gets to the end of the tree, signalling to Woo
+  // that it's time to switch Characters
   public boolean updateTree(TreeNode newHead) {
     //convert _status to an int
     int stat = 0;
@@ -119,100 +223,6 @@ public class Character {
       }
       return false;
     }
-  }
-
-  // Changes attraction level
-  public int changeAttraction(int change) {
-    int old = _attraction;
-    _attraction += change;
-     maintainStatus(old);
-    return old;
-  }
-
-  // Updates corresponding character's status stat based on updated attraction
-  // Stat
-  // Currently assumes that you can't skip levels
-  public String maintainStatus(int oldAttraction) {
-    int a = this._attraction;
-    if (a < 0) {
-      System.out.println("IT'S OVER");
-      this.setOver(true);
-    }
-    else if (oldAttraction <= 33 && a > 33 && a < 66) {
-      this.changeStatus();
-    }
-    else if (oldAttraction <= 66 && a > 66 && a < 100) {
-      this.changeStatus();
-    }
-    else if (a >= 100){
-      this.changeStatus();
-      System.out.println(this._name + "has fallen for you!");
-      this.setFallen(true);
-    }
-    return this.getStatus();
-  }
-
-  // Changes relationship status
-  public String changeStatus() {
-    String prevStat = _status.pop();
-    if (getStatus().equals("<3 <3")) {
-      _currentStage = _stage2;
-    }
-    else if (getStatus().equals("<3 <3 <3")) {
-      _currentStage = _stage3;
-    }
-    else {
-      _currentStage = _winScene;
-    }
-    return prevStat;
-  }
-
-  // Accessor for description
-  public String getDescrip() {
-    return _descrip;
-}
-
-  // Accessor for attraction level
-  public int getAttraction() {
-    return _attraction;
-  }
-
-  // Accessor for relationship status
-  public String getStatus() {
-    return _status.peek();
-  }
-
-  public ArrayList<TreeNode> getStage() {
-    return _currentStage;
-  }
-
-  // Accessor for _name
-  public String getName() {
-    return _name;
-  }
-
-  // Accessor for _over
-  public boolean isOver() {
-    return _over;
-  }
-
-  // Changes _over
-  public boolean setOver(boolean isOver) {
-    boolean old = _over;
-    _over = isOver;
-    return old;
-  }
-
-  // Accessor for _fallen
-  public boolean hasFallen() {
-    return _fallen;
-  }
-
-  // Changes _fallen
-  public boolean setFallen(boolean hasFallen) {
-    boolean old = _fallen;
-    _fallen = hasFallen;
-    return old;
   }
 
 }
