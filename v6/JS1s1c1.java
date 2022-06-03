@@ -32,6 +32,56 @@
 
  FINAL -
  "(You and Jessica walk out of an ice cream shop)"
+ "Woah. So generous. These things are expensive y'know."
+ "Realllllyyy. Prove it."
+ "Noooooo I'll eat it."
+ "(She's waiting)"
+ "No what-"
+
  "Oh so you liiike me?"
- "Woah."
+ "*eyebrow raise* So you already know my answer."
+ "I mean, why not pretty face."
 */
+
+/*
+AKH+D: Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
+APCS pd6
+FP -- Are You a Player?
+2022-06-03
+*/
+import java.util.ArrayList;
+import java.io.*;
+
+public class JS1s1c1 extends TreeNode {
+
+  public JS1s1c1(Character character) {
+    super();
+    _children.add(new JS1s1c2(character));
+    _children.add(new JS1s1c3(character));
+    _likeChange = 0;
+    _character = character;
+  }
+
+  public void interact() {
+    System.out.println("JESSICA: Heyyy I saw you from across the hall. I love your hair, can I run my fingers through it?");
+    System.out.println("Respond: \n\t1. \"No...\" \n\t2. \"Haha sure!\"");
+    System.out.println("Enter 1 or 2.");
+    Scanny in = new Scanny();
+    String choice = in.toString();
+    while (!choice.trim().equals("1") && !choice.trim().equals("2")) {
+      System.out.println("Congrats, you can't follow instructions. Try again.");
+      Scanny in2 = new Scanny();
+      String choice = in2.toString();
+    }
+    Integer input = Integer.parseInt(choice);
+    if (input == 1) {
+      _character.updateTree(_children.get(0));
+      _children.get(0).updateAttraction();
+    }
+    else {
+      _character.updateTree(_children.get(1));
+      _children.get(1).updateAttraction();
+    }
+  }
+
+}

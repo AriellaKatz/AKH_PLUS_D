@@ -209,18 +209,8 @@ public class Character {
     //if you haven't reached the end of the tree, update it so that you're at
     // the head the player chose (newHead)
     else {
-      if (stat == 1) {
-        _pendingLikeChange += _stage1.get(0).getLikeChange();
-        _stage1.set(0, newHead);
-      }
-      else if (stat == 2) {
-        _pendingLikeChange += _stage2.get(0).getLikeChange();
-        _stage2.set(0, newHead);
-      }
-      else {
-        _pendingLikeChange += _stage3.get(0).getLikeChange();
-        _stage3.set(0, newHead);
-      }
+      _pendingLikeChange += _currentStage.get(0).getLikeChange();
+      _currentStage.set(0, newHead);
       return false;
     }
   }
