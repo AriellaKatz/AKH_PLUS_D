@@ -81,13 +81,38 @@ public class Woo {
       type(s);
     }
     else {
-      
+
     }
 
   }
 
-  public String probeTree(Character character){
-    return "";
+  public int probeTree(Character character){
+    int option = 0;
+    int bestLike = Integer.MIN_VALUE;
+    for (int i = 0; i < character.getStage().get(0).getChildren().size(); i++) {
+      int like = probeTreeHelper(character.getStage.get(0).getChildren().get(i));
+      if (like > bestLike) {
+        bestLike = like;
+        option = i;
+      }
+    }
+    return option;
+  }
+
+  public int probeTreeHelper(TreeNode node) {
+    if (node.getChildren().size() == 0) {
+      return node.getLikeChange();
+    }
+    else {
+      int bestLike = Integer.MIN_VALUE;
+      for (int i = 0; i < node.getChildren().size(); i++) {
+        int like = probeTreeHelper(node.getChildren().get(i))
+        if (like > bestLike) {
+          bestLike = like;
+        }
+      }
+      return node.getLikeChange() + bestLike;
+    }
   }
 
   //to print stuff so it looks like it's being typed out

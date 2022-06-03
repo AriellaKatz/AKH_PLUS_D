@@ -17,6 +17,7 @@ public class Character {
   protected ArrayList<TreeNode> _stage2;
   protected ArrayList<TreeNode> _stage3;
   protected ArrayList<TreeNode> _winScene;
+  protected ArrayList<TreeNode> _currentStage; //_stage1, _stage2, _stage3, or _winScene
   protected String _descrip;
   protected String _name;
 
@@ -44,6 +45,7 @@ public class Character {
     _status = new Stack<String>();
     // _status.push("<3 <3 <3 <3 <3");
     // _status.push("<3 <3 <3 <3");
+    _status.push("WIN SCENE");
     _status.push("<3 <3 <3");
     _status.push("<3 <3");
     _status.push("<3");
@@ -53,6 +55,7 @@ public class Character {
     _stage2 = null;
     _stage3 = null;
     _winScene = null;
+    _currentStage = _stage1;
     _descrip = "";
     _name = "";
   }
@@ -151,7 +154,17 @@ public class Character {
 
   // Changes relationship status
   public String changeStatus() {
-    return _status.pop();
+    String prevStat = _status.pop();
+    if (getStatus().equals("<3 <3")) {
+      _currentStage = _stage2;
+    }
+    else if (getStatus().equals("<3 <3 <3")) {
+      _currentStage = _stage3;
+    }
+    else {
+      _currentStage = _winScene;
+    }
+    return prevStat;
   }
 
   // Accessor for description
@@ -167,6 +180,10 @@ public class Character {
   // Accessor for relationship status
   public String getStatus() {
     return _status.peek();
+  }
+
+  public ArrayList<TreeNode> getStage() {
+    return _currentStage;
   }
 
   // Accessor for _name

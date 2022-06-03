@@ -32,6 +32,10 @@ public abstract class TreeNode {
     return _likeChange;
   }
 
+  public ArrayList<TreeNode> getChildren() {
+    return _children;
+  }
+
   //updates corresponding character's status stat based on updated attraction
   //stat
   // currently assumes that you can't skip levels
