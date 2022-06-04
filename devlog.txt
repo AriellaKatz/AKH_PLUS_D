@@ -38,15 +38,24 @@ maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+If you include "throws <Exception>" in the header of an abstract method of an
+ abstract parent class, it must also be included in the header of the method of
+ subclass if that method is meant to implement the abstract one.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 we changed ___ to ___ bc...
+In general, many methods and instance variables have been added or removed as we
+ continue building out our RPG and realize that certain things might be helpful
+ or may have become useless.
+We decided to switch from each Character having a single storyline tree to having
+ arrays of smaller trees for each stage so that the stage would have greater
+ influence on the progression of the relationship
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
+Copy+paste is your friend but only if you're doing it intentionally
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -131,8 +140,8 @@ ALL ::
 v4
 time in call: 40 mins
 Ariella :: Actual code. Wrote updateTree in Character.java.
-Kaitlin :: New gameplay ideas!! There will be no main character tree other than Richard's; each character will have smaller conversations. Split Jessica's story into three stages and wrote a lot more story. 
-Hugo :: Learned how to image open. Debugged updateTree. Made preliminary Brad and Richard files. Wrote Player constructor and sortRank(). Added delay and type from our last project to this one. Began introduction method. 
+Kaitlin :: New gameplay ideas!! There will be no main character tree other than Richard's; each character will have smaller conversations. Split Jessica's story into three stages and wrote a lot more story.
+Hugo :: Learned how to image open. Debugged updateTree. Made preliminary Brad and Richard files. Wrote Player constructor and sortRank(). Added delay and type from our last project to this one. Began introduction method.
 ALL :: Revamped our gameplay. Talked through plans & discussed how to implement new idea into code.
 ==============================================================
 
@@ -142,8 +151,18 @@ v5
 time in call: 30 mins
 Ariella :: Wrote probeTree() and its helpers, added to introduction, started play(), updated UMLs and devlog, reorganized Character to make locating methods easier, helped make new Jessica nodes
 Kaitlin :: Worked on storylines, helped make new Jessica nodes
-Hugo :: Worked on storylines, wrote introductio 
+Hugo :: Worked on storylines, wrote introduction
 ALL :: Revamped our gameplay. Talked through plans & discussed how to implement new idea into code.
+==============================================================
+
+2022-06-03
+--------------------------------------------------------------
+v6
+time in call: 30 mins
+Ariella ::
+Kaitlin ::
+Hugo ::
+ALL :: Started implementing Jnodes
 ==============================================================
 
 
