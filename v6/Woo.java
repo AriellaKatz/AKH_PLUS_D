@@ -96,7 +96,7 @@ public class Woo {
         option = i;
       }
     }
-    return option+1;
+    return option+1; //+1 b/c when the player sees their list of options, it starts at 1, not 0, but option is the index of the array
   }
 
   public int probeTreeHelper(TreeNode node) {
