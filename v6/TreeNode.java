@@ -11,14 +11,14 @@ import java.io.*;
 public abstract class TreeNode {
 
   protected ArrayList<TreeNode> _children;
-  protected int _likeChange;
+  protected ArrayList<Integer> _childrenLikeChanges;
   protected Character _character;
 
   //constructor (doesn't actually work, but can be used as a prototype for
   //subclass constructors)
   protected TreeNode() {
     _children = new ArrayList<TreeNode>();
-    _likeChange = 0;
+    _childrenLikeChange = new ArrayList<Integer>();
     _character = null;
   }
 
@@ -30,9 +30,9 @@ public abstract class TreeNode {
   // if there are multiple options for getting to this node with different
   // likeChanges, this will be reflected in the interact() method of the parent
   // node, when additional likeChange is subtracted or added manually if the
-  // user chooses a certain option 
-  public int getLikeChange() {
-    return _likeChange;
+  // user chooses a certain option
+  public ArrayList<Integer> getChildrenLikeChanges() {
+    return _childrenLikeChanges;
   }
 
   public ArrayList<TreeNode> getChildren() {

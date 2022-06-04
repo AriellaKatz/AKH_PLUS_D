@@ -58,13 +58,14 @@ public class JS1s1c1 extends TreeNode {
     super();
     _children.add(new JS1s1c2(character));
     _children.add(new JS1s1c3(character));
-    _likeChange = 0;
+    _childrenLikeChange.add(0);
+    _childrenLikeChange.add(0);
     _character = character;
   }
 
   public void interact() {
     System.out.println("JESSICA: Heyyy I saw you from across the hall. I love your hair, can I run my fingers through it?");
-    System.out.println("Respond: \n\t1. \"No...\" \n\t2. \"Haha sure!\"");
+    System.out.println("\n\t1. \"No...\" \n\t2. \"Haha sure!\"");
     System.out.println("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
@@ -75,10 +76,10 @@ public class JS1s1c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(_children.get(0));
+      _character.updateTree(0);
     }
     else {
-      _character.updateTree(_children.get(1));
+      _character.updateTree(1);
     }
   }
 

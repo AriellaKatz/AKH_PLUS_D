@@ -26,9 +26,16 @@ public class Character {
     It goes through this tree until you get to the end of the tree (a null
     node), at which point the tree is removed from _stage1. As you go through
     the tree, the head of the tree has to be continuously updated via the
-    updateTree() method, which takes the head you'd like to update the tree with
-    (the current tree is always the tree at index 0 in the ArrayList).
-    updateTree() returns a boolean stating whether the tree is finished.
+    updateTree() method, which takes the index of the head you'd like to update
+    the tree with (the current tree is always the tree at index 0 in the
+    ArrayList). The index will indicate which of the current node's children to
+    point the head at, as well as the corresponding likeChange in the array of
+    the node's children's likeChanges. Even if two of the options the player is
+    given point at the same child, they may have different corresponding
+    likeChanges, so there will be a duplicate child in the array of children and
+    different likeChanges at the corresponding indexes in the array of
+    likeChanges. updateTree() returns a boolean stating whether the tree is
+    finished.
     When you get to the end of the tree, Woo checks likeability to see if player
     can move on to the next stage. If they cannot, proceed with deleting the tree
     and the next convo Woo calls will be the new _stage1[0]. Otherwise, Woo will
@@ -164,9 +171,9 @@ public class Character {
   // Updates the current tree (found at _currentStage.get(0))
   //Returns true when the player gets to the end of the tree, signalling to Woo
   // that it's time to switch Characters
-  public boolean updateTree(TreeNode newHead) {
+  public boolean updateTree(int childInd) {
     //if you've reached the end of the tree...
-    if (newHead == null) {
+    if (_currentStage.get(0).getChildren.get(childInd) == null) {
       //update the attraction based on the change you've ammassed throughout the
       // tree
       changeAttraction(_pendingLikeChange);
@@ -187,9 +194,9 @@ public class Character {
     // the head the player chose (newHead)
     else {
       //continue ammassing likeChange as you progress through the tree
-      _pendingLikeChange += _currentStage.get(0).getLikeChange();
+      _pendingLikeChange += _currentStage.get(0).getChildrenLikeChanges().get(childInd);
       //update the head of the tree you're on
-      _currentStage.set(0, newHead);
+      _currentStage.set(0, _currentStage.get(0).getChildren.get(childInd));
       //return false so Woo knows to keep working through the tree
       return false;
     }
