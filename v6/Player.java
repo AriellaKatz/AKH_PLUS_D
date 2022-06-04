@@ -24,11 +24,11 @@ public Player() {
   _name = "notYet";
 }
 
-//QSort Things
+//QSort Things (sorts in descending order)
 public void sortRank() {
   qSort(0, _rank.size()-1);
 }
-public void qSort(int loPos, int hiPos) {
+private void qSort(int loPos, int hiPos) {
   if (loPos = hiPos) { return; }
   else {
     int s = partition(loPos, hiPos);
@@ -38,7 +38,7 @@ public void qSort(int loPos, int hiPos) {
     }
   }
 }
-public int partition(int loPos, int hiPos) {
+private int partition(int loPos, int hiPos) {
   int v = _rank.get(hiPos).getAttraction();
   int s = loPos;
   for (int i = loPos; i < hiPos; i++) {
@@ -50,7 +50,7 @@ public int partition(int loPos, int hiPos) {
   swap(s, hiPos);
   return s;
 }
-public void swap(int x, int y) {
+private void swap(int x, int y) {
   Character tmp = _rank.get(x);
   _rank.set(x, _rank.get(y));
   _rank.set(y, tmp);
