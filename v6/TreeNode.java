@@ -26,8 +26,11 @@ public abstract class TreeNode {
   public abstract void interact();
 
 
-  //changes corresponding character's attraction stat by specified amount
-  //corresponding to this node's action
+  //returns the "base" like change resulting from getting to this node
+  // if there are multiple options for getting to this node with different
+  // likeChanges, this will be reflected in the interact() method of the parent
+  // node, when additional likeChange is subtracted or added manually if the
+  // user chooses a certain option 
   public int getLikeChange() {
     return _likeChange;
   }
@@ -35,31 +38,5 @@ public abstract class TreeNode {
   public ArrayList<TreeNode> getChildren() {
     return _children;
   }
-
-  //updates corresponding character's status stat based on updated attraction
-  //stat
-  // currently assumes that you can't skip levels
-  // public String updateStatus(int oldAttraction) {
-  //   int a = _character.getAttraction();
-  //   if (a < 0) {
-  //     System.out.println("IT'S OVER");
-  //     _character.setOver(true);
-  //   }
-  //   else if (oldAttraction <= 25 && a > 25 && a < 50) {
-  //     _character.changeStatus();
-  //   }
-  //   else if (oldAttraction <= 50 && a > 50 && a < 75) {
-  //     _character.changeStatus();
-  //   }
-  //   else if (oldAttraction <= 75 && a > 75 && a < 100){
-  //     _character.changeStatus();
-  //   }
-  //   else if (a > 100){
-  //     _character.changeStatus();
-  //     System.out.println(_character.getName() + "has fallen for you!");
-  //     _character.setFallen(true);
-  //   }
-  //   return _character.getStatus();
-  // }
 
 }

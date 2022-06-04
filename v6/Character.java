@@ -165,52 +165,32 @@ public class Character {
   //Returns true when the player gets to the end of the tree, signalling to Woo
   // that it's time to switch Characters
   public boolean updateTree(TreeNode newHead) {
-    //convert _status to an int
-    int stat = 0;
-    String status = _status.peek();
-    while (status.indexOf("<3") != -1) {
-      stat ++;
-      status = status.substring(status.indexOf("<3") + 2);
-    }
-    //if you've reached the end of the tree, delete it from the stage
+    //if you've reached the end of the tree...
     if (newHead == null) {
-      if (stat == 1) {
-        changeAttraction(_pendingLikeChange);
-        _pendingLikeChange = 0;
-        _stage1.remove(0);
-        //if you've gotten through the entire stage without progressing, it's over
-        if (_stage1.size() == 0) {
-          _over = true;
-          System.out.println("IT'S OVER.");
-        }
+      //update the attraction based on the change you've ammassed throughout the
+      // tree
+      changeAttraction(_pendingLikeChange);
+      //now reset the pending likeChange for the next tree
+      _pendingLikeChange = 0;
+      //now delete the tree you've just finished so that the next tree is now at
+      // index 0
+      _currentStage.remove(0);
+      //if you've gotten through the entire stage without progressing, it's over
+      if (_currentStage.size() == 0) {
+        _over = true;
+        System.out.println("This relationship is hopeless. You're taking too long. IT'S OVER.");
       }
-      else if (stat == 2) {
-        changeAttraction(_pendingLikeChange);
-        _pendingLikeChange = 0;
-        _stage2.remove(0);
-        //if you've gotten through the entire stage, it's over
-        if (_stage2.size() == 0) {
-          _over = true;
-          System.out.println("IT'S OVER.");
-        }
-      }
-      else {
-        changeAttraction(_pendingLikeChange);
-        _pendingLikeChange = 0;
-        _stage3.remove(0);
-        //if you've gotten through the entire stage, it's over
-        if (_stage3.size() == 0) {
-          _over = true;
-          System.out.println("IT'S OVER.");
-        }
-      }
+      //return true so that Woo knows the tree has been finished
       return true;
     }
     //if you haven't reached the end of the tree, update it so that you're at
     // the head the player chose (newHead)
     else {
+      //continue ammassing likeChange as you progress through the tree
       _pendingLikeChange += _currentStage.get(0).getLikeChange();
+      //update the head of the tree you're on
       _currentStage.set(0, newHead);
+      //return false so Woo knows to keep working through the tree
       return false;
     }
   }

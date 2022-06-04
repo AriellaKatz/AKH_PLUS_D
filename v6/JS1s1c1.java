@@ -49,8 +49,8 @@ APCS pd6
 FP -- Are You a Player?
 2022-06-03
 */
+
 import java.util.ArrayList;
-import java.io.*;
 
 public class JS1s1c1 extends TreeNode {
 
@@ -65,22 +65,20 @@ public class JS1s1c1 extends TreeNode {
   public void interact() {
     System.out.println("JESSICA: Heyyy I saw you from across the hall. I love your hair, can I run my fingers through it?");
     System.out.println("Respond: \n\t1. \"No...\" \n\t2. \"Haha sure!\"");
-    System.out.println("Enter 1 or 2.");
+    System.out.println("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
-    String choice = in.toString();
-    while (!choice.trim().equals("1") && !choice.trim().equals("2")) {
+    String choice = in.toString().trim();
+    while (!choice.equals("1") && !choice.equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
-      String choice = in2.toString();
+      String choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(_children.get(0));
-      _children.get(0).updateAttraction();
     }
     else {
       _character.updateTree(_children.get(1));
-      _children.get(1).updateAttraction();
     }
   }
 

@@ -12,7 +12,6 @@ public class Jessica extends Character{
   public Jessica() {
     super();
     _attraction = 0;
-    //_head = null;
     _descrip = "flirty and fickle (and desperate)";
     _name = "Jessica";
   }
