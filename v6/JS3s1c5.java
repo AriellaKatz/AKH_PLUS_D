@@ -7,11 +7,11 @@ FP -- Are You a Player?
 
 import java.util.ArrayList;
 
-public class JS3s1c3 extends TreeNode {
+public class JS3s1c5 extends TreeNode {
 
-  public JS3s1c3(Character character) {
+  public JS3s1c5(Character character) {
     super();
-    _children.add(new JS3s1c4(character));
+    _children.add(null);
     _children.add(null);
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
@@ -19,8 +19,8 @@ public class JS3s1c3 extends TreeNode {
   }
 
   public void interact() {
-    System.out.println("JESSICA: Wow, so generous! These things are expensive, y'know.");
-    System.out.println("\n\t1. \"You're worth it.\" \n\t2. (Roll your eyes.) \"You're right, give it back then.\"");
+    System.out.println("(Jessica raises her eyebrows, blushes.)");
+    System.out.println("\n\t1. KISS HER (with consent of course) \n\t2. Be a coward, pretend like nothing's happening.");
     System.out.println("Enter \"1\" or \"2\"");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
@@ -32,6 +32,8 @@ public class JS3s1c3 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(0);
+      System.out.println("Jessica's fallen for you! YOU WIN!");
+      _character.setFallen(true);
     }
     else {
       _character.updateTree(1);
