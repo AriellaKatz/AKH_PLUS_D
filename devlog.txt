@@ -172,7 +172,16 @@ time in call: 60 mins
 Ariella :: Finished implementing Jnodes! Updated devlog
 Kaitlin :: Finished implementing Jnodes!
 Hugo ::
-ALL :: Started implementing Jnodes
+ALL ::
+==============================================================
+
+2022-06-05
+--------------------------------------------------------------
+v6
+Ariella :: Wrote most of Brad's storylines, updated devlog
+Kaitlin ::
+Hugo ::
+ALL :: 
 ==============================================================
 
 yyyy-mm-dd
