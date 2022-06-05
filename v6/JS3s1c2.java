@@ -13,15 +13,15 @@ public class JS3s1c2 extends TreeNode {
     super();
     _children.add(null);
     _children.add(new JS3s1c3(character));
-    _childrenLikeChange.add(0);
-    _childrenLikeChange.add(0);
+    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(0);
     _character = character;
   }
 
   public void interact() {
-    System.out.println("[You arrive at the table.]")
-    System.out.println("JESSICA: Hiiii. These are my teammates and BFFS. The tall one is Charlotte. The peppy one over there is Keria...");
-    System.out.println("[The girls introduce themselves.]");
+    System.out.println("(You arrive at the table.)");
+    System.out.println("JESSICA: Hiiii. These are my teammates aka my besties. The tall one is Charlotte. The peppy one over there is Keria...");
+    System.out.println("(The girls introduce themselves.)");
     System.out.println("\n\t1. \"Hey. It's nice to meet you guys.\"");
     System.out.println("Enter \"1\".");
     Scanny in = new Scanny();
@@ -29,19 +29,18 @@ public class JS3s1c2 extends TreeNode {
     while (!choice.equals("1")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
-      String choice = in2.toString().trim();
+      choice = in2.toString().trim();
     }
     System.out.println("(The cheerleaders whisper amongst themselves.)");
 
     System.out.println("\n\t1. \"(Ignore it.)\" \n\t2. \"Heard my name. You guys talking about me?\"");
     System.out.println("Enter \"1\" or \"2\".");
-
     in = new Scanny();
-    String choice = in.toString().trim();
+    choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
-      String choice = in2.toString().trim();
+      choice = in2.toString().trim();
     }
 
     Integer input = Integer.parseInt(choice);

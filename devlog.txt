@@ -159,12 +159,21 @@ ALL :: Revamped our gameplay. Talked through plans & discussed how to implement 
 --------------------------------------------------------------
 v6
 time in call: 30 mins
-Ariella ::
+Ariella :: Updated devlog
 Kaitlin ::
 Hugo ::
 ALL :: Started implementing Jnodes
 ==============================================================
 
+2022-06-04
+--------------------------------------------------------------
+v6
+time in call: 60 mins
+Ariella :: Finished implementing Jnodes! Updated devlog
+Kaitlin :: Finished implementing Jnodes!
+Hugo ::
+ALL :: Started implementing Jnodes
+==============================================================
 
 yyyy-mm-dd
 --------------------------------------------------------------

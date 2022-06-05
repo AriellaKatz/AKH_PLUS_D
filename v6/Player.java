@@ -29,7 +29,7 @@ public void sortRank() {
   qSort(0, _rank.size()-1);
 }
 private void qSort(int loPos, int hiPos) {
-  if (loPos = hiPos) { return; }
+  if (loPos == hiPos) { return; }
   else {
     int s = partition(loPos, hiPos);
     qSort(s, hiPos);

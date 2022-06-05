@@ -12,9 +12,9 @@ public class JS2s1c7 extends TreeNode {
   public JS2s1c7(Character character) {
     super();
     _children.add(null);
-    _children.add(null));
-    _childrenLikeChange.add(0);
-    _childrenLikeChange.add(0);
+    _children.add(null);
+    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(0);
     _character = character;
   }
 
@@ -27,7 +27,7 @@ public class JS2s1c7 extends TreeNode {
     while (!choice.equals("1") && !choice.equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
-      String choice = in2.toString().trim();
+      choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
@@ -36,7 +36,7 @@ public class JS2s1c7 extends TreeNode {
     }
     else {
       _character.updateTree(1);
-      System.out.println("[The bell rings and you scurry away to class.]");
+      System.out.println("(The bell rings and you scurry away to class.)");
     }
   }
 

@@ -18,7 +18,7 @@ public abstract class TreeNode {
   //subclass constructors)
   protected TreeNode() {
     _children = new ArrayList<TreeNode>();
-    _childrenLikeChange = new ArrayList<Integer>();
+    _childrenLikeChanges = new ArrayList<Integer>();
     _character = null;
   }
 
@@ -30,7 +30,6 @@ public abstract class TreeNode {
   // if there are multiple options for getting to this node with different
   // likeChanges, this will be reflected in the interact() method of the parent
   // node, when additional likeChange is subtracted or added manually if the
-  // user chooses a certain option
   public ArrayList<Integer> getChildrenLikeChanges() {
     return _childrenLikeChanges;
   }

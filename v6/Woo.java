@@ -101,17 +101,17 @@ public class Woo {
 
   public int probeTreeHelper(TreeNode node) {
     if (node.getChildren().size() == 0) {
-      return node.getLikeChange();
+      return 0;
     }
     else {
       int bestLike = Integer.MIN_VALUE;
       for (int i = 0; i < node.getChildren().size(); i++) {
-        int like = probeTreeHelper(node.getChildren().get(i));
+        int like = node.getChildrenLikeChanges().get(i) + probeTreeHelper(node.getChildren().get(i));
         if (like > bestLike) {
           bestLike = like;
         }
       }
-      return node.getLikeChange() + bestLike;
+      return bestLike;
     }
   }
 

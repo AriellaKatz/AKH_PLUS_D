@@ -13,8 +13,8 @@ public class JS1s1c3 extends TreeNode {
     super();
     _children.add(null); //option 1 leads to the end of the scene
     _children.add(null); //option 2 leads to the end of the scene
-    _childrenLikeChange.add(0);
-    _childrenLikeChange.add(0);
+    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(0);
     _character = character;
   }
 
@@ -27,18 +27,18 @@ public class JS1s1c3 extends TreeNode {
     while (!choice.equals("1") && !choice.equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
-      String choice = in2.toString().trim();
+      choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(0);
       //option 1 terminates the relationship
       System.out.println("Wow, you sure know how to shut a relationship down. IT'S OVER.");
-      Jessica.setOver(true);
+      _character.setOver(true);
     }
     else {
       System.out.println("JESSICA: Yay! Let's go to this bakery I know after school. They have really good bread.");
-      System.out.println("[You go to the bakery and have really good bread.]");
+      System.out.println("(You go to the bakery and have really good bread.)");
       _character.updateTree(1);
     }
   }

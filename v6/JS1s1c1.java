@@ -58,8 +58,8 @@ public class JS1s1c1 extends TreeNode {
     super();
     _children.add(new JS1s1c2(character));
     _children.add(new JS1s1c3(character));
-    _childrenLikeChange.add(0);
-    _childrenLikeChange.add(0);
+    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(0);
     _character = character;
   }
 
@@ -72,7 +72,7 @@ public class JS1s1c1 extends TreeNode {
     while (!choice.equals("1") && !choice.equals("2")) {
       System.out.println("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
-      String choice = in2.toString().trim();
+      choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {

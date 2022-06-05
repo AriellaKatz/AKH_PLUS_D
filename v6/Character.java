@@ -173,7 +173,7 @@ public class Character {
   // that it's time to switch Characters
   public boolean updateTree(int childInd) {
     //if you've reached the end of the tree...
-    if (_currentStage.get(0).getChildren.get(childInd) == null) {
+    if (_currentStage.get(0).getChildren().get(childInd) == null) {
       //update the attraction based on the change you've ammassed throughout the
       // tree
       changeAttraction(_pendingLikeChange);
@@ -196,7 +196,7 @@ public class Character {
       //continue ammassing likeChange as you progress through the tree
       _pendingLikeChange += _currentStage.get(0).getChildrenLikeChanges().get(childInd);
       //update the head of the tree you're on
-      _currentStage.set(0, _currentStage.get(0).getChildren.get(childInd));
+      _currentStage.set(0, _currentStage.get(0).getChildren().get(childInd));
       //return false so Woo knows to keep working through the tree
       return false;
     }
