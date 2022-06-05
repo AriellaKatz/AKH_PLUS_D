@@ -180,8 +180,8 @@ ALL ::
 v6
 Ariella :: Wrote most of Brad's storylines, updated devlog
 Kaitlin ::
-Hugo ::
-ALL :: 
+Hugo :: Finished Brad's storyline, absolutely fire
+ALL ::
 ==============================================================
 
 yyyy-mm-dd
