@@ -54,7 +54,7 @@ import java.util.ArrayList;
 
 public class JS1s1c1 extends TreeNode {
 
-  public JS1s1c1(Character character) {
+  public JS1s1c1(Charactar character) {
     super();
     _children.add(new JS1s1c2(character));
     _children.add(new JS1s1c3(character));

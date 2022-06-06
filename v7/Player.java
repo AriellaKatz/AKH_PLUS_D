@@ -8,16 +8,16 @@ FP -- Are You a Player?
 import java.util.ArrayList;
 public class Player{
 
-private ArrayList<Character> _rank;
-private final ArrayList<Character> _order;
+private ArrayList<Charactar> _rank;
+private final ArrayList<Charactar> _order;
 private String _name;
 
 public Player() {
-  _rank = new ArrayList<Character>();
+  _rank = new ArrayList<Charactar>();
   _rank.add(new Brad());
   _rank.add(new Jessica());
   _rank.add(new Richard());
-  _order = new ArrayList<Character>();
+  _order = new ArrayList<Charactar>();
   _order.add(_rank.get(0));
   _order.add(_rank.get(1));
   _order.add(_rank.get(2));
@@ -51,13 +51,13 @@ private int partition(int loPos, int hiPos) {
   return s;
 }
 private void swap(int x, int y) {
-  Character tmp = _rank.get(x);
+  Charactar tmp = _rank.get(x);
   _rank.set(x, _rank.get(y));
   _rank.set(y, tmp);
 }
 
 /*public void sortRank() {
- ArrayList<Character> temp = new ArrayList<Character>();
+ ArrayList<Charactar> temp = new ArrayList<Charactar>();
  int k = 0;
  while (_rank.size() > 0) {
    for (int i = 0; i < _rank.size(); i++) {
@@ -72,7 +72,7 @@ private void swap(int x, int y) {
  _rank = temp;
 }*/
 
-public ArrayList<Character> getRank() {
+public ArrayList<Charactar> getRank() {
   return _rank;
 }
 

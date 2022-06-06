@@ -7,7 +7,7 @@ FP -- Are You a Player?
 
 import java.util.*;
 
-public class Character {
+public class Charactar {
   protected boolean _over;
   protected boolean _fallen;
   protected Stack<String> _status;
@@ -46,7 +46,7 @@ public class Character {
     Character.
   */
 
-  public Character() {
+  public Charactar() {
     _over = false;
     _fallen = false;
     _status = new Stack<String>();

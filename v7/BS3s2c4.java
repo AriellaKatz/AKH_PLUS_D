@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class BS3s2c4 extends TreeNode {
 
-  public BS3s2c4(Character character) {
+  public BS3s2c4(Charactar character) {
     super();
     _children.add(null);
     _children.add(new BS3s1c6(character));
@@ -32,7 +32,7 @@ public class BS3s2c4 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(0);
-
+      System.out.println("Sorry, Brad just can't handle what a catch you are. IT'S OVER.");
     }
     else {
       _character.updateTree(1);

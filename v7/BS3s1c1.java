@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class BS3s1c1 extends TreeNode {
 
-  public BS3s1c1(Character character) {
+  public BS3s1c1(Charactar character) {
     super();
     _children.add(new BS3s1c2(character));
     _children.add(new BS3s1c3(character));
@@ -19,7 +19,7 @@ public class BS3s1c1 extends TreeNode {
   }
 
   public void interact() {
-    System.out.println("[You are at Brad's house and it is 10pm]");
+    System.out.println("[You are at Brad's house and it is 10pm.]");
     System.out.println("\n\t1. \"Oh, it's getting late, I should go...\" \n\t2. \"Hey, can I stay over? It's pretty late.\"");
     System.out.println("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();

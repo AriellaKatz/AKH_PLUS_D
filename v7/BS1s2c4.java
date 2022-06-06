@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class BS1s2c4 extends TreeNode {
 
-  public BS1s1c4(Character character) {
+  public BS1s2c4(Charactar character) {
     super();
     _children.add(null);
     _children.add(null);

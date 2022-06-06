@@ -9,7 +9,7 @@ import java.util.Stack;
 
 //atom://teletype/portal/35bb004f-56e7-4849-9f71-07f6ddda9942
 
-public class Brad extends Character{
+public class Brad extends Charactar{
 
   public Brad() {
     super();

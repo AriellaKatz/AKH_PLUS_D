@@ -100,7 +100,7 @@ public class Woo {
 
   } */
 
-  public int probeTree(Character character){
+  public int probeTree(Charactar character){
     int option = 0;
     int bestLike = Integer.MIN_VALUE;
     for (int i = 0; i < character.getStage().get(0).getChildren().size(); i++) {

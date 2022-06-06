@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class BS3s1c5 extends TreeNode {
 
-  public BS3s1c5(Character character) {
+  public BS3s1c5(Charactar character) {
     super();
     _children.add(null);
     _children.add(new BS3s1c6(character));
@@ -33,7 +33,8 @@ public class BS3s1c5 extends TreeNode {
     if (input == 1) {
       _character.updateTree(0);
       System.out.println("(Brad is stunned but quickly regains his composure)");
-      System.out.println("BRAD: Damn that was snazzy. Wanna do it again?")
+      System.out.println("BRAD: Damn that was snazzy. Wanna do it again?");
+      System.out.println("Brad has fallen for you. YOU WIN!");
       _character.setFallen(true);
     }
     else {

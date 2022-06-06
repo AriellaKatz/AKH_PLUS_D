@@ -7,9 +7,9 @@ FP -- Are You a Player?
 
 import java.util.ArrayList;
 
-public class BS3s1c6 extends TreeNode {
+public class BS3s1c7 extends TreeNode {
 
-  public BS3s1c6(Character character) {
+  public BS3s1c7(Charactar character) {
     super();
     _children.add(null);
     _children.add(null);
@@ -32,11 +32,13 @@ public class BS3s1c6 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(0);
+      System.out.println("[You will see him again, this time at the movies.]");
     }
     else {
       _character.updateTree(1);
       System.out.println("(Brad is stunned but quickly regains his composure)");
-      System.out.println("BRAD: Damn that was snazzy. Wanna do it again?")
+      System.out.println("BRAD: Damn that was snazzy. Wanna do it again?");
+      System.out.println("Brad has fallen for you. YOU WIN!");
       _character.setFallen(true);
     }
   }

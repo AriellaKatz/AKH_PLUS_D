@@ -7,20 +7,20 @@ FP -- Are You a Player?
 
 import java.util.ArrayList;
 
-public class BS3s1c1 extends TreeNode {
+public class BS3s2c6 extends TreeNode {
 
-  public BS3s1c1(Character character) {
+  public BS3s2c6(Charactar character) {
     super();
-    _children.add(new BS3s1c2(character));
-    _children.add(new BS3s1c3(character));
+    _children.add(null);
+    _children.add(null);
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
     _character = character;
   }
 
   public void interact() {
-    System.out.println("BRAD: ");
-    System.out.println("\n\t1. \"\" \n\t2. \"\"");
+    System.out.println("BRAD: Damn bro that's tough. I love that you feel comfortable sharing that with me.");
+    System.out.println("\n\t1. \"I always feel comfortable around you...\" (Kiss him with immense power.) \n\t2. \"I twas a mistake. I don't even think you have feelings you disgusting slug-like creature.\" (Slap him.)");
     System.out.println("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
@@ -32,9 +32,13 @@ public class BS3s1c1 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       _character.updateTree(0);
+      System.out.println("How disgustingly romantic. Somehow Brad has fallen for you. YOU WIN!");
+      _character.setFallen(true);
     }
     else {
       _character.updateTree(1);
+      System.out.println("Idk what you were expecting. He's not into that stuff. IT'S OVER.");
+      _character.setOver(true);
     }
   }
 

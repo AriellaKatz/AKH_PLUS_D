@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class BS3s2c1 extends TreeNode {
 
-  public BS3s2c1(Character character) {
+  public BS3s2c1(Charactar character) {
     super();
     _children.add(new BS3s2c2(character));
     _children.add(new BS3s2c3(character));
@@ -19,7 +19,7 @@ public class BS3s2c1 extends TreeNode {
   }
 
   public void interact() {
-    System.out.println("[You and Brad are sitting next to each other in the movie theater]")
+    System.out.println("[You and Brad are sitting next to each other in the movie theater]");
     System.out.println("BRAD: This movie is hella mid.");
     System.out.println("\n\t1. \"For real dude, I know. Let's get out of here.\" \n\t2. \"Do you know what isn't mid? You.\"");
     System.out.println("Enter \"1\" or \"2\".");

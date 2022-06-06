@@ -7,7 +7,7 @@ FP -- Are You a Player?
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Richard extends Character{
+public class Richard extends Charactar{
 
   public Richard() {
     super();

@@ -30,6 +30,7 @@ Flesh out each category whenever necessary, appropriate.
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow we so BOSS bc...
+We had a class called Character, which was fine until Hugo improved our getting-to-know-you section in the intro (looks for buzzwords and sets up characters' starting attractions accordingly) and had to use a method from Java's og Character class, so we changed our Character class to Charactar to get around it.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,7 +152,7 @@ v5
 time in call: 30 mins
 Ariella :: Wrote probeTree() and its helpers, added to introduction, started play(), updated UMLs and devlog, reorganized Character to make locating methods easier, helped make new Jessica nodes
 Kaitlin :: Worked on storylines, helped make new Jessica nodes
-Hugo :: Worked on storylines, wrote introduction
+Hugo :: Worked on storylines, wrote introduction, added type and delay methods for aesthetics
 ALL :: Revamped our gameplay. Talked through plans & discussed how to implement new idea into code.
 ==============================================================
 
@@ -181,6 +182,15 @@ v6, v7
 Ariella :: Wrote most of Brad's storylines, made the Brad storyline node files, updated devlog
 Kaitlin :: Designed Jessica
 Hugo :: Finished Brad's storyline, absolutely fire
+ALL ::
+==============================================================
+
+2022-06-06
+--------------------------------------------------------------
+v7
+Ariella :: Started + finished Brad's storyline nodes, changed "Character" class to "Charactar" (see OBSTACLES OVERCOME)
+Kaitlin :: Started + finished on Brad's storyline nodes
+Hugo :: Added hashmap + corresponding adjective lists to make "getting to know you" stage in intro more efficient, added removePunctuation method for help w that
 ALL ::
 ==============================================================
 
