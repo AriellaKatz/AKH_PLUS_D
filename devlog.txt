@@ -177,9 +177,9 @@ ALL ::
 
 2022-06-05
 --------------------------------------------------------------
-v6
-Ariella :: Wrote most of Brad's storylines, updated devlog
-Kaitlin ::
+v6, v7
+Ariella :: Wrote most of Brad's storylines, made the Brad storyline node files, updated devlog
+Kaitlin :: Designed Jessica
 Hugo :: Finished Brad's storyline, absolutely fire
 ALL ::
 ==============================================================
