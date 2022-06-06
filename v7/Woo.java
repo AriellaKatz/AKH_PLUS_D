@@ -6,6 +6,9 @@ FP -- Are You a Player?
 */
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.io.File;
+import java.util.Scanner;
 
 public class Woo {
 
@@ -15,7 +18,35 @@ public class Woo {
   private Brad _brad;
   private boolean _gameOver;
 
+  private static HashMap<String, Integer> vibes = new HashMap<String, Integer>();
+
   public Woo(){
+
+
+        // read in the positive adjectives in postiveAdjectives.txt
+        try {
+            Scanner input = new Scanner(new File("positiveAdjectives.txt"));
+            while (input.hasNextLine()) {
+                String temp = input.nextLine().trim();
+                vibes.put(temp, 1);
+            }
+            input.close();
+        } catch (Exception e) {
+            System.out.println("Error reading or parsing postitiveAdjectives.txt\n" + e);
+        }
+
+        // read in the negative adjectives in negativeAdjectives.txt
+        try {
+            Scanner input = new Scanner(new File("negativeAdjectives.txt"));
+            while (input.hasNextLine()) {
+                String temp = input.nextLine().trim();
+                vibes.put(temp, -10);
+            }
+            input.close();
+        } catch (Exception e) {
+            System.out.println("Error reading or parsing negativeAdjectives.txt");
+        }
+
     _player = new Player();
     _gameOver = false;
 // characters will be instaniated after get to know you method (they start out)
@@ -35,35 +66,18 @@ public class Woo {
     }
 
     int startingAttraction = 0;
-    String s = "Tell us a bit about yourself.";
+    String s = "Tell us some adjectives you would use to describe yourself.";
     type(s);
     Scanny in = new Scanny();
-    String intro = in.toString().trim().toLowerCase();
+    String resp = removePunctuation(in.toString());
+    String[] intro = resp.trim().toLowerCase().split(" ");
     s = "Great... let's get started!";
     type(s);
-    if (intro.indexOf("smart") != -1) {
-      startingAttraction ++;
-    }
-    if (intro.indexOf("sweet") != -1) {
-      startingAttraction ++;
-    }
-    if (intro.indexOf("funny") != -1) {
-      startingAttraction ++;
-    }
-    if (intro.indexOf("hot") != -1
-    || intro.indexOf("pretty") != -1) {
-      startingAttraction ++;
-    }
-    if (intro.indexOf("gamer") != -1
-    || intro.indexOf("gaming") != -1) {
-      startingAttraction -= 10;
-    }
-    if (intro.indexOf("comp sci") != -1
-    || intro.indexOf("compsci") != -1
-    || intro.indexOf("cs") != -1
-    || intro.indexOf("coding") != -1
-    || intro.indexOf("programming") != -1) {
-      startingAttraction -= 10;
+
+    for (int i = 0; i < intro.length; i++) {
+      try {
+        startingAttraction += vibes.get(intro[i].toLowerCase());
+      } catch (Exception e) { }
     }
 
     _jessica = new Jessica(startingAttraction);
@@ -135,6 +149,20 @@ public class Woo {
     while (System.currentTimeMillis() - beginTimer < milliseconds) {
       continue;
     }
+  }
+
+  /**
+   * Returns the word after removing any beginning or ending punctuation
+   */
+  public static String removePunctuation(String word) {
+      while (word.length() > 0 && !Character.isAlphabetic(word.charAt(0))) {
+          word = word.substring(1);
+      }
+      while (word.length() > 0 && !Character.isAlphabetic(word.charAt(word.length() - 1))) {
+          word = word.substring(0, word.length() - 1);
+      }
+
+      return word;
   }
 
   public static void main(String[] args) {
