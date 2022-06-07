@@ -28,12 +28,9 @@ public class JS2s1c3 extends TreeNode {
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
-<<<<<<< HEAD
     type("JESSICA: I smiled for you!");
-=======
     _character.changeAttraction(3);
     System.out.println("JESSICA: I smiled for you!");
->>>>>>> 3c6606264bb6ec0b38f968521713be79cf41f4c6
 
     type("\n\t1. \"Oh? I didn't see.\" \n\t2. \"Yes, you looked very pretty.\"");
     type("Enter \"1\" or \"2\".");
