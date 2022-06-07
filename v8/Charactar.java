@@ -150,7 +150,7 @@ public class Charactar {
       this.changeStatus();
     }
     else if (oldAttraction <= 65 && a > 65 && a < 100) {
-      this.changeStatus();&& !choice.equals("2")
+      this.changeStatus();
     }
     else if (a >= 100){
       this.changeStatus();
@@ -161,7 +161,7 @@ public class Charactar {
   }
 
   // Changes attraction level
-  public int changeAttraction(in&& !choice.equals("2")t change) {
+  public int changeAttraction(int change) {
     int old = _attraction;
     _attraction += change;
      maintainStatus(old);
