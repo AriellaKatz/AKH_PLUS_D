@@ -99,13 +99,14 @@ public class Woo {
       type(s);
     }
     else {
+      ImageOpen("jessica_portrait.jpg");
       if (_firstTime) type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
       while (!(_jessica.getStage().get(0).interact()));
       if (_firstTime) type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
       while (!(_brad.getStage().get(0).interact()));
       if(_firstTime) _firstTime = false;
     }
-    play();
+    if (!_gameOver) play();
   }
 
   public int probeTree(Charactar character){
