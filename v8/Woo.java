@@ -103,7 +103,9 @@ public class Woo {
       while (!(_jessica.getStage().get(0).interact()));
       if (_firstTime) type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
       while (!(_brad.getStage().get(0).interact()));
+      if(_firstTime) _firstTime = false;
     }
+    play();
   }
 
   public int probeTree(Charactar character){

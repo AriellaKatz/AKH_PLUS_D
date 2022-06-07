@@ -14,9 +14,9 @@ public class JS2s1c6 extends TreeNode {
     _children.add(null);
     _children.add(new JS2s1c7(character));
     _children.add(new JS2s1c7(character));
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(-6);
+    _childrenLikeChanges.add(5);
+    _childrenLikeChanges.add(8);
     _character = character;
   }
 
