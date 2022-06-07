@@ -164,7 +164,7 @@ public class Charactar {
   public int changeAttraction(int change) {
     int old = _attraction;
     _attraction += change;
-     maintainStatus(old);
+    maintainStatus(old);
     return old;
   }
 
@@ -174,10 +174,13 @@ public class Charactar {
   public boolean updateTree(int childInd) {
     //if you've reached the end of the tree...
     if (_currentStage.get(0).getChildren().get(childInd) == null) {
+      _pendingLikeChange += _currentStage.get(0).getChildrenLikeChanges().get(childInd);
       ArrayList<TreeNode> oldStage = _currentStage;
       //update the attraction based on the change you've ammassed throughout the
       // tree
+      System.out.println("attraction  before: " + _attraction);
       changeAttraction(_pendingLikeChange);
+      System.out.println("attraction  after: " + _attraction);
       //now reset the pending likeChange for the next tree
       _pendingLikeChange = 0;
       //now delete the tree you've just finished so that the next tree is now at
