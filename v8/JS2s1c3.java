@@ -12,8 +12,8 @@ public class JS2s1c3 extends TreeNode {
     super();
     _children.add(null);
     _children.add(null);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(2);
+    _childrenLikeChanges.add(5);
     _character = character;
   }
 
@@ -28,6 +28,7 @@ public class JS2s1c3 extends TreeNode {
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
+    _character.changeAttraction(3);
     System.out.println("JESSICA: I smiled for you!");
 
     System.out.println("\n\t1. \"Oh? I didn't see.\" \n\t2. \"Yes, you looked very pretty.\"");

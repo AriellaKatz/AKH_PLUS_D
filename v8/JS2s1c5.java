@@ -13,8 +13,8 @@ public class JS2s1c5 extends TreeNode {
     super();
     _children.add(new JS2s1c6(character));
     _children.add(null);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(5);
+    _childrenLikeChanges.add(-12);
     _character = character;
   }
 
@@ -29,7 +29,7 @@ public class JS2s1c5 extends TreeNode {
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
-
+    _character.changeAttraction(4);
     System.out.println("JESSICA: Do you hate me or something?");
     System.out.println("\n\t1. \"No. Why would I?\" \n\t2. \"Yes.\"");
     System.out.println("Enter \"1\" or \"2\".");
