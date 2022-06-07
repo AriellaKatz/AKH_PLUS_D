@@ -18,7 +18,7 @@ public class JS2s1c7 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("JESSICA: Oh? Reeaaallyy. Hahaha, you're adorable you know?");
     System.out.println("\n\t1. \"Yea, I know.\" \n\t2. \"Ahaha, sure...\"");
     System.out.println("Enter \"1\"  or \"2\".");
@@ -31,12 +31,12 @@ public class JS2s1c7 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("(Jessica raises her eyebrows in amusement.)");
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("(The bell rings and you scurry away to class.)");
+      return _character.updateTree(1);
     }
   }
 

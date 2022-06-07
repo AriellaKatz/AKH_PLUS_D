@@ -18,7 +18,7 @@ public class JS1s1c3 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("JESSICA: Oooh. Your hair is really soft. Wanna hang out tomorrow?");
     System.out.println("\n\t1. \"No, I'm busy. I'll see you around though.\" \n\t2. \"Yeah, I'd love that!\"");
     System.out.println("Enter \"1\" or \"2\".");
@@ -31,15 +31,15 @@ public class JS1s1c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       //option 1 terminates the relationship
       System.out.println("Wow, you sure know how to shut a relationship down. IT'S OVER.");
       _character.setOver(true);
+      return _character.updateTree(0);
     }
     else {
       System.out.println("JESSICA: Yay! Let's go to this bakery I know after school. They have really good bread.");
       System.out.println("(You go to the bakery and have really good bread.)");
-      _character.updateTree(1);
+      return _character.updateTree(1);
     }
   }
 

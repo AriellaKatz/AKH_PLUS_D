@@ -18,7 +18,7 @@ public class JS2s2c2 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("(You arrive at the table.)");
     System.out.println("JESSICA: Hiiii. These are my teammates aka my besties. The tall one is Charlotte. The peppy one over there is Keria...");
     System.out.println("(The girls introduce themselves.)");
@@ -45,10 +45,10 @@ public class JS2s2c2 extends TreeNode {
 
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
+      return _character.updateTree(1);
     }
   }
 
