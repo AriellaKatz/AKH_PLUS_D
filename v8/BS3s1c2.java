@@ -19,13 +19,13 @@ public class BS3s1c2 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("BRAD: You can stay the night if you want.");
-    System.out.println("\n\t1. \"I'm good, I like sleeping at home.\" \n\t2. \"Sure, why not?\"");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("BRAD: You can stay the night if you want.");
+    type("\n\t1. \"I'm good, I like sleeping at home.\" \n\t2. \"Sure, why not?\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }

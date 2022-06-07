@@ -19,13 +19,13 @@ public class BS2s2c3 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("BRAD: Hey, see you tomorrow?");
-    System.out.println("\n\t1. \"Yeah, it's a date!\" \n\t2. \"Yup!\"");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("BRAD: Hey, see you tomorrow?");
+    type("\n\t1. \"Yeah, it's a date!\" \n\t2. \"Yup!\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
@@ -34,7 +34,7 @@ public class BS2s2c3 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      System.out.println("Aww, you've been friendzoned. Maybe you'll have something in the future, but for now, IT'S OVER.");
+      type("Aww, you've been friendzoned. Maybe you'll have something in the future, but for now, IT'S OVER.");
       _character.setOver(true);
       return _character.updateTree(1);
     }

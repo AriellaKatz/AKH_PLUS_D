@@ -19,25 +19,25 @@ public class JS2s1c4 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("JESSICA: I'm down. You paying?");
-    System.out.println("\n\t1. \"No.\" \n\t2. \"Yeah, sure.\"");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("JESSICA: I'm down. You paying?");
+    type("\n\t1. \"No.\" \n\t2. \"Yeah, sure.\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      System.out.println("JESSICA: Just kidding, haha. I'll pay for myself.");
-      System.out.println("(Jessica pays for herself. The bakery is yummy.)");
+      type("JESSICA: Just kidding, haha. I'll pay for myself.");
+      type("(Jessica pays for herself. The bakery is yummy.)");
       return _character.updateTree(0);
     }
     else {
-      System.out.println("JESSICA: Just kidding, haha. I'll pay for myself.");
-      System.out.println("(Jessica pays for herself. The bakery is yummy.)");
+      type("JESSICA: Just kidding, haha. I'll pay for myself.");
+      type("(Jessica pays for herself. The bakery is yummy.)");
       return _character.updateTree(1);
     }
   }

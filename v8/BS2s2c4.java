@@ -19,24 +19,24 @@ public class BS2s2c4 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("BRAD: Oh, lit! We should hang out, just the two of us.");
-    System.out.println("\n\t1. \"Oh, that's not what I meant. See you around!\" \n\t2. \"Perfect!\"");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("BRAD: Oh, lit! We should hang out, just the two of us.");
+    type("\n\t1. \"Oh, that's not what I meant. See you around!\" \n\t2. \"Perfect!\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      System.out.println("Aww, you've been friendzoned. Maybe you'll have something in the future, but for now, IT'S OVER.");
+      type("Aww, you've been friendzoned. Maybe you'll have something in the future, but for now, IT'S OVER.");
       _character.setOver(true);
       return _character.updateTree(0);
     }
     else {
-      System.out.println("[You will hang out at his place.]");
+      type("[You will hang out at his place.]");
       return _character.updateTree(1);
     }
   }

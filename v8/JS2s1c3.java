@@ -18,35 +18,35 @@ public class JS2s1c3 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("JESSICA: Aww! Glad you did. Did you see me cheer? Was I good?");
-    System.out.println("\n\t1. \"Of course, you were great.\"");
-    System.out.println("Enter \"1\"");
+    type("JESSICA: Aww! Glad you did. Did you see me cheer? Was I good?");
+    type("\n\t1. \"Of course, you were great.\"");
+    type("Enter \"1\"");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
-    System.out.println("JESSICA: I smiled for you!");
+    type("JESSICA: I smiled for you!");
 
-    System.out.println("\n\t1. \"Oh? I didn't see.\" \n\t2. \"Yes, you looked very pretty.\"");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("\n\t1. \"Oh? I didn't see.\" \n\t2. \"Yes, you looked very pretty.\"");
+    type("Enter \"1\" or \"2\".");
     in = new Scanny();
     choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      System.out.println("(Jessica pouts but tries to hide it.)");
-      System.out.println("(You part ways... to meet again?)");
+      type("(Jessica pouts but tries to hide it.)");
+      type("(You part ways... to meet again?)");
       return _character.updateTree(0);
     }
     else {
-      System.out.println("(You part ways... to meet again?)");
+      type("(You part ways... to meet again?)");
       return _character.updateTree(1);
     }
   }

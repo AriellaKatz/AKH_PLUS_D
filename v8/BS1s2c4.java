@@ -19,23 +19,23 @@ public class BS1s2c4 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("BRAD: Rad! We should hang out sometime!");
-    System.out.println("\n\t1. \"I'm pretty busy...\" \n\t2. \"Totally!\"");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("BRAD: Rad! We should hang out sometime!");
+    type("\n\t1. \"I'm pretty busy...\" \n\t2. \"Totally!\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      System.out.println("Aww, you've hurt his feelings. Be nice.");
-      return character.updateTree(0);
+      type("Aww, you've hurt his feelings. Be nice.");
+      return _character.updateTree(0);
     }
     else {
-      System.out.println("Slay! Maybe this is actually going somewhere!");
+      type("Slay! Maybe this is actually going somewhere!");
       return  _character.updateTree(1);
     }
   }

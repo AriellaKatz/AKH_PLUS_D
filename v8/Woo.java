@@ -17,6 +17,7 @@ public class Woo {
   private Richard _richard;
   private Brad _brad;
   private boolean _gameOver;
+  private boolean _firstTime;
 
   private static HashMap<String, Integer> vibes = new HashMap<String, Integer>();
 
@@ -49,6 +50,7 @@ public class Woo {
 
     _player = new Player();
     _gameOver = false;
+    _firstTime = true;
 // characters will be instaniated after get to know you method (they start out)
 // with certain attraction levels
   }
@@ -66,12 +68,15 @@ public class Woo {
     }
 
     int startingAttraction = 0;
-    String s = "Tell us some adjectives you would use to describe yourself.";
+    String s = "What is your name good fellow?";
+    type(s);
+    _player.setName(new Scanny().toString());
+    s = "\nHello " + _player.getName() + ", tell us some adjectives you would use to describe yourself.";
     type(s);
     Scanny in = new Scanny();
     String resp = removePunctuation(in.toString());
     String[] intro = resp.trim().toLowerCase().split(" ");
-    s = "Great... let's get started!";
+    s = "\nGreat... let's get started!";
     type(s);
 
     for (int i = 0; i < intro.length; i++) {
@@ -94,8 +99,10 @@ public class Woo {
       type(s);
     }
     else {
-      _jessica.getStage().get(0).interact();
-
+      if (_firstTime) type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
+      while (!(_jessica.getStage().get(0).interact()));
+      if (_firstTime) type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
+      while (!(_brad.getStage().get(0).interact()));
     }
   }
 

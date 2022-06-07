@@ -17,6 +17,13 @@ public class Brad extends Charactar{
     //_head = null;
     _descrip = "lax frat bro";
     _name = "Brad";
+    _stage1.add(new BS1s1c1(this));
+    _stage1.add(new BS1s2c1(this));
+    _stage2.add(new BS2s1c1(this));
+    _stage2.add(new BS2s2c1(this));
+    _stage3.add(new BS3s1c1(this));
+    _stage3.add(new BS3s2c1(this));
+    _currentStage = _stage1;
   }
 
   public Brad(int attraction) {

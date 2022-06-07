@@ -19,13 +19,13 @@ public class BS1s1c1 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("BRAD: Hey dude!");
-    System.out.println("\n\t1. \"Hi, what's up?\" \n\t2. (Nod and keep walking.)");
-    System.out.println("Enter \"1\" or \"2\".");
+    type("BRAD: Hey dude!");
+    type("\n\t1. \"Hi, what's up?\" \n\t2. (Nod and keep walking.)");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }

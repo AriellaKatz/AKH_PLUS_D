@@ -19,23 +19,23 @@ public class JS2s1c7 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("JESSICA: Oh? Reeaaallyy. Hahaha, you're adorable you know?");
-    System.out.println("\n\t1. \"Yea, I know.\" \n\t2. \"Ahaha, sure...\"");
-    System.out.println("Enter \"1\"  or \"2\".");
+    type("JESSICA: Oh? Reeaaallyy. Hahaha, you're adorable you know?");
+    type("\n\t1. \"Yea, I know.\" \n\t2. \"Ahaha, sure...\"");
+    type("Enter \"1\"  or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      System.out.println("(Jessica raises her eyebrows in amusement.)");
+      type("(Jessica raises her eyebrows in amusement.)");
       return _character.updateTree(0);
     }
     else {
-      System.out.println("(The bell rings and you scurry away to class.)");
+      type("(The bell rings and you scurry away to class.)");
       return _character.updateTree(1);
     }
   }

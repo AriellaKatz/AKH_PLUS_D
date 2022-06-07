@@ -42,6 +42,7 @@ COOL STUFF LEARNED
 If you include "throws <Exception>" in the header of an abstract method of an
  abstract parent class, it must also be included in the header of the method of
  subclass if that method is meant to implement the abstract one.
+Our type method works with tabs and returns 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

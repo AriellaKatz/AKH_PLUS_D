@@ -20,13 +20,13 @@ public class JS3s1c1 extends TreeNode {
   }
 
   public boolean interact() {
-    System.out.println("(You and Jessica are walking together.)");
-    System.out.println("\n\t1. Ask her on a date. \n\t2. Give her your ice cream cone. \n\t3. Why are you walking with her? Walk away and never speak to her again.");
-    System.out.println("Enter \"1\", \"2\", or \"3\".");
+    type("(You and Jessica are walking together.)");
+    type("\n\t1. Ask her on a date. \n\t2. Give her your ice cream cone. \n\t3. Why are you walking with her? Walk away and never speak to her again.");
+    type("Enter \"1\", \"2\", or \"3\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
-      System.out.println("Congrats, you can't follow instructions. Try again.");
+      type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
     }
@@ -38,7 +38,7 @@ public class JS3s1c1 extends TreeNode {
       return _character.updateTree(1);
     }
     else {
-      System.out.println("That's one way to end a relationship. IT'S OVER.");
+      type("That's one way to end a relationship. IT'S OVER.");
       _character.setOver(true);
       return _character.updateTree(2);
     }
