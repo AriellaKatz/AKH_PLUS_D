@@ -40,7 +40,7 @@ public class JS1s2c1 extends TreeNode {
       return _character.updateTree(1);
     }
     else {
-      return _character.updateTree(1);
+      return _character.updateTree(2);
     }
   }
 

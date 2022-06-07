@@ -13,7 +13,7 @@ public class JS1s1c3 extends TreeNode {
     super();
     _children.add(null); //option 1 leads to the end of the scene
     _children.add(null); //option 2 leads to the end of the scene
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(3);
     _childrenLikeChanges.add(6);
     _character = character;
   }
