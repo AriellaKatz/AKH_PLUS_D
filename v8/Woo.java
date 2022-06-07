@@ -85,8 +85,7 @@ public class Woo {
     _brad = new Brad(startingAttraction);
 
   }
-
-/*  public void play(){
+  public void play(){
     String s = "";
 
     if (_jessica.isOver() && _richard.isOver() && _brad.isOver()) {
@@ -95,10 +94,10 @@ public class Woo {
       type(s);
     }
     else {
+      _jessica.getStage().get(0).interact();
 
     }
-
-  } */
+  }
 
   public int probeTree(Charactar character){
     int option = 0;
@@ -135,7 +134,7 @@ public class Woo {
     for(int i = 0; i < s.length(); i++){
       System.out.print(s.charAt(i));
       if (punc.indexOf(s.charAt(i)) >= 0) {
-        delay(300);
+        delay(200);
       }
       else {
         delay(35);
@@ -168,7 +167,7 @@ public class Woo {
   public static void main(String[] args) {
     Woo game = new Woo();
     game.introduction();
-  //  game.play();
+    game.play();
   }
 
 }
