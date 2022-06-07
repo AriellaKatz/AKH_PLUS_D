@@ -26,7 +26,7 @@ public class JS1s2c1 extends TreeNode {
     type("Enter \"1\", \"2\" or \"3\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
-    while (!choice.equals("1") && !choice.equals("2")) {
+    while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
       type("Congrats, you can't follow instructions. Try again.");
       Scanny in2 = new Scanny();
       choice = in2.toString().trim();
