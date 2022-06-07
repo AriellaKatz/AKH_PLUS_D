@@ -146,10 +146,10 @@ public class Charactar {
       System.out.println("IT'S OVER");
       this.setOver(true);
     }
-    else if (oldAttraction <= 33 && a > 33 && a < 66) {
+    else if (oldAttraction <= 25 && a > 25 && a < 65) {
       this.changeStatus();
     }
-    else if (oldAttraction <= 66 && a > 66 && a < 100) {
+    else if (oldAttraction <= 65 && a > 65 && a < 100) {
       this.changeStatus();
     }
     else if (a >= 100){
