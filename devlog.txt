@@ -42,7 +42,7 @@ COOL STUFF LEARNED
 If you include "throws <Exception>" in the header of an abstract method of an
  abstract parent class, it must also be included in the header of the method of
  subclass if that method is meant to implement the abstract one.
-Our type method works with tabs and returns 
+Our type method works with tabs and returns
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,9 +189,10 @@ ALL ::
 2022-06-06
 --------------------------------------------------------------
 v7
-Ariella :: Started + finished Brad's storyline nodes, changed "Character" class to "Charactar" (see OBSTACLES OVERCOME)
-Kaitlin :: Started + finished on Brad's storyline nodes
-Hugo :: Added hashmap + corresponding adjective lists to make "getting to know you" stage in intro more efficient, added removePunctuation method for help w that
+time in call: 120 mins
+Ariella :: Started + finished Brad's storyline nodes, changed "Character" class to "Charactar" (see OBSTACLES OVERCOME), adjustments in returntype of interact(), wrote up richard's storyline in node form
+Kaitlin :: Started + finished on Brad's storyline nodes, balanced points for jessica
+Hugo :: Added hashmap + corresponding adjective lists to make "getting to know you" stage in intro more efficient, added removePunctuation method for help w that, wrote play() method
 ALL ::
 ==============================================================
 
