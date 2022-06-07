@@ -18,7 +18,7 @@ public class JS3s1c4 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("JESSICA: Prove it.");
     System.out.println("\n\t1. \"I'll date you if that's what you want.\" \n\t2. \"No, I've changed my mind. Give me my ice cream back.\"");
     System.out.println("Enter \"1\" or \"2\"");
@@ -31,15 +31,15 @@ public class JS3s1c4 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("JESSICA: (Rolls her eyes jokingly, smiles) \"Fiiine.\"");
       System.out.println("Jessica's fallen for you! YOU WIN!");
       _character.setFallen(true);
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("You two are cute friends. Maybe you'll have something together in the future, but for the rest of this game, friends you'll remain.");
       _character.setOver(true);
+      return _character.updateTree(1);
     }
   }
 

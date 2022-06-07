@@ -18,7 +18,7 @@ public class JS2s2c3 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("(The cheerleaders stifle their laughter and smile in your direction. Jessica rolls her eyes at them.)");
     System.out.println("JESSICA: They just think you're kind of cute. So do I.");
     System.out.println("\n\t1. \"(Smile and laugh)\" \n\t2. \"(Stare at them blankly. You are confused.)\"");
@@ -32,13 +32,13 @@ public class JS2s2c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("(They laugh as they make space for you to sit with them. You take a seat.)");
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("(The cheerleaders look at each other. You sit down but no one speaks.)");
       System.out.println("(It's really awkward. You finish your food and wish you'd stayed away from their table.)");
+      return _character.updateTree(1);
     }
   }
 

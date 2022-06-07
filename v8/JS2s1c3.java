@@ -17,7 +17,7 @@ public class JS2s1c3 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("JESSICA: Aww! Glad you did. Did you see me cheer? Was I good?");
     System.out.println("\n\t1. \"Of course, you were great.\"");
     System.out.println("Enter \"1\"");
@@ -42,13 +42,13 @@ public class JS2s1c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("(Jessica pouts but tries to hide it.)");
       System.out.println("(You part ways... to meet again?)");
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("(You part ways... to meet again?)");
+      return _character.updateTree(1);
     }
   }
 

@@ -18,7 +18,7 @@ public class BS2s2c1 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("BRAD: You again! What's up!");
     System.out.println("\n\t1. \"Hi...\" \n\t2. \"BRAD! Hi!\"");
     System.out.println("Enter \"1\" or \"2\".");
@@ -31,12 +31,12 @@ public class BS2s2c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("[You have a basic, unenthusiastic convo.]");
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("[You have a little chat.]");
+      return _character.updateTree(1);
     }
   }
 

@@ -58,9 +58,9 @@ public class Charactar {
     _status.push("<3");
     _attraction = 0;
     _pendingLikeChange = 0;
-    _stage1 = null;
-    _stage2 = null;
-    _stage3 = null;
+    _stage1 = new ArrayList<TreeNode>();
+    _stage2 = new ArrayList<TreeNode>();
+    _stage3 = new ArrayList<TreeNode>();
     _winScene = null;
     _currentStage = _stage1;
     _descrip = "";

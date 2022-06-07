@@ -20,7 +20,7 @@ public class JS1s2c1 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("JESSICA: You wanna come to the football game Thursday? I'll be cheering.");
     System.out.println("\n\t1. \"Sorry I hate football\" \n\t2. \"Oh, sure! I'll bring my friend.\" \n\t3. \"Yes! I'll be your cheerleader.\""); // ofc ill be cheering you on
     System.out.println("Enter \"1\", \"2\" or \"3\".");
@@ -33,14 +33,14 @@ public class JS1s2c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("(You skip the football game.)");
+      return _character.updateTree(0);
     }
     else if (input == 2) {
-      _character.updateTree(1);
+      return _character.updateTree(1);
     }
     else {
-      _character.updateTree(1);
+      return _character.updateTree(1);
     }
   }
 
