@@ -18,7 +18,7 @@ public class BS3s1c1 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("[You are at Brad's house and it is 10pm.]");
     System.out.println("\n\t1. \"Oh, it's getting late, I should go...\" \n\t2. \"Hey, can I stay over? It's pretty late.\"");
     System.out.println("Enter \"1\" or \"2\".");
@@ -31,10 +31,10 @@ public class BS3s1c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
+      return _character.updateTree(1);
     }
   }
 

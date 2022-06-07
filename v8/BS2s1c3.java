@@ -20,7 +20,7 @@ public class BS2s1c3 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("BRAD: Man, you don't have to wait! You can come over again. Just you.");
     System.out.println("\n\t1. \"No thanks.\" \n\t2. (Be awkward.) \n\t3. \"I'd love to! When?\"");
     System.out.println("Enter \"1\", \"2\", or \"3\".");
@@ -33,17 +33,17 @@ public class BS2s1c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
+      return _character.updateTree(0);
     }
     else if (input == 2) {
-      _character.updateTree(1);
       System.out.println("BRAD: Dope! Let's do Friday.");
       System.out.println("[You will see him on Friday!]");
+      return _character.updateTree(1);
     }
     else {
-      _character.updateTree(2);
       System.out.println("BRAD: Dope! Let's do Friday.");
       System.out.println("[You will see him on Friday!]");
+      return _character.updateTree(2);
     }
   }
 

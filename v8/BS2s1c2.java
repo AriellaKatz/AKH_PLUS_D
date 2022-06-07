@@ -18,7 +18,7 @@ public class BS2s1c2 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("BRAD: What's wrong?");
     System.out.println("\n\t1. \"Please stop talking to me.\" \n\t2. \"Nothing, just exhausted.\"");
     System.out.println("Enter \"1\" or \"2\".");
@@ -31,13 +31,13 @@ public class BS2s1c2 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("Looks like you're getting what you wanted. IT'S OVER.");
       _character.setOver(true);
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("BRAD: I guess you had fun then.");
+      return _character.updateTree(1);
     }
   }
 

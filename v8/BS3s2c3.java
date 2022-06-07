@@ -18,7 +18,7 @@ public class BS3s2c3 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("BRAD: Yoooo. Bro, I don't think you're mid either. I didn't realize you felt the same.");
     System.out.println("\n\t1. \"Well I do. (Passionately kiss him)\" \n\t2. \"Jk, you clapped.\"");
     System.out.println("Enter \"1\" or \"2\".");
@@ -31,16 +31,16 @@ public class BS3s2c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("(Brad is stunned but quickly regains his composure)");
       System.out.println("BRAD: Damn that was snazzy. Wanna do it again?");
       _character.setFallen(true);
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("(Brad gives you a ????? face and leaves silently.)");
       System.out.println("Your relationship will not recover. IT'S OVER.");
       _character.setOver(true);
+      return _character.updateTree(1);
     }
   }
 

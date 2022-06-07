@@ -18,7 +18,7 @@ public class BS3s2c6 extends TreeNode {
     _character = character;
   }
 
-  public void interact() {
+  public boolean interact() {
     System.out.println("BRAD: Damn bro that's tough. I love that you feel comfortable sharing that with me.");
     System.out.println("\n\t1. \"I always feel comfortable around you...\" (Kiss him with immense power.) \n\t2. \"I twas a mistake. I don't even think you have feelings you disgusting slug-like creature.\" (Slap him.)");
     System.out.println("Enter \"1\" or \"2\".");
@@ -31,14 +31,14 @@ public class BS3s2c6 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      _character.updateTree(0);
       System.out.println("How disgustingly romantic. Somehow Brad has fallen for you. YOU WIN!");
       _character.setFallen(true);
+      return _character.updateTree(0);
     }
     else {
-      _character.updateTree(1);
       System.out.println("Idk what you were expecting. He's not into that stuff. IT'S OVER.");
       _character.setOver(true);
+      return _character.updateTree(1);
     }
   }
 

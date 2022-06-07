@@ -23,7 +23,7 @@ public abstract class TreeNode {
   }
 
   //abstract interaction method; coded individually for each node
-  public abstract void interact();
+  public abstract boolean interact();
 
 
   //returns the "base" like change resulting from getting to this node
