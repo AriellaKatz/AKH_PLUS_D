@@ -15,8 +15,8 @@ public class JS1s2c1 extends TreeNode {
     _children.add(new JS1s2c2(character));
     _children.add(new JS1s2c2(character)); //options 2 and 3 lead to the same thing but w diff likeChanges
     _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(-3);
+    _childrenLikeChanges.add(7);
     _character = character;
   }
 

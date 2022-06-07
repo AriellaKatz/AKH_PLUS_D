@@ -14,13 +14,13 @@ public class JS1s1c3 extends TreeNode {
     _children.add(null); //option 1 leads to the end of the scene
     _children.add(null); //option 2 leads to the end of the scene
     _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(6);
     _character = character;
   }
 
   public void interact() {
     System.out.println("JESSICA: Oooh. Your hair is really soft. Wanna hang out tomorrow?");
-    System.out.println("\n\t1. \"No, I'm busy. Bye.\" \n\t2. \"Yeah, I'd love that!\"");
+    System.out.println("\n\t1. \"No, I'm busy. I'll see you around though.\" \n\t2. \"Yeah, I'd love that!\"");
     System.out.println("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
     String choice = in.toString().trim();
