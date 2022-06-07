@@ -190,7 +190,7 @@ ALL ::
 --------------------------------------------------------------
 v7
 time in call: 120 mins
-Ariella :: Started + finished Brad's storyline nodes, changed "Character" class to "Charactar" (see OBSTACLES OVERCOME), adjustments in returntype of interact(), wrote up richard's storyline in node form
+Ariella :: Started + finished Brad's storyline nodes, changed "Character" class to "Charactar" (see OBSTACLES OVERCOME), adjustments in returntype of interact(), wrote up richard's storyline in node form, update devlog
 Kaitlin :: Started + finished on Brad's storyline nodes, balanced points for jessica
 Hugo :: Added hashmap + corresponding adjective lists to make "getting to know you" stage in intro more efficient, added removePunctuation method for help w that, wrote play() method
 ALL ::
