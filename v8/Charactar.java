@@ -150,7 +150,7 @@ public class Charactar {
       this.changeStatus();
     }
     else if (oldAttraction <= 65 && a > 65 && a < 100) {
-      this.changeStatus();
+      this.changeStatus();&& !choice.equals("2")
     }
     else if (a >= 100){
       this.changeStatus();
@@ -161,7 +161,7 @@ public class Charactar {
   }
 
   // Changes attraction level
-  public int changeAttraction(int change) {
+  public int changeAttraction(in&& !choice.equals("2")t change) {
     int old = _attraction;
     _attraction += change;
      maintainStatus(old);
@@ -174,6 +174,7 @@ public class Charactar {
   public boolean updateTree(int childInd) {
     //if you've reached the end of the tree...
     if (_currentStage.get(0).getChildren().get(childInd) == null) {
+      ArrayList<TreeNode> oldStage = _currentStage;
       //update the attraction based on the change you've ammassed throughout the
       // tree
       changeAttraction(_pendingLikeChange);
@@ -183,7 +184,7 @@ public class Charactar {
       // index 0
       _currentStage.remove(0);
       //if you've gotten through the entire stage without progressing, it's over
-      if (_currentStage.size() == 0) {
+      if (_currentStage.size() == 0 && oldStage.equals(_currentStage)) {
         _over = true;
         System.out.println("This relationship is hopeless. You're taking too long. IT'S OVER.");
       }
