@@ -109,7 +109,8 @@ public class Woo {
     if (!_gameOver) play();
   }
 
-  public int probeTree(Charactar character){
+//Moved to Charactar
+/*  public int probeTree(Charactar character){
     int option = 0;
     int bestLike = Integer.MIN_VALUE;
     for (int i = 0; i < character.getStage().get(0).getChildren().size(); i++) {
@@ -136,7 +137,7 @@ public class Woo {
       }
       return bestLike;
     }
-  }
+  } */
 
   //to print stuff so it looks like it's being typed out
   public static void type(String s){

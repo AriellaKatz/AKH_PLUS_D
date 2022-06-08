@@ -6,6 +6,7 @@ FP -- Are You a Player?
 */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class JS2s1c5 extends TreeNode {
 
@@ -22,23 +23,19 @@ public class JS2s1c5 extends TreeNode {
     type("JESSICA: Hey! Hello?");
     type("\n\t1. \"Hi.\"");
     type("Enter \"1\".");
-    Scanny in = new Scanny();
-    String choice = in.toString().trim();
+    Scanner i = new Scanner(System.in);
+    String choice = i.nextLine().trim();
     while (!choice.equals("1")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
-      choice = in2.toString().trim();
+      Scanner i2 = new Scanner(System.in);
+      choice = i2.nextLine().trim();
     }
-
+    _character.changeAttraction(4);
 
     type("JESSICA: Do you hate me or something?");
     type("\n\t1. \"No. Why would I?\" \n\t2. \"Yes.\"");
     type("Enter \"1\" or \"2\".");
-    _character.changeAttraction(4);
-    System.out.println("JESSICA: Do you hate me or something?");
-    System.out.println("\n\t1. \"No. Why would I?\" \n\t2. \"Yes.\"");
-    System.out.println("Enter \"1\" or \"2\".");
-    in = new Scanny();
+    Scanny in = new Scanny();
     choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");

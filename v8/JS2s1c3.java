@@ -5,6 +5,7 @@ FP -- Are You a Player?
 2022-06-03
 */
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class JS2s1c3 extends TreeNode {
 
@@ -21,20 +22,19 @@ public class JS2s1c3 extends TreeNode {
     type("JESSICA: Aww! Glad you did. Did you see me cheer? Was I good?");
     type("\n\t1. \"Of course, you were great.\"");
     type("Enter \"1\"");
-    Scanny in = new Scanny();
-    String choice = in.toString().trim();
+    Scanner i = new Scanner(System.in);
+    String choice = i.nextLine().trim();
     while (!choice.equals("1")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
-      choice = in2.toString().trim();
+      Scanner i2 = new Scanner(System.in);
+      choice = i2.nextLine().trim();
     }
     type("JESSICA: I smiled for you!");
     _character.changeAttraction(3);
-    System.out.println("JESSICA: I smiled for you!");
 
     type("\n\t1. \"Oh? I didn't see.\" \n\t2. \"Yes, you looked very pretty.\"");
     type("Enter \"1\" or \"2\".");
-    in = new Scanny();
+    Scanny in = new Scanny();
     choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
