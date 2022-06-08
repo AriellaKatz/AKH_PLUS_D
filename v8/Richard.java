@@ -12,7 +12,7 @@ public class Richard extends Charactar{
   public Richard() {
     super();
     _attraction = 0;
-    //_head = null;
+    _stage1.add(new R01.java(this));
     _descrip = "SU president";
     _name = "Richard";
   }

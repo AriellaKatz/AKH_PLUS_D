@@ -1,0 +1,42 @@
+/*
+AKH+D: Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
+APCS pd6
+FP -- Are You a Player?
+2022-06-03
+*/
+
+import java.util.ArrayList;
+
+public class R05 extends TreeNode {
+
+  public R05(Charactar character) {
+    super();
+    _children.add(new R06(character));
+    _children.add(new R07(character));
+    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(0);
+    _character = character;
+  }
+
+  public boolean interact() {
+    type("[You are at the party.]");
+    type("RICHARD: Oh! Hey you actually came. Now that I think of it, I never asked for your name. I'll call you dumbass. Dumbass, did you hear about the haunted bathroom on the 9th floor?");
+    type("\n\t1. \"Yeah!\" \n\t2. \"No...\"");
+    type("Enter \"1\" or \"2\".");
+    Scanny in = new Scanny();
+    String choice = in.toString().trim();
+    while (!choice.equals("1") && !choice.equals("2")) {
+      type("Congrats, you can't follow instructions. Try again.");
+      Scanny in2 = new Scanny();
+      choice = in2.toString().trim();
+    }
+    Integer input = Integer.parseInt(choice);
+    if (input == 1) {
+      return _character.updateTree(0);
+    }
+    else {
+      return _character.updateTree(1);
+    }
+  }
+
+}
