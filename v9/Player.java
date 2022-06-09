@@ -12,6 +12,7 @@ private ArrayList<Charactar> _rank;
 private final ArrayList<Charactar> _order;
 private String _name;
 private boolean _hasFriend;
+private boolean _dead;
 
 public Player() {
   _rank = new ArrayList<Charactar>();
@@ -60,6 +61,16 @@ public String setName(String name) {
 
 public boolean hasFriend() {
   return _hasFriend;
+}
+
+// Accessor for _dead
+public boolean isDead(){
+  return _dead;
+}
+
+// Changes _dead
+public boolean die() {
+  _dead = true;
 }
 
 //sorts the characters based on how much they like the protagonist (likeabliity)

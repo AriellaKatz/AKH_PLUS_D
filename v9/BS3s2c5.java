@@ -30,7 +30,8 @@ public class BS3s2c5 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("Y'all fall of the cliff and die. Maybe your relationship will continue in the afterlife, but for this game, IT'S OVER.");
+      type("Y'all fall of the cliff and die. Maybe your relationship will continue in the afterlife.");
+      _player.die();
       _character.setOver(true);
       return _character.updateTree(0);
     }
