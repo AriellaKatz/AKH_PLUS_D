@@ -21,6 +21,7 @@ public class Charactar {
   protected String _descrip;
   protected String _name;
   protected Player _player;
+  protected boolean _isRichard;
 
   /*
     Woo starts at _stage1[0].
@@ -67,6 +68,7 @@ public class Charactar {
     _descrip = "";
     _name = "";
     _player = player;
+    _isRichard = false;
   }
 
 
@@ -105,6 +107,11 @@ public class Charactar {
   // Accessor for _name
   public String getName() {
     return _name;
+  }
+
+  // Accessor for _isRichard
+  public boolean getIR() {
+    return _isRichard;
   }
 
 
