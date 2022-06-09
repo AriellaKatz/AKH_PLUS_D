@@ -10,12 +10,11 @@ import java.util.ArrayList;
 public class BS1s1c4 extends TreeNode {
 
   public BS1s1c4(Charactar character, Player player) {
-    super();
+    super(character, player);
     _children.add(null);
     _children.add(null);
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
-    _character = character;
   }
 
   public boolean interact() {
