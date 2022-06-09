@@ -19,7 +19,7 @@ public class BS3s2c6 extends TreeNode {
 
   public boolean interact() {
     type("BRAD: Damn bro that's tough. I love that you feel comfortable sharing that with me.");
-    type("\n\t1. \"I always feel comfortable around you...\" \033[3mKiss him with immense power.\033[0m \n\t2. \"I twas a mistake. I don't even think you have feelings you disgusting slug-like creature.\" \033[3mYou slap him.\033[0m");
+    type("\n\t1. \"I always feel comfortable around you...\" \033[3mKiss him with immense power.\033[0m \n\t2. \"It was a mistake. I don't even think you have feelings you disgusting slug-like creature.\" \033[3mYou slap him.\033[0m");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();

@@ -112,7 +112,7 @@ public class Woo {
 
       //Brad
       if (_firstTime) {
-        type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
+        type("\n\033[3mA boy comes up to you, he's a total stud. You definitely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
       }
       if (!_brad.isOver()) while (!(_brad.getStage().get(0).interact()));
       if (_brad.hasFallen()) { System.out.println("YOU WIN!"); _gameOver = true; return; }
