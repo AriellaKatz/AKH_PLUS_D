@@ -14,9 +14,9 @@ public class BS2s1c3 extends TreeNode {
     _children.add(new BS2s1c4(character, player));
     _children.add(null);
     _children.add(null);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(-2);
+    _childrenLikeChanges.add(7);
+    _childrenLikeChanges.add(7);
   }
 
   public boolean interact() {

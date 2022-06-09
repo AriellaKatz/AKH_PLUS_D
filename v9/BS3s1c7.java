@@ -13,8 +13,8 @@ public class BS3s1c7 extends TreeNode {
     super(character, player);
     _children.add(null);
     _children.add(null);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(10);
+    _childrenLikeChanges.add(2);
   }
 
   public boolean interact() {
