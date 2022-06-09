@@ -13,8 +13,9 @@ public class BS1s2c3 extends TreeNode {
     super(character, player);
     _children.add(new BS1s2c4(character, player));
     _children.add(new BS1s2c4(character, player));
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(6);
+    _childrenLikeChanges.add(7);
+    //like change should be 5 for the boring and leave part
   }
 
   public boolean interact() {
