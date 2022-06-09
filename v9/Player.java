@@ -23,6 +23,7 @@ public Player() {
   _order.add(_rank.get(1));
   _order.add(_rank.get(2));
   _name = "notYet";
+  _hasFriend = false;
 }
 
 public void sortRank() {
@@ -55,6 +56,10 @@ public String setName(String name) {
   String old = _name;
   _name = name;
   return old;
+}
+
+public boolean hasFriend() {
+  return _hasFriend;
 }
 
 //sorts the characters based on how much they like the protagonist (likeabliity)
