@@ -13,7 +13,7 @@ public abstract class TreeNode {
   protected ArrayList<TreeNode> _children;
   protected ArrayList<Integer> _childrenLikeChanges;
   protected Charactar _character;
-  protected Player _player
+  protected Player _player;
 
   //constructor (doesn't actually work, but can be used as a prototype for
   //subclass constructors)

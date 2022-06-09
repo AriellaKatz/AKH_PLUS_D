@@ -21,7 +21,7 @@ public class R16 extends TreeNode {
   public boolean interact() {
     type("RICHARD: Sorry, I just really wanted to have fun.");
     type("(Richard chuckles while you leave the stall.)");
-    type("RICHARD: Can we still be friends?")
+    type("RICHARD: Can we still be friends?");
     type("\n\t1. \"Of course bestie.\" \n\t2. \"Absolutely not, you nutcase.\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny();
