@@ -10,7 +10,7 @@ public class Scanny {
   String _response;
 
   public Scanny(Charactar character, Player player) {
-    if (player.hasFriend()) {
+    if (player.hasFriend() && !character.getIR()) {
       type("Would you like some advice from Richard?");
       type("Enter \"yes\" or \"no\".");
       Scanner i = new Scanner(System.in);
