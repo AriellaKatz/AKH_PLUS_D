@@ -9,16 +9,17 @@ import java.util.Stack;
 
 public class Richard extends Charactar{
 
-  public Richard() {
-    super();
+  public Richard(Player player) {
+    super(player);
     _attraction = 0;
     _stage1.add(new R01(this));
     _descrip = "SU president";
     _name = "Richard";
+    _isRichard = true;
   }
 
-  public Richard(int attraction) {
-    this();
+  public Richard(int attraction, Player player) {
+    this(player);
     _attraction = attraction;
     if (_attraction < 0) {
       _over = true;
