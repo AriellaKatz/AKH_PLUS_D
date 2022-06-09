@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class BS1s1c4 extends TreeNode {
 
-  public BS1s1c4(Charactar character) {
+  public BS1s1c4(Charactar character, Player player) {
     super();
     _children.add(null);
     _children.add(null);
@@ -22,11 +22,11 @@ public class BS1s1c4 extends TreeNode {
     type("BRAD: You should totally stop by my party.");
     type("\n\t1. \"No, thanks. I'm not a party person.\" \n\t2. \"Dope!\"");
     type("Enter \"1\" or \"2\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
