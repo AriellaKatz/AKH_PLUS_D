@@ -15,8 +15,7 @@ public class JS2s2c2 extends TreeNode {
     _children.add(null);
     _children.add(new JS2s2c3(character, player));
     _childrenLikeChanges.add(0); //0
-    _childrenLikeChanges.add(0); //6
-    _character = character;
+    _childrenLikeChanges.add(6); //6
   }
 
   public boolean interact() {

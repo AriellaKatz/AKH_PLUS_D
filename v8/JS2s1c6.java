@@ -17,7 +17,6 @@ public class JS2s1c6 extends TreeNode {
     _childrenLikeChanges.add(-6);
     _childrenLikeChanges.add(5);
     _childrenLikeChanges.add(8);
-    _character = character;
   }
 
   public boolean interact() {
