@@ -20,6 +20,7 @@ public class Charactar {
   protected ArrayList<TreeNode> _currentStage; //_stage1, _stage2, _stage3, or _winScene
   protected String _descrip;
   protected String _name;
+  protected Player _player;
 
   /*
     Woo starts at _stage1[0].
@@ -46,7 +47,7 @@ public class Charactar {
     Character.
   */
 
-  public Charactar() {
+  public Charactar(Player player) {
     _over = false;
     _fallen = false;
     _status = new Stack<String>();
@@ -65,6 +66,7 @@ public class Charactar {
     _currentStage = _stage1;
     _descrip = "";
     _name = "";
+    _player = player;
   }
 
 

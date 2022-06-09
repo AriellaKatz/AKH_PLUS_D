@@ -18,6 +18,7 @@ public class Woo {
   private Brad _brad;
   private boolean _gameOver;
   private boolean _firstTime;
+  public static Woo game;
 
   private static HashMap<String, Integer> vibes = new HashMap<String, Integer>();
 
@@ -175,8 +176,28 @@ public class Woo {
       return word;
   }
 
+  // Accessor for _player
+  public Player getPlayer() {
+    return _player;
+  }
+
+  // Accessor for _jessica
+  public Charactar getJ() {
+    return _jessica;
+  }
+
+  // Accessor for _brad
+  public Charactar getB() {
+    return _brad;
+  }
+
+  // Accessor for _richard
+  public Charactar getR() {
+    return _richard;
+  }
+
   public static void main(String[] args) {
-    Woo game = new Woo();
+    game = new Woo();
     game.introduction();
     game.play();
   }

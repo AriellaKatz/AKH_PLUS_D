@@ -29,4 +29,26 @@ public class Scanny {
     return _response;
   }
 
+  //to print stuff so it looks like it's being typed out
+  public static void type(String s){
+    String punc = ",.?!-";
+    for(int i = 0; i < s.length(); i++){
+      System.out.print(s.charAt(i));
+      if (punc.indexOf(s.charAt(i)) >= 0) {
+        delay(200);
+      }
+      else {
+        delay(35);
+      }
+    }
+    System.out.println("");
+  }
+  // Built in delay
+  public static void delay(int milliseconds) {
+    long beginTimer = System.currentTimeMillis();
+    while (System.currentTimeMillis() - beginTimer < milliseconds) {
+      continue;
+    }
+  }
+
 }

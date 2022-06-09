@@ -13,7 +13,7 @@ public class JS2s2c2 extends TreeNode {
   public JS2s2c2(Charactar character) {
     super();
     _children.add(null);
-    _children.add(new     System.out.println("JESSICA: I smiled for you!");JS2s2c3(character));
+    _children.add(new JS2s2c3(character));
     _childrenLikeChanges.add(0); //0
     _childrenLikeChanges.add(0); //6
     _character = character;

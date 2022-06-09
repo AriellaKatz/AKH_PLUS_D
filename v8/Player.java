@@ -45,27 +45,7 @@ private int partition(int loPos, int hiPos) {
   for (int i = loPos; i < hiPos; i++) {
     if (_rank.get(i).getAttraction() >= v) {
       swap(i, s);
-      s++;public int probeTree(){
-    int option = 0;
-    int bestLike = Integer.MIN_VALUE;
-    for (int i = 0; i < _currentStage.get(0).getChildren().size(); i++) {
-      int like = probeTreeHelper(_currentStage.get(0).getChildren().get(i));
-      if (like > bestLike) {
-        bestLike = like;
-        option = i;
-      }
-    }
-    double chance = Math.random();
-    //2/3 of the time gives good advice
-    if (chance < 0.66) {
-      return option+1; //+1 b/c when the player sees their list of options, it starts at 1, not 0, but option is the index of the array
-    }
-    //1/3 of the time gives bad advice
-    else {
-      if (option == 0) { return 2; }
-      else { return option; }
-    }
-  }
+      s++;
     }
   }
   swap(s, hiPos);

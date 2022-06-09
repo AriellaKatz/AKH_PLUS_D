@@ -35,7 +35,7 @@ public class R10 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("RICHARD: Too bad (shoves you into the stall).").
+      type("RICHARD: Too bad (shoves you into the stall).");
       return _character.updateTree(1);
     }
   }

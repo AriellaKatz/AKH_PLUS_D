@@ -9,21 +9,21 @@ import java.util.Stack;
 
 public class Jessica extends Charactar{
 
-  public Jessica() {
-    super();
+  public Jessica(Player player) {
+    super(player);
     _attraction = 0;
     _descrip = "flirty and fickle";
     _name = "Jessica";
-    _stage1.add(new JS1s1c1(this));
-    _stage1.add(new JS1s2c1(this));
-    _stage2.add(new JS2s1c1(this));
-    _stage2.add(new JS2s2c1(this));
-    _stage3.add(new JS3s1c1(this));
+    _stage1.add(new JS1s1c1(this, player));
+    _stage1.add(new JS1s2c1(this, player));
+    _stage2.add(new JS2s1c1(this, player));
+    _stage2.add(new JS2s2c1(this, player));
+    _stage3.add(new JS3s1c1(this, player));
     _currentStage = _stage1;
   }
 
-  public Jessica(int attraction) {
-    this();
+  public Jessica(int attraction, Player player) {
+    this(player);
     _attraction = attraction;
     if (_attraction < 0) {
       _over = true;
