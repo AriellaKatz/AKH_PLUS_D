@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 public class R05 extends TreeNode {
 
-  public R05(Charactar character) {
-    super();
-    _children.add(new R06(character));
-    _children.add(new R07(character));
+  public R05(Charactar character, Player player) {
+    super(player);
+    _children.add(new R06(character, player));
+    _children.add(new R07(character, player));
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
     _character = character;
@@ -23,11 +23,11 @@ public class R05 extends TreeNode {
     type("RICHARD: Oh! Hey you actually came. Now that I think of it, I never asked for your name. I'll call you dumbass. Dumbass, did you hear about the haunted bathroom on the 9th floor?");
     type("\n\t1. \"Yeah!\" \n\t2. \"No...\"");
     type("Enter \"1\" or \"2\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);

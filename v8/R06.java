@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class R06 extends TreeNode {
 
-  public R06(Charactar character) {
-    super();
-    _children.add(new R08(character));
+  public R06(Charactar character, Player player) {
+    super(player);
+    _children.add(new R08(character, player));
     _children.add(null);
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
@@ -22,11 +22,11 @@ public class R06 extends TreeNode {
     type("RICHARD: Wanna try sneaking there tonight after the party?");
     type("\n\t1. \"Yeah!\" \n\t2. \"I'm good.\"");
     type("Enter \"1\" or \"2\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
