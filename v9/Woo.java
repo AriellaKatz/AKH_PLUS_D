@@ -94,19 +94,40 @@ public class Woo {
   public void play(){
     String s = "";
 
-    if (_jessica.isOver() && _richard.isOver() && _brad.isOver()) {
+    if (_jessica.isOver() && _brad.isOver()) {
       _gameOver = true;
       s = "You've struck out with ALL of them. GAME OVER.";
       type(s);
     }
     else {
-      new ImageOpen("jessica_portrait.png");
-      if (_firstTime) type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
-      while (!(_jessica.getStage().get(0).interact()));
-      if (_firstTime) type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
-      while (!(_brad.getStage().get(0).interact()));
-      if(_firstTime) _firstTime = false;
+      //Richard
+      if (_firstTime) {
+        type("\n\033[3mYou accidentally bump into someone. He looks annoying. It's Richard, the student president. \033[0m\n");
+      }
+      if (!_richard.isOver() && !_richard.hasFallen()) while (!(_richard.getStage().get(0).interact()));
+      if (_firstTime) {
+        _firstTime = false;
+      }
+      
+      //Brad
+      if (_firstTime) {
+        type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
+      }
+      if (!_brad.isOver) while (!(_brad.getStage().get(0).interact()));
+      if (_brad.hasFallen()) { System.out.println("YOU WIN!"); gameOver = true; break; }
+
+      //Jessica
+      if (!_player.isDead()) {
+        new ImageOpen("jessica_portrait.png");
+        if (_firstTime) {
+          type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
+        }
+        if (!_jessica.isOver()) while (!(_jessica.getStage().get(0).interact()));
+        if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); gameOver = true; break; }
+      }
     }
+    _player.sortRank();
+    printRank();
     if (!_gameOver) play();
   }
 
@@ -194,6 +215,16 @@ public class Woo {
   // Accessor for _richard
   public Charactar getR() {
     return _richard;
+  }
+
+  public void printRank() {
+    ArrayList<Charactar> a = _player.getRank();
+    String s = "Your love interests, in order from most to least interested in you: ";
+    for (int i = 0; i < a.size(); i++) {
+      s += "\n\t" + a.getName() + ": " + a.getStatus();
+    }
+    s += "\n";
+    type(s);
   }
 
   public static void main(String[] args) {

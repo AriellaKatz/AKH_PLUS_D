@@ -19,7 +19,6 @@ public class R01 extends TreeNode {
   }
 
   public boolean interact() {
-    type("[You accidentally bump into someone.]");
     type("RICHARD: Hey, watch where you're going!");
     type("\n\t1. \"Sorry!\" \n\t2. \"Why don't you?\"");
     type("Enter \"1\" or \"2\".");
