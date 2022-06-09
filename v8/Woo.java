@@ -71,7 +71,8 @@ public class Woo {
     int startingAttraction = 0;
     String s = "What is your name good fellow?";
     type(s);
-    _player.setName(new Scanny().toString());
+    Scanner in = new Scanner(System.in);
+    _player.setName(in.nextLine());
     s = "\nHello " + _player.getName() + ", tell us some adjectives you would use to describe yourself.";
     type(s);
     Scanny in = new Scanny();

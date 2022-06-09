@@ -21,7 +21,7 @@ public class JS3s1c4 extends TreeNode {
     type("JESSICA: Prove it.");
     type("\n\t1. \"I'll date you if that's what you want.\" \n\t2. \"No, I've changed my mind. Give me my ice cream back.\"");
     type("Enter \"1\" or \"2\"");
-    Scanny in = new Scanny(character, player);
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");

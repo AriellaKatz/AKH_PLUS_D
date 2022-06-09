@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class JS3s1c5 extends TreeNode {
 
-  public JS3s1c5(Charactar character) {
-    super();
+  public JS3s1c5(Charactar character, Player player) {
+    super(character, player);
     _children.add(null);
     _children.add(null);
     _childrenLikeChanges.add(0);
@@ -22,7 +22,7 @@ public class JS3s1c5 extends TreeNode {
     type("(Jessica raises her eyebrows, blushes.)");
     type("\n\t1. KISS HER (with consent of course) \n\t2. Be a coward, pretend like nothing's happening.");
     type("Enter \"1\" or \"2\"");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
