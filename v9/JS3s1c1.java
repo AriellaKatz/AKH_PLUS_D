@@ -13,9 +13,9 @@ public class JS3s1c1 extends TreeNode {
     _children.add(new JS3s1c2(character, player));
     _children.add(new JS3s1c3(character, player));
     _children.add(null);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(10);
+    _childrenLikeChanges.add(9);
+    _childrenLikeChanges.add(-120);
   }
 
   public boolean interact() {

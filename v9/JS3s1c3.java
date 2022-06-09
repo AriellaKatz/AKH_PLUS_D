@@ -13,8 +13,8 @@ public class JS3s1c3 extends TreeNode {
     super(character, player);
     _children.add(new JS3s1c4(character, player));
     _children.add(null);
-    _childrenLikeChanges.add(0);
-    _childrenLikeChanges.add(0);
+    _childrenLikeChanges.add(9);
+    _childrenLikeChanges.add(-24);
   }
 
   public boolean interact() {
