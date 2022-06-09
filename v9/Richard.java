@@ -9,8 +9,8 @@ import java.util.Stack;
 
 public class Richard extends Charactar{
 
-  public Richard(Player player) {
-    super(player);
+  public Richard(Player player, int startingAttraction) {
+    super(player, startingAttraction);
     _attraction = 0;
     _stage1.add(new R01(this, player));
     _descrip = "Student president";
@@ -18,14 +18,6 @@ public class Richard extends Charactar{
     _isRichard = true;
     _x = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
     _y = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
-  }
-
-  public Richard(int attraction, Player player) {
-    this(player);
-    _attraction = attraction;
-    if (_attraction < 0) {
-      _over = true;
-    }
   }
 
 }

@@ -11,8 +11,8 @@ import java.util.Stack;
 
 public class Brad extends Charactar{
 
-  public Brad(Player player) {
-    super(player);
+  public Brad(Player player, int startingAttraction) {
+    super(player, startingAttraction);
     _attraction = 0;
     //_head = null;
     _descrip = "lax frat bro";
@@ -26,14 +26,6 @@ public class Brad extends Charactar{
     _currentStage = _stage1;
     _x = 30;
     _y = 60;
-  }
-
-  public Brad(int attraction, Player player) {
-    this(player);
-    _attraction = attraction;
-    if (_attraction < 0) {
-      _over = true;
-    }
   }
 
 }

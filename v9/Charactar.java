@@ -49,7 +49,7 @@ public class Charactar {
     Character.
   */
 
-  public Charactar(Player player) {
+  public Charactar(Player player, int startingAttraction) {
     _over = false;
     _fallen = false;
     _status = new Stack<String>();
@@ -59,7 +59,10 @@ public class Charactar {
     _status.push("<3 <3 <3");
     _status.push("<3 <3");
     _status.push("<3");
-    _attraction = 0;
+    _attraction = startingAttraction;
+    if (_attraction < 0) {
+      _over = true;
+    }
     _pendingLikeChange = 0;
     _stage1 = new ArrayList<TreeNode>();
     _stage2 = new ArrayList<TreeNode>();

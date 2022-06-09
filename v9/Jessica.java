@@ -9,8 +9,8 @@ import java.util.Stack;
 
 public class Jessica extends Charactar{
 
-  public Jessica(Player player) {
-    super(player);
+  public Jessica(Player player, int startingAttraction) {
+    super(player, startingAttraction);
     _attraction = 0;
     _descrip = "flirty and fickle";
     _name = "Jessica";
@@ -22,14 +22,6 @@ public class Jessica extends Charactar{
     _currentStage = _stage1;
     _x = 25;
     _y = 60;
-  }
-
-  public Jessica(int attraction, Player player) {
-    this(player);
-    _attraction = attraction;
-    if (_attraction < 0) {
-      _over = true;
-    }
   }
 
 }

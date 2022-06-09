@@ -7,7 +7,7 @@ FP -- Are You a Player?
 
 import java.util.Scanner;
 public class Scanny {
-  String _response;
+  private String _response;
 
   public Scanny(Charactar character, Player player) {
     if (player.hasFriend() && !character.getIR()) {
