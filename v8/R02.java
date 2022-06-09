@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class R02 extends TreeNode {
 
   public R02(Charactar character, Player player) {
-    super(player);
+    super(character, player);
     _children.add(new R04(character, player));
     _children.add(null);
     _childrenLikeChanges.add(0);
