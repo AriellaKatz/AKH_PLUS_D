@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class JS3s1c2 extends TreeNode {
 
-  public JS3s1c2(Charactar character) {
-    super();
-    _children.add(new JS3s1c5(character));
+  public JS3s1c2(Charactar character, Player player) {
+    super(character, player);
+    _children.add(new JS3s1c5(character, player ));
     _children.add(null);
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
@@ -22,11 +22,11 @@ public class JS3s1c2 extends TreeNode {
     type("JESSICA: Ohhh so you like me...");
     type("\n\t1. \"Yeah, and you like me back.\" \n\t2. \"I guess...\"");
     type("Enter \"1\", \"2\", or \"3\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);

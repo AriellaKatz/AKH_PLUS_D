@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 public class JS2s1c6 extends TreeNode {
 
-  public JS2s1c6(Charactar character) {
-    super();
+  public JS2s1c6(Charactar character, Player player) {
+    super(character, player);
     _children.add(null);
-    _children.add(new JS2s1c7(character));
-    _children.add(new JS2s1c7(character));
+    _children.add(new JS2s1c7(character, player));
+    _children.add(new JS2s1c7(character, player));
     _childrenLikeChanges.add(-6);
     _childrenLikeChanges.add(5);
     _childrenLikeChanges.add(8);
@@ -24,11 +24,11 @@ public class JS2s1c6 extends TreeNode {
     type("JESSICA: Then why are you ignoring me?");
     type("\n\t1. \"Oh ummm...\" \n\t2. \"I'm not, I'm not!\" \n\t3. (Get flustered)");
     type("Enter \"1\", \"2\" or \"3\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);

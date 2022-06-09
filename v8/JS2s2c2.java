@@ -10,10 +10,10 @@ import java.util.Scanner;
 
 public class JS2s2c2 extends TreeNode {
 
-  public JS2s2c2(Charactar character) {
-    super();
+  public JS2s2c2(Charactar character, Player player) {
+    super(character, player);
     _children.add(null);
-    _children.add(new JS2s2c3(character));
+    _children.add(new JS2s2c3(character, player));
     _childrenLikeChanges.add(0); //0
     _childrenLikeChanges.add(0); //6
     _character = character;
@@ -36,11 +36,11 @@ public class JS2s2c2 extends TreeNode {
 
     type("\n\t1. \"(Ignore it.)\" \n\t2. \"Heard my name. You guys talking about me?\"");
     type("Enter \"1\" or \"2\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
 
