@@ -9,13 +9,12 @@ import java.util.ArrayList;
 
 public class R14 extends TreeNode {
 
-  public R14(Charactar character) {
-    super();
-    _children.add(new R12(character));
+  public R14(Charactar character, Player player) {
+    super(character, player);
+    _children.add(new R12(character, player));
     _children.add(null);
     _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
-    _character = character;
   }
 
   public boolean interact() {
@@ -24,11 +23,11 @@ public class R14 extends TreeNode {
     type("RICHARD: You good?");
     type("\n\t1. \"Yup.\" \n\t2. \"No, LET ME OUT.\"");
     type("Enter \"1\" or \"2\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);
