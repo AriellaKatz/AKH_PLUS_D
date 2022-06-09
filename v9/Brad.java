@@ -24,6 +24,8 @@ public class Brad extends Charactar{
     _stage3.add(new BS3s1c1(this, player));
     _stage3.add(new BS3s2c1(this, player));
     _currentStage = _stage1;
+    _x = 30;
+    _y = 60;
   }
 
   public Brad(int attraction, Player player) {

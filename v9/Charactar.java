@@ -16,12 +16,13 @@ public class Charactar {
   protected ArrayList<TreeNode> _stage1;
   protected ArrayList<TreeNode> _stage2;
   protected ArrayList<TreeNode> _stage3;
-  protected ArrayList<TreeNode> _winScene;
   protected ArrayList<TreeNode> _currentStage; //_stage1, _stage2, _stage3, or _winScene
   protected String _descrip;
   protected String _name;
   protected Player _player;
   protected boolean _isRichard;
+  protected int _x;
+  protected int _y;
 
   /*
     Woo starts at _stage1[0].
@@ -54,7 +55,7 @@ public class Charactar {
     _status = new Stack<String>();
     // _status.push("<3 <3 <3 <3 <3");
     // _status.push("<3 <3 <3 <3");
-    _status.push("WIN SCENE");
+    _status.push("LOVERS");
     _status.push("<3 <3 <3");
     _status.push("<3 <3");
     _status.push("<3");
@@ -63,7 +64,6 @@ public class Charactar {
     _stage1 = new ArrayList<TreeNode>();
     _stage2 = new ArrayList<TreeNode>();
     _stage3 = new ArrayList<TreeNode>();
-    _winScene = null;
     _currentStage = _stage1;
     _descrip = "";
     _name = "";
@@ -135,15 +135,24 @@ public class Charactar {
   public String changeStatus() {
     String prevStat = _status.pop();
     if (getStatus().equals("<3 <3")) {
+      if (!getIR())
       _currentStage = _stage2;
     }
     else if (getStatus().equals("<3 <3 <3")) {
+      if (!getIR())
       _currentStage = _stage3;
     }
-    else {
-      _currentStage = _winScene;
-    }
+
     return prevStat;
+  }
+
+  // Changes status for richard bc he's problematic
+  public void friendify() {
+    _status.pop();
+    _status.pop();
+    _status.pop();
+    _status.pop();
+    _status.push("FRIENDS");
   }
 
   // Updates corresponding character's status stat based on updated attraction
@@ -155,10 +164,10 @@ public class Charactar {
       System.out.println("IT'S OVER");
       this.setOver(true);
     }
-    else if (oldAttraction <= 25 && a > 25 && a < 65) {
+    else if (oldAttraction <= _x && a > _x && a < _y) {
       this.changeStatus();
     }
-    else if (oldAttraction <= 65 && a > 65 && a < 100) {
+    else if (oldAttraction <= _y && a > _y && a < 100) {
       this.changeStatus();
     }
     else if (a >= 100){

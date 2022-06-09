@@ -35,6 +35,7 @@ public class R12 extends TreeNode {
       type("Unfortunately, Richard is incapable of love. Friends it is!");
       type("Now that you're friends with Richard, you can ask him for advice whenever you're making a decision, and he'll do his best to guide you. Beware, he's a bit stupid and he might give you bad advice!");
       _character.setFallen(true);
+      _character.friendify();
       return _character.updateTree(0);
     }
     else {
@@ -42,6 +43,7 @@ public class R12 extends TreeNode {
       type("Unfortunately, Richard is incapable of love. Friends it is!");
       type("Now that you're friends with Richard, you can ask him for advice whenever you're making a decision, and he'll do his best to guide you. Beware, he's a bit stupid and he might give you bad advice!");
       _character.setFallen(true);
+      _character.friendify();
       return _character.updateTree(1);
     }
   }

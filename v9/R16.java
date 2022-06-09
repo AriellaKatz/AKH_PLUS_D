@@ -34,7 +34,8 @@ public class R16 extends TreeNode {
     if (input == 1) {
       type("Aww! You've made a new friend. Congrats!");
       type("Now that you're friends with Richard, you can ask him for advice whenever you're making a decision, and he'll do his best to guide you. Beware, he's a bit stupid and he might give you bad advice!");
-      _character.setOver(true);
+      _character.setFallen(true);
+      _character.friendify();
       return _character.updateTree(0);
     }
     else {

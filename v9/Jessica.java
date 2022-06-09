@@ -20,6 +20,8 @@ public class Jessica extends Charactar{
     _stage2.add(new JS2s2c1(this, player));
     _stage3.add(new JS3s1c1(this, player));
     _currentStage = _stage1;
+    _x = 25;
+    _y = 60;
   }
 
   public Jessica(int attraction, Player player) {

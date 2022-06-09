@@ -16,6 +16,8 @@ public class Richard extends Charactar{
     _descrip = "SU president";
     _name = "Richard";
     _isRichard = true;
+    _x = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
+    _y = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
   }
 
   public Richard(int attraction, Player player) {
