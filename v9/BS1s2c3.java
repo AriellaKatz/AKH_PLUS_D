@@ -20,8 +20,8 @@ public class BS1s2c3 extends TreeNode {
   }
 
   public boolean interact() {
-    type("BRAD: (Hands you your drink) So how's the party?");
-    type("\n\t1. \"Not bad.\" \n\t2. \"Sick! I'm so glad you invited me!\" \n\t3. \"Kinda boring. I think I'm gonna go home. (Leave.)\"");
+    type("BRAD: \033[3m  Hands you your drink\033[0m So how's the party?");
+    type("\n\t1. \"Not bad.\" \n\t2. \"Sick! I'm so glad you invited me!\" \n\t3. \"Kinda boring. I think I'm gonna go home. \033[3mLeave.\033[0m\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -38,7 +38,7 @@ public class BS1s2c3 extends TreeNode {
       return _character.updateTree(1);
     }
     else {
-      type("[You go home. Will you ever see him again?]");
+      type("\033[3mYou go home. Will you ever see him again?\033[0m");
       return _character.updateTree(2);
     }
   }

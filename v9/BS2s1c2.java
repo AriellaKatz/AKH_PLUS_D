@@ -30,7 +30,7 @@ public class BS2s1c2 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("Looks like you're getting what you wanted. IT'S OVER.");
+      type("\033[3m Looks like you're getting what you wanted.\033[0m \033[1m IT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(0);
     }

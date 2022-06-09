@@ -19,7 +19,7 @@ public class BS3s2c3 extends TreeNode {
 
   public boolean interact() {
     type("BRAD: Yoooo. Bro, I don't think you're mid either. I didn't realize you felt the same.");
-    type("\n\t1. \"Well I do. (Passionately kiss him)\" \n\t2. \"Jk, you clapped.\"");
+    type("\n\t1. \"Well I do. \033[3mPassionately kiss him\033[0m\" \n\t2. \"Jk, you clapped.\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -30,14 +30,14 @@ public class BS3s2c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(Brad is stunned but quickly regains his composure)");
+      type("\033[3mBrad is stunned but quickly regains his composure\033[0m");
       type("BRAD: Damn that was snazzy. Wanna do it again?");
       _character.setFallen(true);
       return _character.updateTree(0);
     }
     else {
-      type("(Brad gives you a ????? face and leaves silently.)");
-      type("Your relationship will not recover. IT'S OVER.");
+      type("\033[3mBrad gives you a ????? face and leaves silently.\033[0m");
+      type("\033[3mYour relationship will not recover.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

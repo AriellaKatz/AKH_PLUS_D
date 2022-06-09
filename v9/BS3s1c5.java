@@ -18,7 +18,7 @@ public class BS3s1c5 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(Kiss him goodnight? But ask him first.)");
+    type("\033[3mKiss him goodnight?\033[0m");
     type("\n\t1. \"Yes\" \n\t2. \"No\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
@@ -30,9 +30,9 @@ public class BS3s1c5 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(Brad is stunned but quickly regains his composure)");
+      type("\033[3mBrad is stunned but quickly regains his composure\033[0m");
       type("BRAD: Damn that was snazzy. Wanna do it again?");
-      type("Brad has fallen for you. YOU WIN!");
+      type("\033[3mBrad has fallen for you.\033[0m \033[1mYOU WIN!\033[0m");
       _character.setFallen(true);
       return _character.updateTree(0);
     }

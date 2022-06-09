@@ -30,7 +30,7 @@ public class BS3s1c4 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("[Brad's smile falls and his heart breaks from your rejection. IT'S OVER.]");
+      type("\033[3mBrad's smile falls and his heart breaks from your rejection.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(0);
     }

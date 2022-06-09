@@ -21,7 +21,7 @@ public class BS2s1c3 extends TreeNode {
 
   public boolean interact() {
     type("BRAD: Man, you don't have to wait! You can come over again. Just you.");
-    type("\n\t1. \"No thanks.\" \n\t2. (Be awkward.) \n\t3. \"I'd love to! When?\"");
+    type("\n\t1. \"No thanks.\" \n\t2. \033[3m Be awkward.\033[0m \n\t3. \"I'd love to! When?\"");
     type("Enter \"1\", \"2\", or \"3\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -36,12 +36,12 @@ public class BS2s1c3 extends TreeNode {
     }
     else if (input == 2) {
       type("BRAD: Dope! Let's do Friday.");
-      type("[You will see him on Friday!]");
+      type("\033[3m You will see him on Friday!\033[0m");
       return _character.updateTree(1);
     }
     else {
       type("BRAD: Dope! Let's do Friday.");
-      type("[You will see him on Friday!]");
+      type("\033[3m  You will see him on Friday!\033[0m");
       return _character.updateTree(2);
     }
   }

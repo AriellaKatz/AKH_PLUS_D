@@ -20,7 +20,7 @@ public class BS3s2c4 extends TreeNode {
 
   public boolean interact() {
     type("BRAD: What's Dee's?");
-    type("\n\t1. \"DEEZ NUTZ\" \n\t2. \"It’s a really good nut shop. My favorite that they sell is pecans. Growing up I would always go with my grandfather and now it’s my only memory of him that I have left. I just miss him so much sometimes. And my grandma has been so sad and quiet since he passed. I just wish we could all see him one last time. There’s so much I didn’t say to him because I thought I had time but now I realize that I have to say what I want to say as soon as I think about it because I don’t want to miss my chance like I did with him. *Starts crying* Brad, I want us to be official. I want everyone to know that you're my man and nobody can go between us. \"");
+    type("\n\t1. \"DEEZ NUTZ\" \n\t2. \"It’s a really good nut shop. My favorite that they sell is pecans. Growing up I would always go with my grandfather and now it’s my only memory of him that I have left. I just miss him so much sometimes. And my grandma has been so sad and quiet since he passed. I just wish we could all see him one last time. There’s so much I didn’t say to him because I thought I had time but now I realize that I have to say what I want to say as soon as I think about it because I don’t want to miss my chance like I did with him. \033[3mYou start crying\033[0m Brad, I want us to be official. I want everyone to know that you're my man and nobody can go between us. \"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -35,7 +35,7 @@ public class BS3s2c4 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("(Brad gives you a ????? face and leaves silently.)");
+      type("\033[3mBrad gives you a ????? face and leaves silently.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

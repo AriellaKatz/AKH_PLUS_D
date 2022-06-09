@@ -18,7 +18,7 @@ public class BS2s1c1 extends TreeNode {
   }
 
   public boolean interact() {
-    type("[It's the next day.]");
+    type("\033[3mIt's the next day.\033[0m");
     type("BRAD:'Sup, man! That party was fire, right?");
     type("\n\t1. \"I guess...\" \n\t2. \"Hell yeah! Can't wait for the next one!\"");
     type("Enter \"1\" or \"2\".");

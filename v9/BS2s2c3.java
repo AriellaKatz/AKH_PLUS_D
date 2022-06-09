@@ -33,7 +33,7 @@ public class BS2s2c3 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("Aww, you've been friendzoned. Maybe you'll have something in the future, but for now, IT'S OVER.");
+      type("\033[3mAww, you've been friendzoned. Maybe you'll have something in the future, but for now,\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

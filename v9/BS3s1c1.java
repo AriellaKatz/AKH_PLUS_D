@@ -19,7 +19,7 @@ public class BS3s1c1 extends TreeNode {
   }
 
   public boolean interact() {
-    type("[You are at Brad's house and it is 10pm.]");
+    type("\033[3mYou are at Brad's house and it is 10pm.\033[0m");
     type("\n\t1. \"Oh, it's getting late, I should go...\" \n\t2. \"Hey, can I stay over? It's pretty late.\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);

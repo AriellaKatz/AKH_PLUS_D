@@ -108,13 +108,13 @@ public class Woo {
       if (_firstTime) {
         _firstTime = false;
       }
-      
+
       //Brad
       if (_firstTime) {
         type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
       }
-      if (!_brad.isOver) while (!(_brad.getStage().get(0).interact()));
-      if (_brad.hasFallen()) { System.out.println("YOU WIN!"); gameOver = true; break; }
+      if (!_brad.isOver()) while (!(_brad.getStage().get(0).interact()));
+      if (_brad.hasFallen()) { System.out.println("YOU WIN!"); _gameOver = true; return; }
 
       //Jessica
       if (!_player.isDead()) {
@@ -123,7 +123,7 @@ public class Woo {
           type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
         }
         if (!_jessica.isOver()) while (!(_jessica.getStage().get(0).interact()));
-        if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); gameOver = true; break; }
+        if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); _gameOver = true; return; }
       }
     }
     _player.sortRank();
@@ -131,35 +131,6 @@ public class Woo {
     if (!_gameOver) play();
   }
 
-//Moved to Charactar
-/*  public int probeTree(Charactar character){
-    int option = 0;
-    int bestLike = Integer.MIN_VALUE;
-    for (int i = 0; i < character.getStage().get(0).getChildren().size(); i++) {
-      int like = probeTreeHelper(character.getStage().get(0).getChildren().get(i));
-      if (like > bestLike) {
-        bestLike = like;
-        option = i;
-      }
-    }
-    return option+1; //+1 b/c when the player sees their list of options, it starts at 1, not 0, but option is the index of the array
-  }
-
-  public int probeTreeHelper(TreeNode node) {
-    if (node.getChildren().size() == 0) {
-      return 0;
-    }
-    else {
-      int bestLike = Integer.MIN_VALUE;
-      for (int i = 0; i < node.getChildren().size(); i++) {
-        int like = node.getChildrenLikeChanges().get(i) + probeTreeHelper(node.getChildren().get(i));
-        if (like > bestLike) {
-          bestLike = like;
-        }
-      }
-      return bestLike;
-    }
-  } */
 
   //to print stuff so it looks like it's being typed out
   public static void type(String s){
@@ -221,7 +192,7 @@ public class Woo {
     ArrayList<Charactar> a = _player.getRank();
     String s = "Your love interests, in order from most to least interested in you: ";
     for (int i = 0; i < a.size(); i++) {
-      s += "\n\t" + a.getName() + ": " + a.getStatus();
+      s += "\n\t" + a.get(i).getName() + ": " + a.get(i);
     }
     s += "\n";
     type(s);

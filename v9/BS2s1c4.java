@@ -19,7 +19,7 @@ public class BS2s1c4 extends TreeNode {
 
   public boolean interact() {
     type("BRAD: Aww c'mon.");
-    type("\n\t1. \"Some other time!\" \n\t2. (Walk away.)");
+    type("\n\t1. \"Some other time!\" \n\t2. \033[3m Walk away.\033[0m");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -30,11 +30,11 @@ public class BS2s1c4 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("[We'll see about that.]");
+      type("\033[3m We'll see about that.\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("Rude. IT'S OVER.");
+      type("\033[3m Rude.\033[0m \033[1m IT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

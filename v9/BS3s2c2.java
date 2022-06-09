@@ -18,7 +18,7 @@ public class BS3s2c2 extends TreeNode {
   }
 
   public boolean interact() {
-    type("[You walk outside together and stand under a tree]");
+    type("\033[3mYou walk outside together and stand under a tree\033[0m");
     type("BRAD: So. What do you want to do now?");
     type("\n\t1. \"Let's go to Dee's.\" \n\t2. \"C'mon, I know a spot.\"");
     type("Enter \"1\" or \"2\".");

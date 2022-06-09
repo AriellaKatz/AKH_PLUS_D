@@ -33,7 +33,7 @@ public class BS1s2c2 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("Wow, Brad is HELLA offended. IT'S OVER.");
+      type("\033[3mWow, Brad is HELLA offended.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

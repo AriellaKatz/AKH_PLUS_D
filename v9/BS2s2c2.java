@@ -31,7 +31,7 @@ public class BS2s2c2 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       type("BRAD: Hell yeah! Come over to my place!");
-      type("[You will go over to his place.]");
+      type("\033[3mYou will go over to his place.\033[0m");
       return _character.updateTree(0);
     }
     else {

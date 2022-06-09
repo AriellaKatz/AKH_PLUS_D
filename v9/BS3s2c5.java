@@ -19,7 +19,7 @@ public class BS3s2c5 extends TreeNode {
 
   public boolean interact() {
     type("BRAD: Dammmm this spot is valid af. The vista is rocking. How'd you come across it?");
-    type("\n\t1. \"I found it a couple summers ago and I knew from that moment that I was going to bring someone that I care a lot about here. That person is you. (You dive in to hug him.)\" \n\t2. \"Just somewhere I used to come with my ex.\"");
+    type("\n\t1. \"I found it a couple summers ago and I knew from that moment that I was going to bring someone that I care a lot about here. That person is you. \033[3mYou dive in to hug him.\033[0m\" \n\t2. \"Just somewhere I used to come with my ex.\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();

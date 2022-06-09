@@ -30,11 +30,11 @@ public class BS2s2c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("[You have a basic, unenthusiastic convo.]");
+      type("\033[3mYou have a basic, unenthusiastic convo.\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("[You have a little chat.]");
+      type("\033[3mYou have a little chat.\033[0m");
       return _character.updateTree(1);
     }
   }

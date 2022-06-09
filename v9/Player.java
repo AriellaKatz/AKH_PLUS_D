@@ -71,6 +71,7 @@ public boolean isDead(){
 // Changes _dead
 public boolean die() {
   _dead = true;
+  return _dead;
 }
 
 //sorts the characters based on how much they like the protagonist (likeabliity)
