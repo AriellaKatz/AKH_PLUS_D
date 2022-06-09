@@ -15,7 +15,7 @@ public class Scanny {
       type("Enter \"yes\" or \"no\".");
       Scanner i = new Scanner(System.in);
       String resp = i.nextLine();
-      if (i.trim().toLowerCase().equals("yes")) {
+      if (resp.trim().toLowerCase().equals("yes")) {
         int advice = character.probeTree();
         type("Richard says you should choose option " + advice + ".\n");
       }
