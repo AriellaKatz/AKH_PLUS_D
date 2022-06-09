@@ -105,6 +105,7 @@ public class Woo {
         type("\n\033[3mYou accidentally bump into someone. He looks annoying. It's Richard, the student president. \033[0m\n");
       }
       if (!_richard.isOver() && !_richard.hasFallen()) while (!(_richard.getStage().get(0).interact()));
+      System.out.println("\033[H\033[2J");
       if (_firstTime) {
         _firstTime = false;
       }
@@ -115,6 +116,7 @@ public class Woo {
       }
       if (!_brad.isOver()) while (!(_brad.getStage().get(0).interact()));
       if (_brad.hasFallen()) { System.out.println("YOU WIN!"); _gameOver = true; return; }
+      System.out.println("\033[H\033[2J");
 
       //Jessica
       if (!_player.isDead()) {
@@ -124,6 +126,7 @@ public class Woo {
         }
         if (!_jessica.isOver()) while (!(_jessica.getStage().get(0).interact()));
         if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); _gameOver = true; return; }
+        System.out.println("\033[H\033[2J");
       }
     }
     _player.sortRank();
@@ -192,7 +195,7 @@ public class Woo {
     ArrayList<Charactar> a = _player.getRank();
     String s = "Your love interests, in order from most to least interested in you: ";
     for (int i = 0; i < a.size(); i++) {
-      s += "\n\t" + a.get(i).getName() + ": " + a.get(i);
+      s += "\n\t" + a.get(i).getName() + ": " + a.get(i).getAttraction();
     }
     s += "\n";
     type(s);
@@ -201,6 +204,7 @@ public class Woo {
   public static void main(String[] args) {
     Woo game = new Woo();
     game.introduction();
+    System.out.println("\033[H\033[2J");
     game.play();
   }
 

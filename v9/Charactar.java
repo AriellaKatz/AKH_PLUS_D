@@ -196,9 +196,11 @@ public class Charactar {
       ArrayList<TreeNode> oldStage = _currentStage;
       //update the attraction based on the change you've ammassed throughout the
       // tree
+      /*
       System.out.println("attraction  before: " + _attraction);
       changeAttraction(_pendingLikeChange);
       System.out.println("attraction  after: " + _attraction);
+      */
       //now reset the pending likeChange for the next tree
       _pendingLikeChange = 0;
       //now delete the tree you've just finished so that the next tree is now at
@@ -207,7 +209,7 @@ public class Charactar {
       //if you've gotten through the entire stage without progressing, it's over
       if (_currentStage.size() == 0 && oldStage.equals(_currentStage)) {
         _over = true;
-        System.out.println("This relationship is hopeless. You're taking too long. IT'S OVER.");
+        if (!_isRichard) System.out.println("This relationship is hopeless. You're taking too long. IT'S OVER.");
       }
       //return true so that Woo knows the tree has been finished
       return true;

@@ -35,7 +35,7 @@ public class BS1s1c4 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("\033[3mYou go to the party.\033[0m");
+      type("\033[3mYou will go to the party.\033[0m");
       return _character.updateTree(1);
     }
   }

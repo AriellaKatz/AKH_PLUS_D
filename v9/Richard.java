@@ -13,7 +13,7 @@ public class Richard extends Charactar{
     super(player);
     _attraction = 0;
     _stage1.add(new R01(this, player));
-    _descrip = "SU president";
+    _descrip = "Student president";
     _name = "Richard";
     _isRichard = true;
     _x = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
