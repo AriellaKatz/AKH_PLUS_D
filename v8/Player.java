@@ -15,9 +15,9 @@ private boolean _hasFriend;
 
 public Player() {
   _rank = new ArrayList<Charactar>();
-  _rank.add(new Brad());
-  _rank.add(new Jessica());
-  _rank.add(new Richard());
+  _rank.add(new Brad(this));
+  _rank.add(new Jessica(this));
+  _rank.add(new Richard(this));
   _order = new ArrayList<Charactar>();
   _order.add(_rank.get(0));
   _order.add(_rank.get(1));
