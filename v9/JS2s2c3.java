@@ -20,7 +20,7 @@ public class JS2s2c3 extends TreeNode {
   public boolean interact() {
     type("(The cheerleaders stifle their laughter and smile in your direction. Jessica rolls her eyes at them.)");
     type("JESSICA: They just think you're kind of cute. So do I.");
-    type("\n\t1. \"(Smile and laugh)\" \n\t2. \"(Stare at them blankly. You are confused.)\"");
+    type("\n\t1. \"\033[3mSmile and laugh\033[0m\" \n\t2. \"\033[3mStare at them blankly. You are confused.\033[0m\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -31,12 +31,12 @@ public class JS2s2c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(They laugh as they make space for you to sit with them. You take a seat.)");
+      type("\033[3mThey laugh as they make space for you to sit with them. You take a seat.\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("(The cheerleaders look at each other. You sit down but no one speaks.)");
-      type("(It's really awkward. You finish your food and wish you'd stayed away from their table.)");
+      type("\033[3mThe cheerleaders look at each other. You sit down but no one speaks.\033[0m");
+      type("\033[3mIt's really awkward. You finish your food and wish you'd stayed away from their table.\033[0m");
       return _character.updateTree(1);
     }
   }

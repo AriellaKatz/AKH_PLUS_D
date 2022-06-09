@@ -18,7 +18,7 @@ public class R13 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(A hand violently grabs your ankle.)");
+    type("\033[3mA hand violently grabs your ankle.\033[0m");
     type("\n\t1. \"Jesus Christ!\" \n\t2. \"Bruh.\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);

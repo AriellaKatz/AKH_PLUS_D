@@ -30,11 +30,11 @@ public class R10 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(You go in.)");
+      type("\033[3mYou go in.\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("RICHARD: Too bad (shoves you into the stall).");
+      type("RICHARD: Too bad \033[3mshoves you into the stall\033[0m.");
       return _character.updateTree(1);
     }
   }

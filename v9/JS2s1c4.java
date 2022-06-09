@@ -31,12 +31,12 @@ public class JS2s1c4 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       type("JESSICA: Just kidding, haha. I'll pay for myself.");
-      type("(Jessica pays for herself. The bakery is yummy.)");
+      type("\033[3mJessica pays for herself. The bakery is yummy.\033[0m");
       return _character.updateTree(0);
     }
     else {
       type("JESSICA: Just kidding, haha. I'll pay for myself.");
-      type("(Jessica pays for herself. The bakery is yummy.)");
+      type("\033[3mJessica pays for herself. The bakery is yummy.\033[0m");
       return _character.updateTree(1);
     }
   }

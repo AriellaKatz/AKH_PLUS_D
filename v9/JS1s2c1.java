@@ -32,7 +32,7 @@ public class JS1s2c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(You skip the football game.)");
+      type("\033[3m You skip the football game.\033[0m");
       return _character.updateTree(0);
     }
     else if (input == 2) {

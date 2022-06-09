@@ -19,8 +19,8 @@ public class R08 extends TreeNode {
   }
 
   public boolean interact() {
-    type("[You are in the bathroom. It is pitch black.]");
-    type("RICHARD: (Standing motionless) Oh, there you are.");
+    type("\033[3mYou are in the bathroom. It is pitch black.\033[0m");
+    type("RICHARD: \033[3mStanding motionless\033[0m Oh, there you are.");
     type("\n\t1. \"Are you okay...\" \n\t2. \"So, uh, what now?\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);

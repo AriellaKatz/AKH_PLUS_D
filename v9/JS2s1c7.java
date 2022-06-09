@@ -30,11 +30,11 @@ public class JS2s1c7 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(Jessica raises her eyebrows in amusement.)");
+      type("\033[3mJessica raises her eyebrows in amusement.\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("(The bell rings and you scurry away to class.)");
+      type("\033[3mThe bell rings and you scurry away to class.\033[0m");
       return _character.updateTree(1);
     }
   }

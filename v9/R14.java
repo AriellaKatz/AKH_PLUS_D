@@ -19,7 +19,7 @@ public class R14 extends TreeNode {
 
   public boolean interact() {
     type("RICHARD: Too bad.");
-    type("(Richard's a jerk, but you go through with it anyway.)");
+    type("\033[3mRichard's a jerk, but you go through with it anyway.\033[0m");
     type("RICHARD: You good?");
     type("\n\t1. \"Yup.\" \n\t2. \"No, LET ME OUT.\"");
     type("Enter \"1\" or \"2\".");
@@ -35,7 +35,7 @@ public class R14 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("(Richard is disgusted by your cowardice. IT'S OVER.)");
+      type("\033[3mRichard is disgusted by your cowardice.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

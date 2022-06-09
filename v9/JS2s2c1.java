@@ -17,7 +17,7 @@ public class JS2s2c1 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(A group of pretty girls approach you, giggling.)");
+    type("\033[3mA group of pretty girls approach you, giggling.\033[0m");
     type("GIRLS: Yo! Jessica wants you to sit at our table. Wanna come?");
     type("\n\t1. \"Yea, sure.\" \n\t2. \"Oh I'm good. I'll eat somewhere else.\"");
     type("Enter \"1\" or \"2\".");
@@ -30,11 +30,11 @@ public class JS2s2c1 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(The girls sweep you away.)");
+      type("\033[3mThe girls sweep you away.\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("(You turn around and walk away before you can see their reactions.)");
+      type("\033[3mYou turn around and walk away before you can see their reactions.\033[0m");
       return _character.updateTree(1);
     }
   }

@@ -34,7 +34,7 @@ public class JS1s2c3 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("(Jessica blushes slightly)");
+      type("\033[3mJessica blushes slightly\033[0m ");
       return _character.updateTree(1);
     }
   }

@@ -35,7 +35,7 @@ public class R02 extends TreeNode {
     }
     else {
       type("RICHARD: Jerk.");
-      type("Wow, that was fast. IT'S OVER.");
+      type("\033[3mWow, that was fast.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

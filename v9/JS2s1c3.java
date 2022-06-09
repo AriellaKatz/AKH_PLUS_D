@@ -42,12 +42,12 @@ public class JS2s1c3 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("(Jessica pouts but tries to hide it.)");
-      type("(You part ways... to meet again?)");
+      type("\033[3mJessica pouts but tries to hide it.\033[0m");
+      type("\033[3mYou part ways... to meet again?\033[0m");
       return _character.updateTree(0);
     }
     else {
-      type("(You part ways... to meet again?)");
+      type("\033[3mYou part ways... to meet again?\033[0m");
       return _character.updateTree(1);
     }
   }

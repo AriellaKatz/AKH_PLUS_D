@@ -19,7 +19,7 @@ public class JS2s1c1 extends TreeNode {
 
   public boolean interact() {
     type("(You see Jessica.)");
-    type("\n\t1. (Go up to her): \"Jessica! What's up?\" \n\t2. (Ignore her.)");
+    type("\n\t1. (Go up to her): \"Jessica! What's up?\" \n\t2. \033[3mIgnore her.\033[0m ");
     type("Enter \"1\" or \"2\"");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();

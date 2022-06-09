@@ -48,7 +48,7 @@ public class JS2s1c5 extends TreeNode {
     }
     else {
       type("JESSICA: Oh. Ummm. Sorry? I'll go.");
-      type("Why so salty? Jessica hates you too. IT'S OVER.");
+      type("\033[3mWhy so salty? Jessica hates you too.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

@@ -33,7 +33,7 @@ public class JS3s1c2 extends TreeNode {
     }
     else {
       type("JESSICA: Aw you're so cute.");
-      type("Sorry, you've been friendzoned. IT'S OVER.");
+      type("\033[3mSorry, you've been friendzoned.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

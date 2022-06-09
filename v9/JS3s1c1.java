@@ -37,7 +37,7 @@ public class JS3s1c1 extends TreeNode {
       return _character.updateTree(1);
     }
     else {
-      type("That's one way to end a relationship. IT'S OVER.");
+      type("\033[3mThat's one way to end a relationship.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(2);
     }

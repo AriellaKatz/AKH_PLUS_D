@@ -33,7 +33,7 @@ public class JS2s1c6 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       type("JESSICA: Oh I see how it is. I was going to ask you to link again if you wanted to, but I guess not.");
-      type("You certainly have a way with words. You may not hate Jessica but she hates you. IT'S OVER.");
+      type("\033[3mYou certainly have a way with words. You may not hate Jessica but she hates you.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(0);
     }

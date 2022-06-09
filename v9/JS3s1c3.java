@@ -19,7 +19,7 @@ public class JS3s1c3 extends TreeNode {
 
   public boolean interact() {
     type("JESSICA: Wow, so generous! These things are expensive, y'know.");
-    type("\n\t1. \"You're worth it.\" \n\t2. (Roll your eyes.) \"You're right, give it back then.\"");
+    type("\n\t1. \"You're worth it.\" \n\t2. \033[3mRoll your eyes.\033[0m \"You're right, give it back then.\"");
     type("Enter \"1\" or \"2\"");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
@@ -33,7 +33,7 @@ public class JS3s1c3 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("You two are cute friends. Maybe you'll have something together in the future, but for the rest of this game, friends you'll remain.");
+      type("\033[3mYou two are cute friends. Maybe you'll have something together in the future, but for the rest of this game, friends you'll remain.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

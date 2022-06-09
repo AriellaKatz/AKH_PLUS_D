@@ -31,12 +31,12 @@ public class JS1s1c2 extends TreeNode {
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
       //option 1 terminates the relationship
-      type("Wow, you sure know how to shut a relationship down. IT'S OVER.");
+      type("\033[3mWow, you sure know how to shut a relationship down.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(0);
     }
     else {
-      type("(She shows you around and you have a lovely little bonding experience.)");
+      type("\033[3mShe shows you around and you have a lovely little bonding experience.\033[1m");
       return _character.updateTree(1);
     }
   }
