@@ -18,7 +18,6 @@ public class Woo {
   private Brad _brad;
   private boolean _gameOver;
   private boolean _firstTime;
-  public static Woo game;
 
   private static HashMap<String, Integer> vibes = new HashMap<String, Integer>();
 
@@ -75,8 +74,8 @@ public class Woo {
     _player.setName(in.nextLine());
     s = "\nHello " + _player.getName() + ", tell us some adjectives you would use to describe yourself.";
     type(s);
-    Scanny in = new Scanny();
-    String resp = removePunctuation(in.toString());
+    in = new Scanner(System.in);
+    String resp = removePunctuation(in.nextLine());
     String[] intro = resp.trim().toLowerCase().split(" ");
     s = "\nGreat... let's get started!";
     type(s);
@@ -87,9 +86,9 @@ public class Woo {
       } catch (Exception e) { }
     }
 
-    _jessica = new Jessica(startingAttraction);
-    _richard = new Richard(startingAttraction);
-    _brad = new Brad(startingAttraction);
+    _jessica = new Jessica(startingAttraction, _player);
+    _richard = new Richard(startingAttraction, _player);
+    _brad = new Brad(startingAttraction, _player);
 
   }
   public void play(){
@@ -198,7 +197,7 @@ public class Woo {
   }
 
   public static void main(String[] args) {
-    game = new Woo();
+    Woo game = new Woo();
     game.introduction();
     game.play();
   }
