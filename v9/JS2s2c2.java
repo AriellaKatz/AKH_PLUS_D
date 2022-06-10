@@ -19,7 +19,7 @@ public class JS2s2c2 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(You arrive at the table.)");
+    type("\033[3mYou arrive at the table.\033[0m");
     type("JESSICA: Hiiii. These are my teammates aka my besties. The tall one is Charlotte. The peppy one over there is Keria...");
     type("\033[3mThe girls introduce themselves.\033[0m");
     type("\n\t1. \"Hey. It's nice to meet you guys.\"");
@@ -31,7 +31,7 @@ public class JS2s2c2 extends TreeNode {
       Scanner i2 = new Scanner(System.in);
       choice = i2.nextLine().trim();
     }
-    type("\033[3mThe cheerleaders whisper amongst themselves.\033[0m\033[3m");
+    type("\033[3mThe cheerleaders whisper amongst themselves.\033[0m");
 
     type("\n\t1. \033[3mIgnore it.\033[0m \n\t2. \"Heard my name. You guys talking about me?\"");
     type("Enter \"1\" or \"2\".");

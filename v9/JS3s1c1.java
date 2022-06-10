@@ -19,7 +19,7 @@ public class JS3s1c1 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(You and Jessica are walking together.)");
+    type("\033[3mYou and Jessica are walking together.\033[0m");
     type("\n\t1. Ask her on a date. \n\t2. Give her your ice cream cone. \n\t3. Why are you walking with her? Walk away and never speak to her again.");
     type("Enter \"1\", \"2\", or \"3\".");
     Scanny in = new Scanny(_character, _player);

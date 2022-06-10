@@ -12,7 +12,7 @@ public class BS3s2c4 extends TreeNode {
   public BS3s2c4(Charactar character, Player player) {
     super(character, player);
     _children.add(null);
-    _children.add(new BS3s1c6(character, player));
+    _children.add(new BS3s2c6(character, player));
     _childrenLikeChanges.add(-57);
     _childrenLikeChanges.add(5);
     _character = character;
@@ -35,8 +35,6 @@ public class BS3s2c4 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("\033[3mBrad gives you a ????? face and leaves silently.\033[0m");
-      _character.setOver(true);
       return _character.updateTree(1);
     }
   }

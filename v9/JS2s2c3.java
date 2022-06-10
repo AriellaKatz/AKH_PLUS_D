@@ -18,9 +18,9 @@ public class JS2s2c3 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(The cheerleaders stifle their laughter and smile in your direction. Jessica rolls her eyes at them.)");
+    type("\033[3mThe cheerleaders stifle their laughter and smile in your direction. Jessica rolls her eyes at them.\033[0m");
     type("JESSICA: They just think you're kind of cute. So do I.");
-    type("\n\t1. \"\033[3mSmile and laugh\033[0m\" \n\t2. \"\033[3mStare at them blankly. You are confused.\033[0m\"");
+    type("\n\t1. \033[3mSmile and laugh\033[0m \n\t2. \033[3mStare at them blankly. You are confused.\033[0m");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
