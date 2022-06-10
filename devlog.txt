@@ -222,16 +222,8 @@ ALL :: Lots an' lots of fixing stuff
 v9
 Ariella :: Added ask a friend functionality, dealt with Richard's problems
 because he's "special", worked on play(), updated UMLs, updated devlog
-Kaitlin :: Balanced Brad's likeability points, drew Brad,
+Kaitlin :: Balanced Brad's likeability points, drew Brad
 Hugo :: Added ask a friend functionality, dealt with Richard's problems because 
-he's "special", worked on play(), more visuals (ANSI stuff),
+he's "special", worked on play(), more visuals (ANSI stuff)
 ALL :: Lots an' lots of fixing stuff, many run-throughs
-==============================================================
-
-yyyy-mm-dd
---------------------------------------------------------------
-Ariella :: <Thing member did.>
-Kaitlin :: <Thing member did.>
-Hugo :: <Thing member did.>
-ALL :: <Thing everyone did.>
 ==============================================================
