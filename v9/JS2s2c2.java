@@ -33,7 +33,7 @@ public class JS2s2c2 extends TreeNode {
     }
     type("\033[3mThe cheerleaders whisper amongst themselves.\033[0m\033[3m");
 
-    type("\n\t1. \"\033[3mIgnore it.\033[0m \" \n\t2. \"Heard my name. You guys talking about me?\"");
+    type("\n\t1. \033[3mIgnore it.\033[0m \n\t2. \"Heard my name. You guys talking about me?\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     choice = in.toString().trim();

@@ -14,7 +14,7 @@ public class BS3s2c3 extends TreeNode {
     _children.add(null);
     _children.add(null);
     _childrenLikeChanges.add(13);
-    _childrenLikeChanges.add(25);
+    _childrenLikeChanges.add(-25);
   }
 
   public boolean interact() {

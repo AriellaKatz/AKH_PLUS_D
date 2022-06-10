@@ -22,7 +22,7 @@ public class BS1s2c3 extends TreeNode {
   public boolean interact() {
     type("BRAD: \033[3m  Hands you your drink\033[0m So how's the party?");
     type("\n\t1. \"Not bad.\" \n\t2. \"Sick! I'm so glad you invited me!\" \n\t3. \"Kinda boring. I think I'm gonna go home. \033[3mLeave.\033[0m\"");
-    type("Enter \"1\" or \"2\".");
+    type("Enter \"1\", \"2\", or \"3\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {

@@ -19,6 +19,9 @@ public class Scanny {
         int advice = character.probeTree();
         type("Richard says you should choose option " + advice + ".\n");
       }
+      else {
+        type("Suit yourself. Enter your decision.");
+      }
     }
     Scanner in = new Scanner(System.in);
     _response = in.nextLine();

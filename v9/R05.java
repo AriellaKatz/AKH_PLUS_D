@@ -20,7 +20,7 @@ public class R05 extends TreeNode {
 
   public boolean interact() {
     type("\033[3mYou are at the party.\033[0m");
-    type("RICHARD: Oh! Hey you actually came. Now that I think of it, I never asked for your name. I'll call you dumbass. Dumbass, did you hear about the haunted bathroom on the 9th floor?");
+    type("RICHARD: Oh! Hey you actually came. Now that I think of it, I never asked for your name. Whatever. Did you hear about the haunted bathroom on the 9th floor?");
     type("\n\t1. \"Yeah!\" \n\t2. \"No...\"");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);

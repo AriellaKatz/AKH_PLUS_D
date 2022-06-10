@@ -140,9 +140,9 @@ public class Woo {
         if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); _gameOver = true; return; }
         System.out.println("\033[H\033[2J");
       }
+      _player.sortRank();
+      printRank();
     }
-    _player.sortRank();
-    printRank();
     if (!_gameOver) play();
   }
 
@@ -207,7 +207,7 @@ public class Woo {
     ArrayList<Charactar> a = _player.getRank();
     String s = "Your love interests, in order from most to least interested in you: ";
     for (int i = 0; i < a.size(); i++) {
-      s += "\n\t" + a.get(i).getName() + ": " + a.get(i).getAttraction();
+      s += "\n\t" + a.get(i).getName() + ": " + a.get(i).getStatus();
     }
     s += "\n";
     type(s);

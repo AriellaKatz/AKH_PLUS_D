@@ -156,6 +156,7 @@ public class Charactar {
     _status.pop();
     _status.pop();
     _status.push("FRIENDS");
+    _player.giveFriend();
   }
 
   // Updates corresponding character's status stat based on updated attraction
@@ -175,7 +176,7 @@ public class Charactar {
     }
     else if (a >= 100){
       this.changeStatus();
-      System.out.println(this._name + "has fallen for you!");
+      System.out.println(this._name + " has fallen for you!");
       this.setFallen(true);
     }
     return this.getStatus();
@@ -210,9 +211,10 @@ public class Charactar {
       // index 0
       _currentStage.remove(0);
       //if you've gotten through the entire stage without progressing, it's over
-      if (_currentStage.size() == 0 && oldStage.equals(_currentStage)) {
+      if (_currentStage.size() == 0 && oldStage.equals(_currentStage) && !this.hasFallen()) {
         _over = true;
-        if (!_isRichard) System.out.println("\033[3mThis relationship is hopeless. You're taking too long.\033[0m \033[1mIT'S OVER.\033[0m");
+        //if (!_isRichard)
+        System.out.println("\033[3mThis relationship is hopeless. You're taking too long.\033[0m \033[1mIT'S OVER.\033[0m");
       }
       //return true so that Woo knows the tree has been finished
       return true;
@@ -233,10 +235,12 @@ public class Charactar {
     int option = 0;
     int bestLike = Integer.MIN_VALUE;
     for (int i = 0; i < _currentStage.get(0).getChildren().size(); i++) {
-      int like = probeTreeHelper(_currentStage.get(0).getChildren().get(i));
-      if (like > bestLike) {
-        bestLike = like;
-        option = i;
+      if (_currentStage.get(0).getChildren().get(i) != null) {
+        int like = probeTreeHelper(_currentStage.get(0).getChildren().get(i));
+        if (like > bestLike) {
+          bestLike = like;
+          option = i;
+        }
       }
     }
     double chance = Math.random();
@@ -257,8 +261,14 @@ public class Charactar {
     }
     else {
       int bestLike = Integer.MIN_VALUE;
+      int like = 0;
       for (int i = 0; i < node.getChildren().size(); i++) {
-        int like = node.getChildrenLikeChanges().get(i) + probeTreeHelper(node.getChildren().get(i));
+        if (node.getChildren().get(i) == null) {
+          like = node.getChildrenLikeChanges().get(i);
+        }
+        else {
+          like = node.getChildrenLikeChanges().get(i) + probeTreeHelper(node.getChildren().get(i));
+        }
         if (like > bestLike) {
           bestLike = like;
         }

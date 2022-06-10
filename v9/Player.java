@@ -59,6 +59,10 @@ public class Player{
     return _hasFriend;
   }
 
+  public void giveFriend() {
+    _hasFriend = true;
+  }
+
   // Accessor for _dead
   public boolean isDead(){
     return _dead;
