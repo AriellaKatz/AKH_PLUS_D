@@ -133,11 +133,13 @@ public class Woo {
 
       //Jessica
       if (!_player.isDead()) {
-        new ImageOpen("jessica_portrait.png");
         if (_firstTime) {
           type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
         }
-        if (!_jessica.isOver()) while (!(_jessica.getStage().get(0).interact()));
+        if (!_jessica.isOver()) {
+          new ImageOpen("jessica_portrait.png");
+          while (!(_jessica.getStage().get(0).interact()));
+        }
         if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); _gameOver = true; return; }
         System.out.println("\033[H\033[2J");
       }

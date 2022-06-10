@@ -18,7 +18,7 @@ public class BS1s2c1 extends TreeNode {
   }
 
   public boolean interact() {
-    type("[You are at the party.]");
+    type("\033[3mYou are at the party.\033[0m");
     type("BRAD: Yoooo I remember you! You're that new kid! We've got soda, White Claws... Lemme get you a drink.");
     type("\n\t1. \"No, I don't drink.\" \n\t2. \"Awesome, thanks!\"");
     type("Enter \"1\" or \"2\".");

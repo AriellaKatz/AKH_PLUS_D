@@ -30,7 +30,7 @@ public class BS3s2c5 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("Y'all fall of the cliff and die. Maybe your relationship will continue in the afterlife.");
+      type("\033[3mY'all fall of the cliff and die. Maybe your relationship will continue in the afterlife.\033[0m");
       _player.die();
       new ImageOpen("cliff.jpg");
       _character.setOver(true);

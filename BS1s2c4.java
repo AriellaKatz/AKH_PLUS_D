@@ -34,7 +34,7 @@ public class BS1s2c4 extends TreeNode {
       return _character.updateTree(0);
     }
     else {
-      type("Slay! Maybe this is actually going somewhere!");
+      type("\033[3mSlay! Maybe this is actually going somewhere!\033[0m");
       return  _character.updateTree(1);
     }
   }

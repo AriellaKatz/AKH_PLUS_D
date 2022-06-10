@@ -18,7 +18,7 @@ public class BS2s2c2 extends TreeNode {
   }
 
   public boolean interact() {
-    type("(Ask Brad on a date?)");
+    type("\033[3mAsk Brad on a date?\033[0m");
     type("\n\t1. Yes \n\t2. No");
     type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
