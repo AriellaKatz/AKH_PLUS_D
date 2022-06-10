@@ -58,7 +58,7 @@ public class Woo {
   public void introduction() {
     // Welcome Message
     System.out.println("Welcome to: ");
-    new ImageOpen("logo2.jpg");
+    new ImageOpen("../logo2.jpg");
 
     // Introductions
     String s = "Meet Jessica: ";
@@ -126,13 +126,14 @@ public class Woo {
       if (_firstTime) {
         type("\n\033[3mA boy comes up to you, he's a total stud. You definitely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
       }
+      new ImageOpen("../brad_portrait.png");
       if (!_brad.isOver()) while (!(_brad.getStage().get(0).interact()));
       if (_brad.hasFallen()) { System.out.println("YOU WIN!"); _gameOver = true; return; }
       System.out.println("\033[H\033[2J");
 
       //Jessica
       if (!_player.isDead()) {
-        new ImageOpen("jessica_portrait.png");
+        new ImageOpen("../jessica_portrait.png");
         if (_firstTime) {
           type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
         }

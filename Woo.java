@@ -126,6 +126,7 @@ public class Woo {
       if (_firstTime) {
         type("\n\033[3mA boy comes up to you, he's a total stud. You definitely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
       }
+      new ImageOpen("brad_portrait.png");
       if (!_brad.isOver()) while (!(_brad.getStage().get(0).interact()));
       if (_brad.hasFallen()) { System.out.println("YOU WIN!"); _gameOver = true; return; }
       System.out.println("\033[H\033[2J");
