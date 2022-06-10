@@ -24,5 +24,7 @@ change in the character's attraction to the player.
    $ javac Woo.java
    $ java Woo
    ```
-* Nota bene: Any commits attributed to "H. Jeffrey Katz" are from Ariella on her  
+* Nota bene unus: Images are only available at the root level because they take up  
+too much space.
+* Nota bene duo: Any commits attributed to "H. Jeffrey Katz" are from Ariella on her  
 dad's computer.
