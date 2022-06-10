@@ -32,6 +32,7 @@ public class BS3s2c5 extends TreeNode {
     if (input == 1) {
       type("Y'all fall of the cliff and die. Maybe your relationship will continue in the afterlife.");
       _player.die();
+      new ImageOpen("cliff.jpg");
       _character.setOver(true);
       return _character.updateTree(0);
     }

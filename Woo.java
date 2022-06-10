@@ -141,6 +141,9 @@ public class Woo {
         if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); _gameOver = true; return; }
         System.out.println("\033[H\033[2J");
       }
+      else {
+        return;
+      }
       _player.sortRank();
       printRank();
     }
