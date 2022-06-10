@@ -217,13 +217,14 @@ Hugo :: Visuals
 ALL :: Lots an' lots of fixing stuff
 ==============================================================
 
-2022-06-08, 2022-06-08
+2022-06-08, 2022-06-09
 --------------------------------------------------------------
 v9
+time in call: 7 hours
 Ariella :: Added ask a friend functionality, dealt with Richard's problems
 because he's "special", worked on play(), updated UMLs, updated devlog
 Kaitlin :: Balanced Brad's likeability points, drew Brad
-Hugo :: Added ask a friend functionality, dealt with Richard's problems because 
+Hugo :: Added ask a friend functionality, dealt with Richard's problems because
 he's "special", worked on play(), more visuals (ANSI stuff)
 ALL :: Lots an' lots of fixing stuff, many run-throughs
 ==============================================================
