@@ -61,14 +61,21 @@ public class Woo {
     new ImageOpen("logo2.jpg");
 
     // Introductions
-    for (int i = 0; i < 3; i++) {
-      String s = "Meet " + _player.getRank().get(i).getName() + ": " + _player.getRank().get(i).getDescrip();
-      type(s);
-      delay(1000);
-    }
+    String s = "Meet Jessica: ";
+    s += "flirty and fickle";
+    type(s);
+    delay(1000);
+    s = "Meet Brad: ";
+    s += "lax frat bro";
+    type(s);
+    delay(1000);
+    s = "Meet Richard: ";
+    s += "student president";
+    type(s);
+    delay(1000);
 
     int startingAttraction = 0;
-    String s = "What is your name good fellow?";
+    s = "What is your name good fellow?";
     type(s);
     Scanner in = new Scanner(System.in);
     _player.setName(in.nextLine());
