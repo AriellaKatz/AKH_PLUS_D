@@ -8,89 +8,70 @@ FP -- Are You a Player?
 import java.util.ArrayList;
 public class Player{
 
-private ArrayList<Charactar> _rank;
-private final ArrayList<Charactar> _order;
-private String _name;
+  private ArrayList<Charactar> _rank;
+  private String _name;
+  private boolean _hasFriend;
+  private boolean _dead;
 
-public Player() {
-  _rank = new ArrayList<Charactar>();
-  _rank.add(new Brad());
-  _rank.add(new Jessica());
-  _rank.add(new Richard());
-  _order = new ArrayList<Charactar>();
-  _order.add(_rank.get(0));
-  _order.add(_rank.get(1));
-  _order.add(_rank.get(2));
-  _name = "notYet";
-}
-
-//QSort Things (sorts in descending order)
-public void sortRank() {
-  qSort(0, _rank.size()-1);
-}
-private void qSort(int loPos, int hiPos) {
-  if (loPos == hiPos) { return; }
-  else {
-    int s = partition(loPos, hiPos);
-    qSort(s, hiPos);
-    if (s != 0) {
-      qSort(loPos, s-1);
-    }
+  public Player() {
+    _rank = new ArrayList<Charactar>();
+    _name = "notYet";
+    _hasFriend = false;
   }
-}
-private int partition(int loPos, int hiPos) {
-  int v = _rank.get(hiPos).getAttraction();
-  int s = loPos;
-  for (int i = loPos; i < hiPos; i++) {
-    if (_rank.get(i).getAttraction() >= v) {
-      swap(i, s);
-      s++;
-    }
-  }
-  swap(s, hiPos);
-  return s;
-}
-private void swap(int x, int y) {
-  Charactar tmp = _rank.get(x);
-  _rank.set(x, _rank.get(y));
-  _rank.set(y, tmp);
-}
 
-/*public void sortRank() {
- ArrayList<Charactar> temp = new ArrayList<Charactar>();
- int k = 0;
- while (_rank.size() > 0) {
-   for (int i = 0; i < _rank.size(); i++) {
+  public void sortRank() {
+   ArrayList<Charactar> temp = new ArrayList<Charactar>();
+   int k = 0;
+   while (_rank.size() > 0) {
      k = 0;
-     if (_rank.get(i).getAttraction() > _rank.get(k).getAttraction()) {
-       k = i;
+     for (int i = 0; i < _rank.size(); i++) {
+       if (_rank.get(i).getAttraction() > _rank.get(k).getAttraction()) {
+         k = i;
+       }
      }
+     temp.add(_rank.get(k));
+     _rank.remove(k);
    }
-   temp.add(_rank.get(k));
-   _rank.remove(k);
- }
- _rank = temp;
-}*/
+   _rank = temp;
+  }
 
-public ArrayList<Charactar> getRank() {
-  return _rank;
-}
+  public ArrayList<Charactar> getRank() {
+    return _rank;
+  }
 
-// Accessor for _name
-public String getName() {
-  return _name;
-}
+  public void addToRank(Charactar character) {
+    _rank.add(character);
+  }
 
-// Changes _name
-public String setName(String name) {
-  String old = _name;
-  _name = name;
-  return old;
-}
+  // Accessor for _name
+  public String getName() {
+    return _name;
+  }
 
-//sorts the characters based on how much they like the protagonist (likeabliity)
-// public void sortRank(){
-//
-// }
+  // Changes _name
+  public String setName(String name) {
+    String old = _name;
+    _name = name;
+    return old;
+  }
+
+  public boolean hasFriend() {
+    return _hasFriend;
+  }
+
+  public void giveFriend() {
+    _hasFriend = true;
+  }
+
+  // Accessor for _dead
+  public boolean isDead(){
+    return _dead;
+  }
+
+  // Changes _dead
+  public boolean die() {
+    _dead = true;
+    return _dead;
+  }
 
 }

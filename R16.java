@@ -7,20 +7,22 @@ FP -- Are You a Player?
 
 import java.util.ArrayList;
 
-public class JS3s1c5 extends TreeNode {
+public class R16 extends TreeNode {
 
-  public JS3s1c5(Charactar character, Player player) {
+  public R16(Charactar character, Player player) {
     super(character, player);
     _children.add(null);
     _children.add(null);
-    _childrenLikeChanges.add(15);
+    _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
   }
 
   public boolean interact() {
-    type("(Jessica raises her eyebrows, blushes.)");
-    type("\n\t1. \033[3mKISS HER (with consent of course)\033[0m \n\t2. \033[3mBe a coward, pretend like nothing's happening.\033[0m");
-    type("Enter \"1\" or \"2\"");
+    type("RICHARD: Sorry, I just really wanted to have fun.");
+    type("\033[3mRichard chuckles while you leave the stall.\033[0m");
+    type("RICHARD: Can we still be friends?");
+    type("\n\t1. \"Of course bestie.\" \n\t2. \"Absolutely not, you nutcase.\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
@@ -30,12 +32,15 @@ public class JS3s1c5 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("\033[3mJessica's fallen for you!\033[0m \033[1mYOU WIN!\033[0m");
+      type("\033[3mAww! You've made a\033[0m \033[1mnew friend\033[0m.\033[3m Congrats!\033[0m\n");
+      type("\033[0mNow that you're friends with Richard, you can ask him for advice whenever you're making a decision, and he'll do his best to guide you. Beware, he's a bit stupid and he might give you bad advice!\033[0m");
       _character.setFallen(true);
+      _character.friendify();
       return _character.updateTree(0);
     }
     else {
-      type("\033[3mYou two are cute friends. Maybe you'll have something together in the future, but for the rest of this game, friends you'll remain.\033[0m");
+      type("(Richard cries.)");
+      type("Obviously, IT'S OVER.");
       _character.setOver(true);
       return _character.updateTree(1);
     }

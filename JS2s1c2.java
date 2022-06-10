@@ -9,24 +9,23 @@ import java.util.ArrayList;
 
 public class JS2s1c2 extends TreeNode {
 
-  public JS2s1c2(Charactar character) {
-    super();
-    _children.add(new JS2s1c3(character));
-    _children.add(new JS2s1c4(character));
+  public JS2s1c2(Charactar character, Player player) {
+    super(character, player);
+    _children.add(new JS2s1c3(character, player));
+    _children.add(new JS2s1c4(character, player));
     _childrenLikeChanges.add(6);
     _childrenLikeChanges.add(9);
-    _character = character;
   }
 
   public boolean interact() {
     type("JESSICA: Oh hi! What's up?");
     type("\n\t1. \"I had fun at the game!\" \n\t2. \"You down for lunch at the bakery?\""); // bakery for lunch?
     type("Enter \"1\" or \"2\".");
-    Scanny in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
     Integer input = Integer.parseInt(choice);

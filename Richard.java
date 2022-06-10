@@ -9,20 +9,15 @@ import java.util.Stack;
 
 public class Richard extends Charactar{
 
-  public Richard() {
-    super();
+  public Richard(Player player, int startingAttraction) {
+    super(player, startingAttraction);
     _attraction = 0;
-    //_head = null;
-    _descrip = "SU president";
+    _stage1.add(new R01(this, player));
+    _descrip = "student president";
     _name = "Richard";
-  }
-
-  public Richard(int attraction) {
-    this();
-    _attraction = attraction;
-    if (_attraction < 0) {
-      _over = true;
-    }
+    _isRichard = true;
+    _x = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
+    _y = Integer.MAX_VALUE; //bc we want Richard to stay at stage1
   }
 
 }

@@ -16,10 +16,13 @@ public class Charactar {
   protected ArrayList<TreeNode> _stage1;
   protected ArrayList<TreeNode> _stage2;
   protected ArrayList<TreeNode> _stage3;
-  protected ArrayList<TreeNode> _winScene;
   protected ArrayList<TreeNode> _currentStage; //_stage1, _stage2, _stage3, or _winScene
   protected String _descrip;
   protected String _name;
+  protected Player _player;
+  protected boolean _isRichard;
+  protected int _x;
+  protected int _y;
 
   /*
     Woo starts at _stage1[0].
@@ -46,25 +49,29 @@ public class Charactar {
     Character.
   */
 
-  public Charactar() {
+  public Charactar(Player player, int startingAttraction) {
     _over = false;
     _fallen = false;
     _status = new Stack<String>();
     // _status.push("<3 <3 <3 <3 <3");
     // _status.push("<3 <3 <3 <3");
-    _status.push("WIN SCENE");
+    _status.push("LOVERS");
     _status.push("<3 <3 <3");
     _status.push("<3 <3");
     _status.push("<3");
-    _attraction = 0;
+    _attraction = startingAttraction;
+    if (_attraction < 0) {
+      _over = true;
+    }
     _pendingLikeChange = 0;
     _stage1 = new ArrayList<TreeNode>();
     _stage2 = new ArrayList<TreeNode>();
     _stage3 = new ArrayList<TreeNode>();
-    _winScene = null;
     _currentStage = _stage1;
     _descrip = "";
     _name = "";
+    _player = player;
+    _isRichard = false;
   }
 
 
@@ -105,6 +112,11 @@ public class Charactar {
     return _name;
   }
 
+  // Accessor for _isRichard
+  public boolean getIR() {
+    return _isRichard;
+  }
+
 
   //MUTATORS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -126,15 +138,25 @@ public class Charactar {
   public String changeStatus() {
     String prevStat = _status.pop();
     if (getStatus().equals("<3 <3")) {
+      if (!getIR())
       _currentStage = _stage2;
     }
     else if (getStatus().equals("<3 <3 <3")) {
+      if (!getIR())
       _currentStage = _stage3;
     }
-    else {
-      _currentStage = _winScene;
-    }
+
     return prevStat;
+  }
+
+  // Changes status for richard bc he's problematic
+  public void friendify() {
+    _status.pop();
+    _status.pop();
+    _status.pop();
+    _status.pop();
+    _status.push("FRIENDS");
+    _player.giveFriend();
   }
 
   // Updates corresponding character's status stat based on updated attraction
@@ -146,15 +168,15 @@ public class Charactar {
       System.out.println("IT'S OVER");
       this.setOver(true);
     }
-    else if (oldAttraction <= 25 && a > 25 && a < 65) {
+    else if (oldAttraction <= _x && a > _x && a < _y) {
       this.changeStatus();
     }
-    else if (oldAttraction <= 65 && a > 65 && a < 100) {
+    else if (oldAttraction <= _y && a > _y && a < 100) {
       this.changeStatus();
     }
     else if (a >= 100){
       this.changeStatus();
-      System.out.println(this._name + "has fallen for you!");
+      System.out.println(this._name + " has fallen for you!");
       this.setFallen(true);
     }
     return this.getStatus();
@@ -164,7 +186,7 @@ public class Charactar {
   public int changeAttraction(int change) {
     int old = _attraction;
     _attraction += change;
-     maintainStatus(old);
+    maintainStatus(old);
     return old;
   }
 
@@ -174,18 +196,25 @@ public class Charactar {
   public boolean updateTree(int childInd) {
     //if you've reached the end of the tree...
     if (_currentStage.get(0).getChildren().get(childInd) == null) {
+      _pendingLikeChange += _currentStage.get(0).getChildrenLikeChanges().get(childInd);
+      ArrayList<TreeNode> oldStage = _currentStage;
       //update the attraction based on the change you've ammassed throughout the
       // tree
+
+      // System.out.println("attraction  before: " + _attraction);
       changeAttraction(_pendingLikeChange);
+      // System.out.println("attraction  after: " + _attraction);
+
       //now reset the pending likeChange for the next tree
       _pendingLikeChange = 0;
       //now delete the tree you've just finished so that the next tree is now at
       // index 0
       _currentStage.remove(0);
       //if you've gotten through the entire stage without progressing, it's over
-      if (_currentStage.size() == 0) {
+      if (_currentStage.size() == 0 && oldStage.equals(_currentStage) && !this.hasFallen()) {
         _over = true;
-        System.out.println("This relationship is hopeless. You're taking too long. IT'S OVER.");
+        //if (!_isRichard)
+        System.out.println("\033[3mThis relationship is hopeless. You're taking too long.\033[0m \033[1mIT'S OVER.\033[0m");
       }
       //return true so that Woo knows the tree has been finished
       return true;
@@ -199,6 +228,52 @@ public class Charactar {
       _currentStage.set(0, _currentStage.get(0).getChildren().get(childInd));
       //return false so Woo knows to keep working through the tree
       return false;
+    }
+  }
+
+  public int probeTree(){
+    int option = 0;
+    int bestLike = Integer.MIN_VALUE;
+    for (int i = 0; i < _currentStage.get(0).getChildren().size(); i++) {
+      if (_currentStage.get(0).getChildren().get(i) != null) {
+        int like = probeTreeHelper(_currentStage.get(0).getChildren().get(i));
+        if (like > bestLike) {
+          bestLike = like;
+          option = i;
+        }
+      }
+    }
+    double chance = Math.random();
+    //2/3 of the time gives good advice
+    if (chance < 0.66) {
+      return option+1; //+1 b/c when the player sees their list of options, it starts at 1, not 0, but option is the index of the array
+    }
+    //1/3 of the time gives bad advice
+    else {
+      if (option == 0) { return 2; }
+      else { return option; }
+    }
+  }
+
+  public int probeTreeHelper(TreeNode node) {
+    if (node.getChildren().size() == 0) {
+      return 0;
+    }
+    else {
+      int bestLike = Integer.MIN_VALUE;
+      int like = 0;
+      for (int i = 0; i < node.getChildren().size(); i++) {
+        if (node.getChildren().get(i) == null) {
+          like = node.getChildrenLikeChanges().get(i);
+        }
+        else {
+          like = node.getChildrenLikeChanges().get(i) + probeTreeHelper(node.getChildren().get(i));
+        }
+        if (like > bestLike) {
+          bestLike = like;
+        }
+      }
+      return bestLike;
     }
   }
 

@@ -61,20 +61,28 @@ public class Woo {
     new ImageOpen("logo2.jpg");
 
     // Introductions
-    for (int i = 0; i < 3; i++) {
-      String s = "Meet " + _player.getRank().get(i).getName() + ": " + _player.getRank().get(i).getDescrip();
-      type(s);
-      delay(1000);
-    }
+    String s = "Meet Jessica: ";
+    s += "flirty and fickle";
+    type(s);
+    delay(1000);
+    s = "Meet Brad: ";
+    s += "lax frat bro";
+    type(s);
+    delay(1000);
+    s = "Meet Richard: ";
+    s += "student president";
+    type(s);
+    delay(1000);
 
     int startingAttraction = 0;
-    String s = "What is your name good fellow?";
+    s = "What is your name good fellow?";
     type(s);
-    _player.setName(new Scanny().toString());
+    Scanner in = new Scanner(System.in);
+    _player.setName(in.nextLine());
     s = "\nHello " + _player.getName() + ", tell us some adjectives you would use to describe yourself.";
     type(s);
-    Scanny in = new Scanny();
-    String resp = removePunctuation(in.toString());
+    in = new Scanner(System.in);
+    String resp = removePunctuation(in.nextLine());
     String[] intro = resp.trim().toLowerCase().split(" ");
     s = "\nGreat... let's get started!";
     type(s);
@@ -85,58 +93,59 @@ public class Woo {
       } catch (Exception e) { }
     }
 
-    _jessica = new Jessica(startingAttraction);
-    _richard = new Richard(startingAttraction);
-    _brad = new Brad(startingAttraction);
+    _jessica = new Jessica(_player, startingAttraction);
+    _richard = new Richard(_player, startingAttraction);
+    _brad = new Brad(_player, startingAttraction);
+
+    _player.addToRank(_jessica);
+    _player.addToRank(_brad);
+    _player.addToRank(_richard);
 
   }
+
   public void play(){
     String s = "";
 
-    if (_jessica.isOver() && _richard.isOver() && _brad.isOver()) {
+    if (_jessica.isOver() && _brad.isOver()) {
       _gameOver = true;
       s = "You've struck out with ALL of them. GAME OVER.";
       type(s);
     }
     else {
-      new ImageOpen("jessica_portrait.png");
-      if (_firstTime) type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
-      while (!(_jessica.getStage().get(0).interact()));
-      if (_firstTime) type("\n\033[3mA boy comes up to you, he's a total stud. You definetely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
-      while (!(_brad.getStage().get(0).interact()));
-      if(_firstTime) _firstTime = false;
+      //Richard
+      if (_firstTime) {
+        type("\n\033[3mYou accidentally bump into someone. He looks annoying. It's Richard, the student president. \033[0m\n");
+      }
+      if (!_richard.isOver() && !_richard.hasFallen()) while (!(_richard.getStage().get(0).interact()));
+      System.out.println("\033[H\033[2J");
+      if (_firstTime) {
+        _firstTime = false;
+      }
+
+      //Brad
+      if (_firstTime) {
+        type("\n\033[3mA boy comes up to you, he's a total stud. You definitely know who he is. Brad. The certified sigma male of the school. Captain of the lacrosse team and knows how to have a good time. \033[0m\n");
+      }
+      if (!_brad.isOver()) while (!(_brad.getStage().get(0).interact()));
+      if (_brad.hasFallen()) { System.out.println("YOU WIN!"); _gameOver = true; return; }
+      System.out.println("\033[H\033[2J");
+
+      //Jessica
+      if (!_player.isDead()) {
+        new ImageOpen("jessica_portrait.png");
+        if (_firstTime) {
+          type("\n\033[3mA girl comes up to you, you think you've heard about her. What's her name? Jessica? Yes that's it. She's pretty, but seems to be a bit on the simpler side. \033[0m\n");
+        }
+        if (!_jessica.isOver()) while (!(_jessica.getStage().get(0).interact()));
+        if (_jessica.hasFallen()) {System.out.println("YOU WIN!"); _gameOver = true; return; }
+        System.out.println("\033[H\033[2J");
+      }
+      _player.sortRank();
+      printRank();
     }
     if (!_gameOver) play();
   }
 
-  public int probeTree(Charactar character){
-    int option = 0;
-    int bestLike = Integer.MIN_VALUE;
-    for (int i = 0; i < character.getStage().get(0).getChildren().size(); i++) {
-      int like = probeTreeHelper(character.getStage().get(0).getChildren().get(i));
-      if (like > bestLike) {
-        bestLike = like;
-        option = i;
-      }
-    }
-    return option+1; //+1 b/c when the player sees their list of options, it starts at 1, not 0, but option is the index of the array
-  }
-
-  public int probeTreeHelper(TreeNode node) {
-    if (node.getChildren().size() == 0) {
-      return 0;
-    }
-    else {
-      int bestLike = Integer.MIN_VALUE;
-      for (int i = 0; i < node.getChildren().size(); i++) {
-        int like = node.getChildrenLikeChanges().get(i) + probeTreeHelper(node.getChildren().get(i));
-        if (like > bestLike) {
-          bestLike = like;
-        }
-      }
-      return bestLike;
-    }
-  }
 
   //to print stuff so it looks like it's being typed out
   public static void type(String s){
@@ -174,9 +183,40 @@ public class Woo {
       return word;
   }
 
+  // Accessor for _player
+  public Player getPlayer() {
+    return _player;
+  }
+
+  // Accessor for _jessica
+  public Charactar getJ() {
+    return _jessica;
+  }
+
+  // Accessor for _brad
+  public Charactar getB() {
+    return _brad;
+  }
+
+  // Accessor for _richard
+  public Charactar getR() {
+    return _richard;
+  }
+
+  public void printRank() {
+    ArrayList<Charactar> a = _player.getRank();
+    String s = "Your love interests, in order from most to least interested in you: ";
+    for (int i = 0; i < a.size(); i++) {
+      s += "\n\t" + a.get(i).getName() + ": " + a.get(i).getStatus();
+    }
+    s += "\n";
+    type(s);
+  }
+
   public static void main(String[] args) {
     Woo game = new Woo();
     game.introduction();
+    System.out.println("\033[H\033[2J");
     game.play();
   }
 

@@ -13,13 +13,15 @@ public abstract class TreeNode {
   protected ArrayList<TreeNode> _children;
   protected ArrayList<Integer> _childrenLikeChanges;
   protected Charactar _character;
+  protected Player _player;
 
   //constructor (doesn't actually work, but can be used as a prototype for
   //subclass constructors)
-  protected TreeNode() {
+  protected TreeNode(Charactar character, Player player) {
     _children = new ArrayList<TreeNode>();
     _childrenLikeChanges = new ArrayList<Integer>();
-    _character = null;
+    _character = character;
+    _player = player;
   }
 
   //abstract interaction method; coded individually for each node
@@ -60,5 +62,7 @@ public abstract class TreeNode {
         continue;
       }
     }
+
+
 
 }

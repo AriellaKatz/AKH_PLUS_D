@@ -7,20 +7,20 @@ FP -- Are You a Player?
 
 import java.util.ArrayList;
 
-public class JS3s1c5 extends TreeNode {
+public class R09 extends TreeNode {
 
-  public JS3s1c5(Charactar character, Player player) {
+  public R09(Charactar character, Player player) {
     super(character, player);
-    _children.add(null);
-    _children.add(null);
-    _childrenLikeChanges.add(15);
+    _children.add(new R11(character, player));
+    _children.add(new R12(character, player));
+    _childrenLikeChanges.add(0);
     _childrenLikeChanges.add(0);
   }
 
   public boolean interact() {
-    type("(Jessica raises her eyebrows, blushes.)");
-    type("\n\t1. \033[3mKISS HER (with consent of course)\033[0m \n\t2. \033[3mBe a coward, pretend like nothing's happening.\033[0m");
-    type("Enter \"1\" or \"2\"");
+    type("RICHARD: Alright, so do you want to hear the story of the bathroom?");
+    type("\n\t1. \"Absolutely.\" \n\t2. \"Nah, I'm caught up.\"");
+    type("Enter \"1\" or \"2\".");
     Scanny in = new Scanny(_character, _player);
     String choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
@@ -30,13 +30,10 @@ public class JS3s1c5 extends TreeNode {
     }
     Integer input = Integer.parseInt(choice);
     if (input == 1) {
-      type("\033[3mJessica's fallen for you!\033[0m \033[1mYOU WIN!\033[0m");
-      _character.setFallen(true);
       return _character.updateTree(0);
     }
     else {
-      type("\033[3mYou two are cute friends. Maybe you'll have something together in the future, but for the rest of this game, friends you'll remain.\033[0m");
-      _character.setOver(true);
+      type("RICHARD: Great! So let's see what happens. In you go!");
       return _character.updateTree(1);
     }
   }

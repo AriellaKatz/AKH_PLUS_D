@@ -6,43 +6,39 @@ FP -- Are You a Player?
 */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class JS2s1c5 extends TreeNode {
 
-  public JS2s1c5(Charactar character) {
-    super();
-    _children.add(new JS2s1c6(character));
+  public JS2s1c5(Charactar character, Player player) {
+    super(character, player);
+    _children.add(new JS2s1c6(character, player));
     _children.add(null);
     _childrenLikeChanges.add(5);
     _childrenLikeChanges.add(-12);
-    _character = character;
   }
 
   public boolean interact() {
     type("JESSICA: Hey! Hello?");
     type("\n\t1. \"Hi.\"");
     type("Enter \"1\".");
-    Scanny in = new Scanny();
-    String choice = in.toString().trim();
+    Scanner i = new Scanner(System.in);
+    String choice = i.nextLine().trim();
     while (!choice.equals("1")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
-      choice = in2.toString().trim();
+      Scanner i2 = new Scanner(System.in);
+      choice = i2.nextLine().trim();
     }
-
+    _character.changeAttraction(4);
 
     type("JESSICA: Do you hate me or something?");
     type("\n\t1. \"No. Why would I?\" \n\t2. \"Yes.\"");
     type("Enter \"1\" or \"2\".");
-    _character.changeAttraction(4);
-    System.out.println("JESSICA: Do you hate me or something?");
-    System.out.println("\n\t1. \"No. Why would I?\" \n\t2. \"Yes.\"");
-    System.out.println("Enter \"1\" or \"2\".");
-    in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
 
@@ -52,7 +48,7 @@ public class JS2s1c5 extends TreeNode {
     }
     else {
       type("JESSICA: Oh. Ummm. Sorry? I'll go.");
-      type("Why so salty? Jessica hates you too. IT'S OVER.");
+      type("\033[3mWhy so salty? Jessica hates you too.\033[0m \033[1mIT'S OVER.\033[0m");
       _character.setOver(true);
       return _character.updateTree(1);
     }

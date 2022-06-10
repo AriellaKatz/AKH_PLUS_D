@@ -6,40 +6,40 @@ FP -- Are You a Player?
 */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class JS2s2c2 extends TreeNode {
 
-  public JS2s2c2(Charactar character) {
-    super();
+  public JS2s2c2(Charactar character, Player player) {
+    super(character, player);
     _children.add(null);
-    _children.add(new JS2s2c3(character));
+    _children.add(new JS2s2c3(character, player));
     _childrenLikeChanges.add(0); //0
-    _childrenLikeChanges.add(0); //6
-    _character = character;
+    _childrenLikeChanges.add(6); //6
   }
 
   public boolean interact() {
-    type("(You arrive at the table.)");
+    type("\033[3mYou arrive at the table.\033[0m");
     type("JESSICA: Hiiii. These are my teammates aka my besties. The tall one is Charlotte. The peppy one over there is Keria...");
-    type("(The girls introduce themselves.)");
+    type("\033[3mThe girls introduce themselves.\033[0m");
     type("\n\t1. \"Hey. It's nice to meet you guys.\"");
     type("Enter \"1\".");
-    Scanny in = new Scanny();
-    String choice = in.toString().trim();
+    Scanner i = new Scanner(System.in);
+    String choice = i.nextLine().trim();
     while (!choice.equals("1")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
-      choice = in2.toString().trim();
+      Scanner i2 = new Scanner(System.in);
+      choice = i2.nextLine().trim();
     }
-    type("(The cheerleaders whisper amongst themselves.)");
+    type("\033[3mThe cheerleaders whisper amongst themselves.\033[0m");
 
-    type("\n\t1. \"(Ignore it.)\" \n\t2. \"Heard my name. You guys talking about me?\"");
+    type("\n\t1. \033[3mIgnore it.\033[0m \n\t2. \"Heard my name. You guys talking about me?\"");
     type("Enter \"1\" or \"2\".");
-    in = new Scanny();
+    Scanny in = new Scanny(_character, _player);
     choice = in.toString().trim();
     while (!choice.equals("1") && !choice.equals("2")) {
       type("Congrats, you can't follow instructions. Try again.");
-      Scanny in2 = new Scanny();
+      Scanny in2 = new Scanny(_character, _player);
       choice = in2.toString().trim();
     }
 
