@@ -86,12 +86,16 @@ public class Woo {
       } catch (Exception e) { }
     }
 
-    _jessica = new Jessica(startingAttraction, _player);
-    _richard = new Richard(startingAttraction, _player);
-    _brad = new Brad(startingAttraction, _player);
+    _jessica = new Jessica(_player, startingAttraction);
+    _richard = new Richard(_player, startingAttraction);
+    _brad = new Brad(_player, startingAttraction);
+
+    _player.addToRank(_jessica);
+    _player.addToRank(_brad);
+    _player.addToRank(_richard);
 
   }
-  
+
   public void play(){
     String s = "";
 

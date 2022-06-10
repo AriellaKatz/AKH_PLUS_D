@@ -9,20 +9,12 @@ import java.util.ArrayList;
 public class Player{
 
   private ArrayList<Charactar> _rank;
-  private final ArrayList<Charactar> _order;
   private String _name;
   private boolean _hasFriend;
   private boolean _dead;
 
   public Player() {
     _rank = new ArrayList<Charactar>();
-    _rank.add(new Brad(this));
-    _rank.add(new Jessica(this));
-    _rank.add(new Richard(this));
-    _order = new ArrayList<Charactar>();
-    _order.add(_rank.get(0));
-    _order.add(_rank.get(1));
-    _order.add(_rank.get(2));
     _name = "notYet";
     _hasFriend = false;
   }
@@ -45,6 +37,10 @@ public class Player{
 
   public ArrayList<Charactar> getRank() {
     return _rank;
+  }
+
+  public void addToRank(Charactar character) {
+    _rank.add(character);
   }
 
   // Accessor for _name
