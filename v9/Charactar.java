@@ -212,7 +212,7 @@ public class Charactar {
       //if you've gotten through the entire stage without progressing, it's over
       if (_currentStage.size() == 0 && oldStage.equals(_currentStage)) {
         _over = true;
-        if (!_isRichard) System.out.println("This relationship is hopeless. You're taking too long. IT'S OVER.");
+        if (!_isRichard) System.out.println("\033[3mThis relationship is hopeless. You're taking too long.\033[0m \033[1mIT'S OVER.\033[0m");
       }
       //return true so that Woo knows the tree has been finished
       return true;
