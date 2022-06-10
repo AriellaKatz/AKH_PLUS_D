@@ -22,7 +22,7 @@ public class Woo {
   public void introduction() {
     // Welcome Message
     System.out.println("Welcome to: ");
-    new ImageOpen("logo2.jpg");
+    new ImageOpen("../logo2.jpg");
 
     // Introductions
     for (int i = 0; i < 3; i++) {

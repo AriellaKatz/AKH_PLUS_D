@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Woo {
   public static void main(String[] args) {
     System.out.println("This is our v0 beep bop");
-    new ImageOpen("logo2.jpg");
+    new ImageOpen("ourLogo.jpg");
   }
 
   //private Brad _brad;
